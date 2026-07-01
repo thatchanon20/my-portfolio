@@ -10,15 +10,15 @@
     
     <style>
         :root {
-            --bg-dark-main: #030712;      /* Deep dark background */
-            --bg-card-dark: #0b1329;     /* Deep blue-grey card bg */
-            --border-tech: #1e293b;      /* Slate border */
+            --bg-dark-main: #1f2937;      /* Modern slate grey background */
+            --bg-card-dark: #111827;      /* Darker grey for cards */
+            --border-tech: #374151;        /* Clearly visible border */
             --tech-cyan: #38bdf8;        /* Cyber cyan */
             --tech-purple: #c084fc;      /* Tech purple */
             --tech-red: #f87171;         /* Terminal alert red */
             --tech-green: #4ade80;       /* Terminal success green */
-            --text-light: #f3f4f6;       /* Bright light text */
-            --text-muted: #9ca3af;       /* Muted grey text */
+            --text-light: #f9fafb;       /* Maximum brightness text */
+            --text-muted: #d1d5db;       /* High-contrast muted text (Gray 300) */
         }
 
         body {
@@ -40,7 +40,7 @@
 
         /* Modernized Tech Navbar */
         .navbar {
-            background-color: rgba(3, 7, 18, 0.85) !important;
+            background-color: rgba(17, 24, 39, 0.9) !important;
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-tech);
             padding: 15px 0;
@@ -68,12 +68,12 @@
             border: 1px solid var(--border-tech);
             overflow: hidden;
             margin-bottom: 35px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             position: relative;
         }
 
         .profile-banner {
-            background: radial-gradient(circle at top right, #0f172a, #030712);
+            background: radial-gradient(circle at top right, #374151, #111827);
             padding: 50px 40px;
             border-bottom: 1px solid var(--border-tech);
             display: flex;
@@ -87,7 +87,7 @@
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background-image: linear-gradient(rgba(56, 189, 248, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
+            background-image: linear-gradient(rgba(56, 189, 248, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
             background-size: 25px 25px;
             pointer-events: none;
         }
@@ -98,7 +98,7 @@
             font-weight: 700; 
             margin: 5px 0; 
             letter-spacing: -1px;
-            background: linear-gradient(to right, #ffffff, #94a3b8);
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -115,15 +115,16 @@
 
         /* Status Badge */
         .status-badge {
-            background-color: rgba(74, 222, 128, 0.1);
+            background-color: rgba(74, 222, 128, 0.15);
             color: var(--tech-green);
-            border: 1px solid rgba(74, 222, 128, 0.2);
+            border: 1px solid rgba(74, 222, 128, 0.3);
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 0.8rem;
             display: inline-flex;
             align-items: center;
             gap: 6px;
+            font-weight: 500;
         }
         .status-dot {
             width: 6px; height: 6px; background-color: var(--tech-green); border-radius: 50%;
@@ -136,7 +137,7 @@
         /* Technical Info Label & Box */
         .section-title-box {
             font-family: 'JetBrains Mono', sans-serif;
-            background-color: rgba(30, 41, 59, 0.5);
+            background-color: rgba(55, 65, 81, 0.8);
             color: var(--tech-cyan);
             padding: 5px 12px;
             border-radius: 6px;
@@ -154,7 +155,7 @@
 
         /* Terminal Window Box for Interactive Skills Showcase */
         .skill-cat-card {
-            background: #090f1e;
+            background: var(--bg-card-dark);
             border: 1px solid var(--border-tech);
             border-radius: 10px;
             padding: 20px;
@@ -162,7 +163,7 @@
             transition: all 0.2s ease;
         }
         .skill-cat-card:hover {
-            border-color: rgba(58, 189, 248, 0.4);
+            border-color: rgba(58, 189, 248, 0.5);
             transform: translateY(-2px);
         }
         .skill-cat-header {
@@ -179,7 +180,7 @@
             gap: 8px;
         }
         .skill-tag {
-            background: rgba(30, 41, 59, 0.6);
+            background: rgba(55, 65, 81, 0.6);
             border: 1px solid var(--border-tech);
             color: var(--text-light);
             padding: 4px 10px;
@@ -195,7 +196,7 @@
             align-items: center;
             gap: 12px;
             padding: 14px;
-            background: rgba(15, 23, 42, 0.4);
+            background: rgba(55, 65, 81, 0.3);
             border-radius: 10px;
             border: 1px solid var(--border-tech);
             text-decoration: none;
@@ -203,12 +204,12 @@
             transition: all 0.2s ease;
         }
         .contact-item-box:hover {
-            background: rgba(30, 41, 59, 0.5);
+            background: rgba(55, 65, 81, 0.6);
             border-color: var(--tech-cyan);
-            color: var(--tech-cyan);
+            color: var(--tech-cyan) !important;
         }
         .contact-icon-circle {
-            width: 32px; height: 32px; border-radius: 6px; background: rgba(30, 41, 59, 0.8); color: var(--text-light);
+            width: 32px; height: 32px; border-radius: 6px; background: rgba(55, 65, 81, 0.8); color: var(--text-light);
             display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0;
             border: 1px solid var(--border-tech);
         }
@@ -224,14 +225,14 @@
         }
         .custom-card:hover {
             transform: translateY(-4px);
-            border-color: rgba(56, 189, 248, 0.3);
+            border-color: rgba(56, 189, 248, 0.4);
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
         
         /* ช่องใส่รูปภาพสไตล์ Tech */
         .cert-img-wrapper { 
             height: 180px; 
-            background-color: #040814; 
+            background-color: #1f2937; 
             border-bottom: 1px solid var(--border-tech); 
             text-align: center; 
             line-height: 180px; 
@@ -266,9 +267,9 @@
         }
         
         /* Color variants for tech roles */
-        .tag-backend { background: rgba(192, 132, 252, 0.1); color: var(--tech-purple); border: 1px solid rgba(192, 132, 252, 0.2); }
-        .tag-blockchain { background: rgba(56, 189, 248, 0.1); color: var(--tech-cyan); border: 1px solid rgba(56, 189, 248, 0.2); }
-        .tag-security { background: rgba(248, 113, 113, 0.1); color: var(--tech-red); border: 1px solid rgba(248, 113, 113, 0.2); }
+        .tag-backend { background: rgba(192, 132, 252, 0.15); color: var(--tech-purple); border: 1px solid rgba(192, 132, 252, 0.3); }
+        .tag-blockchain { background: rgba(56, 189, 248, 0.15); color: var(--tech-cyan); border: 1px solid rgba(56, 189, 248, 0.3); }
+        .tag-security { background: rgba(248, 113, 113, 0.15); color: var(--tech-red); border: 1px solid rgba(248, 113, 113, 0.3); }
 
         .project-tech-stack {
             display: flex;
@@ -278,7 +279,7 @@
         }
         .tech-pill {
             font-size: 0.72rem;
-            background: #040814;
+            background: #1f2937;
             border: 1px solid var(--border-tech);
             color: var(--tech-green);
             padding: 2px 8px;
@@ -288,13 +289,13 @@
 
         /* Education Component Styles */
         .edu-card {
-            background: rgba(15, 23, 42, 0.3);
+            background: rgba(55, 65, 81, 0.3);
             border: 1px solid var(--border-tech);
             border-radius: 10px;
             padding: 15px;
         }
         .gpa-box {
-            background: #090f1e;
+            background: var(--bg-card-dark);
             border: 1px solid var(--border-tech);
             padding: 10px;
             border-radius: 8px;
@@ -303,7 +304,7 @@
 
         @media print {
             .navbar { display: none !important; }
-            body { background-color: #030712; color: #ffffff; }
+            body { background-color: #ffffff; color: #000000; }
         }
     </style>
 </head>
@@ -346,7 +347,7 @@
                     <img src="images/20.jpg" class="profile-img-circle" alt="นายฐัฏชนนท์ วัยนิพลี" onerror="this.src='https://via.placeholder.com/140?text=Profile'">
                 </div>
 
-                <div class="p-4" style="background-color: #060b16;">
+                <div class="p-4" style="background-color: var(--bg-card-dark);">
                     <div class="row g-4">
                         <div class="col-lg-4">
                             <div class="section-title-box">Personal Info</div>
@@ -441,7 +442,7 @@
                     <div class="skill-cat-card" style="border-color: var(--tech-purple);">
                         <div class="skill-cat-header" style="color: var(--tech-purple);">
                             <span><i class="fa-solid fa-code me-2"></i>Web Development</span>
-                            <span class="badge bg-purple code-font" style="font-size:0.7rem; background:rgba(192, 132, 252, 0.2); color:var(--tech-purple)">8 skills</span>
+                            <span class="badge code-font" style="font-size:0.7rem; background:rgba(192, 132, 252, 0.2); color:var(--tech-purple)">8 skills</span>
                         </div>
                         <div class="skill-badge-container">
                             <span class="skill-tag">HTML</span>
@@ -528,7 +529,7 @@
                 <div class="col">
                     <div class="custom-card">
                         <div class="cert-img-wrapper">
-                            <img src="images/11.png" class="cert-img" onerror="this.src='https://via.placeholder.com/400x250/0b1329/38bdf8?text=Project+01+Image'">
+                            <img src="images/11.png" class="cert-img" onerror="this.src='https://via.placeholder.com/400x250/111827/38bdf8?text=Project+01+Image'">
                         </div>
                         <div class="p-4">
                             <span class="project-tag tag-backend">Backend Tester</span>
@@ -545,7 +546,7 @@
                 <div class="col">
                     <div class="custom-card">
                         <div class="cert-img-wrapper">
-                            <img src="images/11.png" class="cert-img" onerror="this.src='https://via.placeholder.com/400x250/0b1329/38bdf8?text=Project+02+Image'">
+                            <img src="images/11.png" class="cert-img" onerror="this.src='https://via.placeholder.com/400x250/111827/38bdf8?text=Project+02+Image'">
                         </div>
                         <div class="p-4">
                             <span class="project-tag tag-blockchain">Blockchain Tester</span>
@@ -562,7 +563,7 @@
                 <div class="col">
                     <div class="custom-card">
                         <div class="cert-img-wrapper">
-                            <img src="images/11.png" class="cert-img" onerror="this.src='https://via.placeholder.com/400x250/0b1329/38bdf8?text=Project+03+Image'">
+                            <img src="images/11.png" class="cert-img" onerror="this.src='https://via.placeholder.com/400x250/111827/38bdf8?text=Project+03+Image'">
                         </div>
                         <div class="p-4">
                             <span class="project-tag tag-security">Security Practice</span>
@@ -588,7 +589,7 @@
                 <div class="col">
                     <div class="custom-card">
                         <div class="cert-img-wrapper">
-                            <img src="images/01.png" class="cert-img" onerror="this.src='https://via.placeholder.com/400x250/0b1329/4ade80?text=Certificate+01+Image'">
+                            <img src="images/01.png" class="cert-img" onerror="this.src='https://via.placeholder.com/400x250/111827/4ade80?text=Certificate+01+Image'">
                         </div>
                         <div class="p-4">
                             <div class="d-flex align-items-start gap-2">
@@ -604,7 +605,7 @@
                 <div class="col">
                     <div class="custom-card">
                         <div class="cert-img-wrapper">
-                            <img src="images/02.png" class="cert-img" onerror="this.src='https://via.placeholder.com/400x250/0b1329/4ade80?text=Certificate+02+Image'">
+                            <img src="images/02.png" class="cert-img" onerror="this.src='https://via.placeholder.com/400x250/111827/4ade80?text=Certificate+02+Image'">
                         </div>
                         <div class="p-4">
                             <div class="d-flex align-items-start gap-2">
@@ -620,7 +621,7 @@
                 <div class="col">
                     <div class="custom-card">
                         <div class="cert-img-wrapper">
-                            <img src="images/03.png" class="cert-img" onerror="this.src='https://via.placeholder.com/400x250/0b1329/4ade80?text=Certificate+03+Image'">
+                            <img src="images/03.png" class="cert-img" onerror="this.src='https://via.placeholder.com/400x250/111827/4ade80?text=Certificate+03+Image'">
                         </div>
                         <div class="p-4">
                             <div class="d-flex align-items-start gap-2">
