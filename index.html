@@ -11,7 +11,7 @@
     <style>
         :root {
             --bg-dark-main: #1f2937;      
-            --bg-card-dark: #111827;      
+            --bg-card-dark: rgba(17, 24, 39, 0.85); /* ปรับให้โปร่งใสเล็กน้อยเพื่อให้เห็นพื้นหลังขยับ */     
             --border-tech: #374151;        
             --tech-cyan: #38bdf8;        
             --tech-purple: #c084fc;      
@@ -27,6 +27,21 @@
             background-color: var(--bg-dark-main);
             color: var(--text-light);
             scroll-behavior: smooth;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* ------------------------------------------------------------- */
+        /* Canvas Background Setup */
+        /* ------------------------------------------------------------- */
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1; /* ซ่อนไว้ข้างหลังสุด */
+            pointer-events: none; /* ยอมให้เมาส์คลิกทะลุไปกดปุ่มบนเว็บได้ */
         }
 
         .code-font {
@@ -37,6 +52,8 @@
             width: 100%;
             max-width: 1140px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .navbar {
@@ -44,6 +61,7 @@
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-tech);
             padding: 15px 0;
+            z-index: 1050;
         }
         .navbar-brand {
             font-family: 'JetBrains Mono', sans-serif;
@@ -63,6 +81,7 @@
 
         .profile-header-card {
             background: var(--bg-card-dark);
+            backdrop-filter: blur(8px);
             border-radius: 16px;
             border: 1px solid var(--border-tech);
             overflow: hidden;
@@ -72,7 +91,7 @@
         }
 
         .profile-banner {
-            background: radial-gradient(circle at top right, #374151, #111827);
+            background: radial-gradient(circle at top right, rgba(55, 65, 81, 0.9), rgba(17, 24, 39, 0.95));
             padding: 50px 40px;
             border-bottom: 1px solid var(--border-tech);
             display: flex;
@@ -175,7 +194,7 @@
             width: 34px;
             height: 34px;
             border-radius: 50%;
-            background: var(--bg-card-dark);
+            background: #111827;
             border: 2px solid var(--tech-cyan);
             color: var(--tech-cyan);
             display: flex;
@@ -214,6 +233,7 @@
 
         .skill-cat-card {
             background: var(--bg-card-dark);
+            backdrop-filter: blur(8px);
             border: 1px solid var(--border-tech);
             border-radius: 10px;
             padding: 20px;
@@ -275,6 +295,7 @@
             border: 1px solid var(--border-tech); 
             border-radius: 12px; 
             background: var(--bg-card-dark); 
+            backdrop-filter: blur(8px);
             overflow: hidden; 
             height: 100%; 
             transition: all 0.3s ease;
@@ -340,7 +361,7 @@
         }
 
         .gpa-box {
-            background: var(--bg-card-dark);
+            background: #111827;
             border: 1px solid var(--border-tech);
             padding: 10px;
             border-radius: 8px;
@@ -349,6 +370,7 @@
 
         .contact-section-card {
             background: var(--bg-card-dark);
+            backdrop-filter: blur(8px);
             border: 1px solid var(--border-tech);
             border-radius: 16px;
             padding: 45px 30px;
@@ -431,12 +453,15 @@
         }
 
         @media print {
-            .navbar, #contact-form-section { display: none !important; }
+            .navbar, #contact-form-section, #bg-canvas { display: none !important; }
             body { background-color: #ffffff; color: #000000; }
         }
     </style>
 </head>
 <body>
+
+    <!-- Canvas ตัวรันโค้ดพื้นหลังขยับได้ -->
+    <canvas id="bg-canvas"></canvas>
 
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
@@ -461,7 +486,7 @@
 
     <div class="a4-container px-3 px-md-0 my-5">
         
-        <!-- Profile Section (Updated Content to Software Focus) -->
+        <!-- Profile Section -->
         <section id="profile" class="mb-5">
             <div class="profile-header-card">
                 <div class="profile-banner">
@@ -476,12 +501,11 @@
                     <img src="images/20.jpg" class="profile-img-circle" alt="นายฐัฏชนนท์ วัยนิพลี" onerror="this.src='https://via.placeholder.com/140?text=Profile'">
                 </div>
 
-                <div class="p-4" style="background-color: var(--bg-card-dark);">
+                <div class="p-4">
                     <div class="row g-4">
                         <div class="col-lg-4">
                             <div class="section-title-box">Personal Info</div>
                             <h5 class="fw-bold text-white mb-3">นายฐัฏชนนท์ วัยนิพลี</h5>
-                            <!-- ปรับเปลี่ยนเนื้อหาจากรูปเดิมที่เป็น Cybersecurity เป็นด้านซอฟต์แวร์ตามต้องการ -->
                             <p class="readable-description mb-3">นักศึกษาคณะวิศวกรรมศาสตร์ สาขาวิศวกรรมคอมพิวเตอร์ ที่มีความสนใจและมุ่งมั่นในสายงานการพัฒนาซอฟต์แวร์ (Software Engineering) การออกแบบระบบ Back-end สถาปัตยกรรมระบบเว็บแอปพลิเคชัน และเทคโนโลยี Full-Stack</p>
                             <div class="d-flex flex-column gap-2">
                                 <div><span class="info-label">ID:</span><span class="info-value code-font text-info fw-bold">6612247017</span></div>
@@ -540,7 +564,7 @@
             </div>
         </section>
 
-        <!-- Education & Experience Timeline Section -->
+        <!-- Education Section -->
         <section id="education" class="mb-5">
             <div class="d-flex align-items-center mb-4">
                 <div class="section-title-box m-0">เส้นทางการศึกษา</div>
@@ -581,7 +605,7 @@
             </div>
         </section>
 
-        <!-- Skills Section (Rearranged to focus on Software Dev) -->
+        <!-- Skills Section -->
         <section id="skills" class="mb-5">
             <div class="d-flex align-items-center mb-4">
                 <div class="section-title-box m-0">Technical Skills</div>
@@ -641,7 +665,7 @@
             </div>
         </section>
 
-        <!-- Projects Section (Updated Descriptions to Software Engineering) -->
+        <!-- Projects Section -->
         <section id="projects" class="mb-5">
             <div class="d-flex align-items-center mb-4">
                 <div class="section-title-box m-0">Project Experience</div>
@@ -804,5 +828,66 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+    
+    <!-- ------------------------------------------------------------- -->
+    <!-- JavaScript สำหรับควบคุมระบบอนุภาคเม็ดขยับ (Particles System) -->
+    <!-- ------------------------------------------------------------- -->
+    <script>
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let particlesArray = [];
+        const numberOfParticles = 65; // จำนวนเม็ดอนุภาค (ปรับเพิ่ม-ลดตามความหนาแน่นที่ชอบได้)
+
+        // ตรวจจับขนาดหน้าจอให้เต็มตลอดเวลา
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', function() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            init();
+        });
+
+        // จัดเก็บพิกัดของเมาส์
+        const mouse = {
+            x: null,
+            y: null,
+            radius: 140 // รัศมีวงกลมที่เมาส์จะผลักดันหรือดึงดูดจุด
+        }
+
+        window.addEventListener('mousemove', function(event) {
+            mouse.x = event.clientX;
+            mouse.y = event.clientY;
+        });
+
+        window.addEventListener('mouseout', function() {
+            mouse.x = null;
+            mouse.y = null;
+        });
+
+        // คลาสแม่พิมพ์สร้างเม็ดอนุภาค
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1; // ขนาดเม็ด
+                this.speedX = Math.random() * 0.4 - 0.2; // ความเร็วแนวตั้ง
+                this.speedY = Math.random() * 0.4 - 0.2; // ความเร็วแนวนอน
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                // ตรวจสอบถ้าชนขอบหน้าจอให้เด้งกลับ
+                if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
+                if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
+
+                // ตรรกะปฏิสัมพันธ์กับเมาส์ (Interactive Effect)
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < mouse.radius) {
+                    if (mouse.x > this.x && this.x > 10) this.x -= 2;
+                    if (mouse.x < this.x && this.x < canvas.width - 10) this.x += 2;
+                    if (mouse.y > this.y && this.Normally I can help with things like this, but I don't seem to have access to that content. You can try again or ask me for something else.
