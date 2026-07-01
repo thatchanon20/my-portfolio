@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thatchanon W. | Computer Engineering Internship Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #334155;    /* Slate 700 */
+            --secondary-dark: #1e293b;  /* Slate 800 */
+            --accent-gray: #64748b;     /* Slate 500 */
+            --bg-light: #f8fafc;        /* Slate 50 */
+            --text-main: #334155;
+        }
+
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            scroll-behavior: smooth;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .a4-container {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        /* Navbar Style */
+        .navbar {
+            background-color: #1e293b !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-bottom: 3px solid var(--accent-gray);
+        }
+        .nav-link { color: rgba(255, 255, 255, 0.8) !important; font-size: 0.95rem; }
+
+        /* Profile Card & Banner */
+        .profile-header-card {
+            background: #ffffff;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+        .profile-banner {
+            background: linear-gradient(135deg, #475569 0%, #1e293b 100%);
+            padding: 30px 35px;
+            color: white;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .profile-banner h1 { font-size: 2.2rem; font-weight: 700; margin: 5px 0 0 0; }
+        
+        .profile-img-circle {
+            width: 125px;
+            height: 125px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        /* Section Title Style */
+        .section-title-box {
+            background-color: #64748b;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 12px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        /* Skill Progress Bar Style */
+        .skill-progress-item { margin-bottom: 18px; }
+        .skill-name { font-size: 0.85rem; font-weight: 600; color: var(--secondary-dark); display: flex; justify-content: space-between; margin-bottom: 6px; }
+        .progress { height: 10px; background-color: #e2e8f0 !important; border-radius: 10px; overflow: hidden; display: flex; }
+        
+        .bg-html-css { background-color: #0ea5e9 !important; width: 90%; }
+        .bg-bootstrap { background-color: #6366f1 !important; width: 85%; }
+        .bg-graphic { background-color: #f97316 !important; width: 80%; }
+
+        /* Education & Info Labels */
+        .info-label { font-weight: 600; color: var(--secondary-dark); width: 100px; display: inline-block; font-size: 0.9rem; }
+        .info-value { color: #475569; font-size: 0.9rem; }
+
+        /* Skill Badges & Contact */
+        .skill-pill {
+            background: #ffffff;
+            color: #1e293b;
+            padding: 6px 12px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin: 4px;
+        }
+        .contact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        .contact-item-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: #f8fafc;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            text-decoration: none;
+            color: inherit;
+        }
+        .contact-icon-circle {
+            width: 30px; height: 30px; border-radius: 50%; background: #64748b; color: white;
+            display: flex; align-items: center; justify-content: center; font-size: 0.85rem; flex-shrink: 0;
+        }
+
+        /* โครงสร้างล็อกแถว 3 คอลัมน์สำหรับเกียรติบัตรและผลงาน */
+        .cert-row { display: table; width: 100%; table-layout: fixed; border-spacing: 12px 0px; }
+        .cert-col { display: table-cell; width: 33.333%; vertical-align: top; }
+        .custom-card { border: 1px solid #e2e8f0; border-radius: 12px; background: #ffffff; overflow: hidden; height: 100%; }
+        .cert-img-wrapper { height: 140px; background-color: #f1f5f9; border-bottom: 1px solid #e2e8f0; text-align: center; line-height: 140px; }
+        .cert-img { max-width: 100%; max-height: 100%; object-fit: contain; padding: 10px; display: inline-block; vertical-align: middle; }
+
+        @media print {
+            .navbar { display: none !important; }
+            .a4-container { width: 210mm; margin: 0 auto; }
+            .py-4 { padding-top: 1rem !important; padding-bottom: 1rem !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top py-2">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-uppercase" href="#"><i class="fa-solid fa-user-gear text-light me-2"></i>Thatchanon.W</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto fw-medium gap-1">
+                    <li class="nav-item"><a class="nav-link" href="#profile">ประวัติส่วนตัว</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">ผลงาน</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certificates">เกียรติบัตร</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="a4-container px-3 px-md-0">
+        
+        <section id="profile" class="py-4">
+            <div class="profile-header-card">
+                <div class="profile-banner">
+                    <div>
+                        <p class="text-uppercase tracking-wider small mb-0 opacity-75">Computer Engineering</p>
+                        <h1>PORTFOLIO</h1>
+                        <p class="small mb-0 mt-1 opacity-75">INTERNSHIP EVALUATION</p>
+                    </div>
+                    <img src="20.jpg" class="profile-img-circle" alt="นายฐัฏชนนท์ วัยนิพลี" onerror="this.src='https://via.placeholder.com/125?text=Profile'">
+                </div>
+
+                <div class="p-4">
+                    <div class="row g-4">
+                        <div class="col-lg-4">
+                            <div class="section-title-box">Personal Info</div>
+                            <h5 class="fw-bold text-dark mb-3">นายฐัฏชนนท์ วัยนิพลี</h5>
+                            <div class="d-flex flex-column gap-2">
+                                <div><span class="info-label">รหัสนักศึกษา:</span><span class="info-value fw-bold">6612247017</span></div>
+                                <div><span class="info-label">เกิดวันที่:</span><span class="info-value">20 มิ.ย. 2548</span></div>
+                                <div><span class="info-label">สัญชาติ:</span><span class="info-value">ไทย (พุทธ)</span></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 border-start border-end px-lg-4">
+                            <div class="section-title-box">Professional Skills</div>
+                            <div class="skill-progress-item">
+                                <div class="skill-name"><span>HTML & CSS</span><span>90%</span></div>
+                                <div class="progress"><div class="progress-bar bg-html-css" style="width: 90%;"></div></div>
+                            </div>
+                            <div class="skill-progress-item">
+                                <div class="skill-name"><span>Bootstrap Framework</span><span>85%</span></div>
+                                <div class="progress"><div class="progress-bar bg-bootstrap" style="width: 85%;"></div></div>
+                            </div>
+                            <div class="skill-progress-item">
+                                <div class="skill-name"><span>Graphic Design</span><span>80%</span></div>
+                                <div class="progress"><div class="progress-bar bg-graphic" style="width: 80%;"></div></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="section-title-box">Education History</div>
+                            <div class="mb-3 d-flex align-items-start gap-2">
+                                <i class="fa-solid fa-school text-secondary mt-1"></i>
+                                <div>
+                                    <div class="fw-bold text-dark small">ระดับมัธยมศึกษา</div>
+                                    <span class="info-value x-small d-block">โรงเรียนตะพานหิน</span>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-start gap-2">
+                                <i class="fa-solid fa-graduation-cap text-secondary mt-1"></i>
+                                <div>
+                                    <div class="fw-bold text-dark small">ระดับอุดมศึกษา</div>
+                                    <span class="info-value x-small d-block">วิศวกรรมคอมพิวเตอร์ | มรภ.พิบูลสงคราม</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 pt-3 border-top">
+                        <div class="section-title-box mb-3">Contact Channels</div>
+                        <div class="contact-grid">
+                            <a href="tel:0863539051" class="contact-item-box">
+                                <div class="contact-icon-circle"><i class="fa-solid fa-phone"></i></div>
+                                <span class="fw-semibold small">086-3539051</span>
+                            </a>
+                            <a href="mailto:thatchanon.w@psru.ac.th" class="contact-item-box">
+                                <div class="contact-icon-circle"><i class="fa-solid fa-envelope"></i></div>
+                                <span class="fw-semibold small text-truncate">thatchanon.w@psru.ac.th</span>
+                            </a>
+                            <a href="https://instagram.com/mhxn_tch" target="_blank" class="contact-item-box">
+                                <div class="contact-icon-circle"><i class="fa-brands fa-instagram"></i></div>
+                                <span class="fw-semibold small">mhxn_tch</span>
+                            </a>
+                            <a href="https://facebook.com" target="_blank" class="contact-item-box">
+                                <div class="contact-icon-circle"><i class="fa-brands fa-facebook-f"></i></div>
+                                <span class="fw-semibold small">ThatchanonWainiplee</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-2 mb-4">
+            <div class="d-flex align-items-center mb-3">
+                <div class="section-title-box m-0">Projects</div>
+                <h5 class="fw-bold text-dark my-0 ms-2">ผลงานและโครงการที่ภาคภูมิใจ</h5>
+            </div>
+
+            <div class="cert-row">
+                <div class="cert-col">
+                    <div class="custom-card">
+                        <div class="cert-img-wrapper">
+                            <img src="11.png" class="cert-img" onerror="this.src='https://via.placeholder.com/400x280?text=Project+Image+1'">
+                        </div>
+                        <div class="p-3">
+                            <h6 class="fw-bold text-dark mb-1 small">พัฒนาเว็บแอปพลิเคชัน</h6>
+                            <p class="text-muted mb-0" style="font-size: 0.7rem;">ออกแบบโครงสร้าง UI/UX รองรับระบบ Responsive ด้วย Bootstrap 5</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cert-col">
+                    <div class="custom-card">
+                        <div class="cert-img-wrapper">
+                            <img src="11.png" class="cert-img" onerror="this.src='https://via.placeholder.com/400x280?text=Project+Image+2'">
+                        </div>
+                        <div class="p-3">
+                            <h6 class="fw-bold text-dark mb-1 small">โครงงานสิ่งประดิษฐ์สมองกล</h6>
+                            <p class="text-muted mb-0" style="font-size: 0.7rem;">เขียนโปรแกรมควบคุมไมโครคอนโทรลเลอร์ประยุกต์ร่วมกับระบบเน็ตเวิร์ก</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cert-col">
+                    <div class="custom-card">
+                        <div class="cert-img-wrapper">
+                            <img src="11.png" class="cert-img" onerror="this.src='https://via.placeholder.com/400x280?text=Project+Image+3'">
+                        </div>
+                        <div class="p-3">
+                            <h6 class="fw-bold text-dark mb-1 small">งานออกแบบ Graphic Design</h6>
+                            <p class="text-muted mb-0" style="font-size: 0.7rem;">สร้างสรรค์สื่อดิจิทัลและแบนเนอร์ประชาสัมพันธ์โครงการวิชาการ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certificates" class="py-2">
+            <div class="d-flex align-items-center mb-3">
+                <div class="section-title-box m-0">Certificates</div>
+                <h5 class="fw-bold text-dark my-0 ms-2">ใบประกาศและเกียรติบัตร</h5>
+            </div>
+
+            <div class="cert-row">
+                <div class="cert-col">
+                    <div class="custom-card">
+                        <div class="cert-img-wrapper"><img src="01.png" class="cert-img" onerror="this.src='https://via.placeholder.com/400x280?text=Python+Essentials'"></div>
+                        <div class="p-3"><h6 class="fw-bold text-dark mb-1 small">เกียรติบัตรทักษะดิจิทัล</h6><p class="text-muted mb-0" style="font-size: 0.7rem;">Python Essentials</p></div>
+                    </div>
+                </div>
+                <div class="cert-col">
+                    <div class="custom-card">
+                        <div class="cert-img-wrapper"><img src="02.png" class="cert-img" onerror="this.src='https://via.placeholder.com/400x280?text=Cybersecurity'"></div>
+                        <div class="p-3"><h6 class="fw-bold text-dark mb-1 small">สัมมนาเครือข่ายปลอดภัย</h6><p class="text-muted mb-0" style="font-size: 0.7rem;">Basic Cybersecurity</p></div>
+                    </div>
+                </div>
+                <div class="cert-col">
+                    <div class="custom-card">
+                        <div class="cert-img-wrapper"><img src="03.png" class="cert-img" onerror="this.src='https://via.placeholder.com/400x280?text=Fortinet'"></div>
+                        <div class="p-3"><h6 class="fw-bold text-dark mb-1 small">Cybersecurity Course</h6><p class="text-muted mb-0" style="font-size: 0.7rem;">Fortinet 3.0</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center py-4 text-muted mt-2 border-top">
+            <p class="mb-0 small">&copy; 2026 Thatchanon Wainiplee. Computer Engineering Portfolio.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
