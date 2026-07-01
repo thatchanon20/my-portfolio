@@ -451,7 +451,6 @@
 </head>
 <body>
 
-    <!-- HTML Canvas พื้นหลังกลุ่มดาวเรขาคณิตสีเทาเงิน (Minimalist Constellation) -->
     <canvas id="bg-canvas"></canvas>
 
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
@@ -477,7 +476,6 @@
 
     <div class="a4-container px-3 px-md-0 my-5">
         
-        <!-- Profile Section -->
         <section id="profile" class="mb-5">
             <div class="profile-header-card">
                 <div class="profile-banner">
@@ -555,7 +553,6 @@
             </div>
         </section>
 
-        <!-- Education Section -->
         <section id="education" class="mb-5">
             <div class="d-flex align-items-center mb-4">
                 <div class="section-title-box m-0">เส้นทางการศึกษา</div>
@@ -596,7 +593,6 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
         <section id="skills" class="mb-5">
             <div class="d-flex align-items-center mb-4">
                 <div class="section-title-box m-0">Technical Skills</div>
@@ -656,7 +652,6 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
         <section id="projects" class="mb-5">
             <div class="d-flex align-items-center mb-4">
                 <div class="section-title-box m-0">Project Experience</div>
@@ -717,7 +712,6 @@
             </div>
         </section>
 
-        <!-- Certificates Section -->
         <section id="certificates" class="mb-5">
             <div class="d-flex align-items-center mb-4">
                 <div class="section-title-box m-0">Certificates & Achievements</div>
@@ -775,7 +769,6 @@
             </div>
         </section>
 
-        <!-- Contact Form Section -->
         <section id="contact-form-section" class="mb-4">
             <div class="contact-section-card text-center">
                 <h2>มาร่วมงานกัน</h2>
@@ -820,16 +813,34 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- JavaScript พื้นหลังกลุ่มดาวเรขาคณิต (Geometric Constellation) นุ่มนวล ดูแพง -->
     <script>
         const canvas = document.getElementById('bg-canvas');
         const ctx = canvas.getContext('2d');
 
         let particlesArray = [];
-        const maxParticles = 60; // ปรับลดจำนวนลงเพื่อความเรียบหรู คลีนตา
+        const maxParticles = 45; // ลดจำนวนลงเล็กน้อยเพื่อให้โครงข่ายขนาดใหญ่ดูโปร่ง คลีน และสวยงาม
+
+        // ออบเจกต์เก็บพิกัดของเมาส์ และระยะตรวจจับการขยับตามเมาส์
+        const mouse = {
+            x: null,
+            y: null,
+            radius: 220 // รัศมีวงกว้างขึ้นในการดึงดูดจุดรอบๆ เมาส์
+        };
 
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
+
+        // ดักจับการเคลื่อนที่ของเมาส์
+        window.addEventListener('mousemove', (event) => {
+            mouse.x = event.clientX;
+            mouse.y = event.clientY;
+        });
+
+        // เมื่อเมาส์เลื่อนออกจากหน้าจอ ให้ล้างค่าไม่ให้จุดค้างวิ่งตาม
+        window.addEventListener('mouseout', () => {
+            mouse.x = null;
+            mouse.y = null;
+        });
 
         window.addEventListener('resize', () => {
             canvas.width = window.innerWidth;
@@ -841,20 +852,39 @@
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 1.5 + 0.5; // จุดขนาดเล็กมาก ไม่รกสายตา
-                // ปรับความเร็วให้เคลื่อนที่ช้าลงมากๆ เพื่อความสมูทและพรีเมียม
-                this.speedX = Math.random() * 0.3 - 0.15;
-                this.speedY = Math.random() * 0.3 - 0.15;
+                // [ปรับให้ใหญ่ขึ้น] เพิ่มขนาดจุดวงกลมให้เห็นชัดเจนขึ้น มีมิติความลึกตื้น
+                this.size = Math.random() * 3.5 + 1.5; 
+                this.speedX = Math.random() * 0.4 - 0.2;
+                this.speedY = Math.random() * 0.4 - 0.2;
+                this.baseX = this.x;
+                this.baseY = this.y;
             }
             update() {
+                // คำนวณระยะห่างระหว่างจุดกับเมาส์ปัจจุบัน
+                if (mouse.x != null && mouse.y != null) {
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    // ถ้าจุดอยู่ใกล้เมาส์ในระยะรัศมีที่กำหนด จะเกิดแรงดึงขยับตามเมาส์แบบเบาๆ
+                    if (distance < mouse.radius) {
+                        let force = (mouse.radius - distance) / mouse.radius;
+                        // ขยับจุดเคลื่อนที่มุ่งหน้าเข้าหาตำแหน่งเมาส์อย่างนุ่มนวล
+                        this.x += (dx / distance) * force * 1.8;
+                        this.y += (dy / distance) * force * 1.8;
+                    }
+                }
+
+                // การเคลื่อนที่ลอยไปมาอิสระปกติ
                 this.x += this.speedX;
                 this.y += this.speedY;
 
+                // ชนขอบหน้าจอแล้วสะท้อนกลับ
                 if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
                 if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
             }
             draw() {
-                ctx.fillStyle = 'rgba(203, 213, 225, 0.2)'; // สีเทาเงินจางๆ
+                ctx.fillStyle = 'rgba(203, 213, 225, 0.25)'; // สีเทาเงินเมทัลลิกแบบโปร่งแสง
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 ctx.fill();
@@ -875,14 +905,30 @@
                     let dy = particlesArray[a].y - particlesArray[b].y;
                     let distance = Math.sqrt(dx * dx + dy * dy);
 
-                    // ถ้าระยะห่างของจุดอยู่ใกล้กัน จะลากเส้นเชื่อมบางๆ สไตล์กลุ่มดาวกลุ่มโครงข่าย
-                    if (distance < 150) {
-                        let opacity = (1 - (distance / 150)) * 0.07; // จางมากๆ ไม่กวนสายตาตอนอ่านข้อความ
+                    // [ปรับให้ใหญ่ขึ้น] เพิ่มระยะความยาวเส้นเชื่อมต่อระหว่างคู่จุดสูงสุดเป็น 220px
+                    if (distance < 220) {
+                        let opacity = (1 - (distance / 220)) * 0.08; 
                         ctx.strokeStyle = `rgba(203, 213, 225, ${opacity})`;
-                        ctx.lineWidth = 0.8;
+                        ctx.lineWidth = 1.2; // ปรับเส้นหนาขึ้นเล็กน้อยให้คมชัดสวยงาม
                         ctx.beginPath();
                         ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
                         ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                        ctx.stroke();
+                    }
+                }
+
+                // เชื่อมเส้นโครงข่ายพิเศษเข้าหาตำแหน่งเมาส์โดยตรง หากจุดใดวิ่งเข้าใกล้เมาส์
+                if (mouse.x != null && mouse.y != null) {
+                    let mdx = particlesArray[a].x - mouse.x;
+                    let mdy = particlesArray[a].y - mouse.y;
+                    let mDistance = Math.sqrt(mdx * mdx + mdy * mdy);
+                    if (mDistance < mouse.radius) {
+                        let mOpacity = (1 - (mDistance / mouse.radius)) * 0.12;
+                        ctx.strokeStyle = `rgba(241, 245, 249, ${mOpacity})`; // เส้นเชื่อมเมาส์จะสว่างนวลขึ้นเล็กน้อย
+                        ctx.lineWidth = 1.0;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(mouse.x, mouse.y);
                         ctx.stroke();
                     }
                 }
