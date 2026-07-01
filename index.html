@@ -10,9 +10,9 @@
     
     <style>
         :root {
-            --bg-dark-main: #1f2937;      
-            --bg-card-dark: rgba(17, 24, 39, 0.85); /* ปรับให้โปร่งใสเล็กน้อยเพื่อให้เห็นพื้นหลังขยับ */     
-            --border-tech: #374151;        
+            --bg-dark-main: #111827;      
+            --bg-card-dark: rgba(31, 41, 55, 0.75); /* ปรับความโปร่งใสเพื่อให้เห็นพื้นหลังเคลื่นไหว */   
+            --border-tech: rgba(75, 85, 99, 0.4);        
             --tech-cyan: #38bdf8;        
             --tech-purple: #c084fc;      
             --tech-red: #f87171;         
@@ -31,16 +31,14 @@
             overflow-x: hidden;
         }
 
-        /* ------------------------------------------------------------- */
-        /* Canvas Background Setup */
-        /* ------------------------------------------------------------- */
+        /* --- Canvas Background Setup --- */
         #bg-canvas {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            z-index: -1; /* ซ่อนไว้ข้างหลังสุด */
+            z-index: -1;
             pointer-events: none; /* ยอมให้เมาส์คลิกทะลุไปกดปุ่มบนเว็บได้ */
         }
 
@@ -57,7 +55,7 @@
         }
 
         .navbar {
-            background-color: rgba(17, 24, 39, 0.9) !important;
+            background-color: rgba(17, 24, 39, 0.85) !important;
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-tech);
             padding: 15px 0;
@@ -81,7 +79,7 @@
 
         .profile-header-card {
             background: var(--bg-card-dark);
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(10px);
             border-radius: 16px;
             border: 1px solid var(--border-tech);
             overflow: hidden;
@@ -91,7 +89,7 @@
         }
 
         .profile-banner {
-            background: radial-gradient(circle at top right, rgba(55, 65, 81, 0.9), rgba(17, 24, 39, 0.95));
+            background: radial-gradient(circle at top right, rgba(55, 65, 81, 0.8), rgba(17, 24, 39, 0.9));
             padding: 50px 40px;
             border-bottom: 1px solid var(--border-tech);
             display: flex;
@@ -104,7 +102,7 @@
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background-image: linear-gradient(rgba(56, 189, 248, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
+            background-image: linear-gradient(rgba(56, 189, 248, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
             background-size: 25px 25px;
             pointer-events: none;
         }
@@ -233,7 +231,7 @@
 
         .skill-cat-card {
             background: var(--bg-card-dark);
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(10px);
             border: 1px solid var(--border-tech);
             border-radius: 10px;
             padding: 20px;
@@ -258,7 +256,7 @@
             gap: 8px;
         }
         .skill-tag {
-            background: rgba(55, 65, 81, 0.6);
+            background: rgba(31, 41, 55, 0.6);
             border: 1px solid var(--border-tech);
             color: var(--text-light);
             padding: 4px 10px;
@@ -295,7 +293,7 @@
             border: 1px solid var(--border-tech); 
             border-radius: 12px; 
             background: var(--bg-card-dark); 
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(10px);
             overflow: hidden; 
             height: 100%; 
             transition: all 0.3s ease;
@@ -352,7 +350,7 @@
         }
         .tech-pill {
             font-size: 0.72rem;
-            background: #1f2937;
+            background: #111827;
             border: 1px solid var(--border-tech);
             color: var(--tech-green);
             padding: 2px 8px;
@@ -370,7 +368,7 @@
 
         .contact-section-card {
             background: var(--bg-card-dark);
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(10px);
             border: 1px solid var(--border-tech);
             border-radius: 16px;
             padding: 45px 30px;
@@ -386,7 +384,7 @@
 
         .btn-tech-mail {
             background-color: var(--tech-cyan);
-            color: var(--bg-card-dark) !important;
+            color: #111827 !important;
             font-weight: 600;
             border: 1px solid var(--tech-cyan);
             padding: 12px 28px;
@@ -413,7 +411,7 @@
         }
 
         .form-tech-input {
-            background-color: rgba(31, 41, 55, 0.5) !important;
+            background-color: rgba(17, 24, 39, 0.6) !important;
             border: 1px solid var(--border-tech) !important;
             color: var(--text-light) !important;
             padding: 12px 16px;
@@ -423,14 +421,10 @@
         }
 
         .form-tech-input:focus {
-            background-color: rgba(31, 41, 55, 0.8) !important;
+            background-color: rgba(17, 24, 39, 0.8) !important;
             border-color: var(--tech-cyan) !important;
             box-shadow: 0 0 8px rgba(56, 189, 248, 0.2) !important;
             outline: none;
-        }
-
-        .form-tech-input::placeholder {
-            color: rgba(156, 163, 175, 0.5);
         }
 
         .btn-form-submit {
@@ -460,7 +454,6 @@
 </head>
 <body>
 
-    <!-- Canvas ตัวรันโค้ดพื้นหลังขยับได้ -->
     <canvas id="bg-canvas"></canvas>
 
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
@@ -486,7 +479,6 @@
 
     <div class="a4-container px-3 px-md-0 my-5">
         
-        <!-- Profile Section -->
         <section id="profile" class="mb-5">
             <div class="profile-header-card">
                 <div class="profile-banner">
@@ -517,7 +509,7 @@
                         <div class="col-lg-4 border-start border-end px-lg-4" style="border-color: var(--border-tech) !important;">
                             <div class="section-title-box">Academic Scores</div>
                             <div class="d-flex flex-column gap-3">
-                                <div class="p-3 rounded-3" style="background: rgba(55, 65, 81, 0.3); border: 1px solid var(--border-tech);">
+                                <div class="p-3 rounded-3" style="background: rgba(55, 65, 81, 0.2); border: 1px solid var(--border-tech);">
                                     <span class="info-value d-block small mb-2 text-white-50">มหาวิทยาลัยราชภัฏพิบูลสงคราม</span>
                                     <div class="row g-2">
                                         <div class="col-6">
@@ -564,7 +556,6 @@
             </div>
         </section>
 
-        <!-- Education Section -->
         <section id="education" class="mb-5">
             <div class="d-flex align-items-center mb-4">
                 <div class="section-title-box m-0">เส้นทางการศึกษา</div>
@@ -605,7 +596,6 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
         <section id="skills" class="mb-5">
             <div class="d-flex align-items-center mb-4">
                 <div class="section-title-box m-0">Technical Skills</div>
@@ -665,7 +655,6 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
         <section id="projects" class="mb-5">
             <div class="d-flex align-items-center mb-4">
                 <div class="section-title-box m-0">Project Experience</div>
@@ -726,7 +715,6 @@
             </div>
         </section>
 
-        <!-- Certificates Section -->
         <section id="certificates" class="mb-5">
             <div class="d-flex align-items-center mb-4">
                 <div class="section-title-box m-0">Certificates & Achievements</div>
@@ -784,7 +772,6 @@
             </div>
         </section>
 
-        <!-- Contact Form Section -->
         <section id="contact-form-section" class="mb-4">
             <div class="contact-section-card text-center">
                 <h2>มาร่วมงานกัน</h2>
@@ -829,31 +816,28 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- ------------------------------------------------------------- -->
-    <!-- JavaScript สำหรับควบคุมระบบอนุภาคเม็ดขยับ (Particles System) -->
-    <!-- ------------------------------------------------------------- -->
     <script>
         const canvas = document.getElementById('bg-canvas');
         const ctx = canvas.getContext('2d');
 
         let particlesArray = [];
-        const numberOfParticles = 65; // จำนวนเม็ดอนุภาค (ปรับเพิ่ม-ลดตามความหนาแน่นที่ชอบได้)
+        const numberOfParticles = 75; // จำนวนจุดดิจิตอลบนหน้าจอ
 
-        // ตรวจจับขนาดหน้าจอให้เต็มตลอดเวลา
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
+        // จัดการเมื่อเปลี่ยนขนาดหน้าจอ
         window.addEventListener('resize', function() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
             init();
         });
 
-        // จัดเก็บพิกัดของเมาส์
+        // จัดเก็บตำแหน่งเมาส์
         const mouse = {
             x: null,
             y: null,
-            radius: 140 // รัศมีวงกลมที่เมาส์จะผลักดันหรือดึงดูดจุด
+            radius: 150
         }
 
         window.addEventListener('mousemove', function(event) {
@@ -866,28 +850,91 @@
             mouse.y = null;
         });
 
-        // คลาสแม่พิมพ์สร้างเม็ดอนุภาค
+        // คลาสสร้างจุดดิจิตอล
         class Particle {
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2 + 1; // ขนาดเม็ด
-                this.speedX = Math.random() * 0.4 - 0.2; // ความเร็วแนวตั้ง
-                this.speedY = Math.random() * 0.4 - 0.2; // ความเร็วแนวนอน
+                this.size = Math.random() * 2.5 + 1;
+                this.speedX = Math.random() * 0.6 - 0.3;
+                this.speedY = Math.random() * 0.6 - 0.3;
             }
             update() {
                 this.x += this.speedX;
                 this.y += this.speedY;
 
-                // ตรวจสอบถ้าชนขอบหน้าจอให้เด้งกลับ
+                // ชนขอบแล้วเด้งกลับ
                 if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
                 if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
 
-                // ตรรกะปฏิสัมพันธ์กับเมาส์ (Interactive Effect)
-                let dx = mouse.x - this.x;
-                let dy = mouse.y - this.y;
-                let distance = Math.sqrt(dx * dx + dy * dy);
-                if (distance < mouse.radius) {
-                    if (mouse.x > this.x && this.x > 10) this.x -= 2;
-                    if (mouse.x < this.x && this.x < canvas.width - 10) this.x += 2;
-                    if (mouse.y > this.y && this.Normally I can help with things like this, but I don't seem to have access to that content. You can try again or ask me for something else.
+                // การตอบสนองกับเมาส์ (ผลักจุดออกแบบนุ่มนวล)
+                if (mouse.x != null && mouse.y != null) {
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < mouse.radius) {
+                        let forceDirectionX = dx / distance;
+                        let forceDirectionY = dy / distance;
+                        let force = (mouse.radius - distance) / mouse.radius;
+                        let directionX = forceDirectionX * force * 3;
+                        let directionY = forceDirectionY * force * 3;
+                        
+                        this.x -= directionX;
+                        this.y -= directionY;
+                    }
+                }
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(56, 189, 248, 0.4)'; // สีฟ้า Cyan โปร่งแสง
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        // เริ่มต้นสร้างกลุ่มจุด
+        function init() {
+            particlesArray = [];
+            for (let i = 0; i < numberOfParticles; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+
+        // วาดเส้นเชื่อมโยงโครงข่ายซอฟต์แวร์เมื่อจุดอยู่ใกล้กัน
+        function connect() {
+            let opacityValue = 1;
+            for (let a = 0; a < particlesArray.length; a++) {
+                for (let b = a; b < particlesArray.length; b++) {
+                    let dx = particlesArray[a].x - particlesArray[b].x;
+                    let dy = particlesArray[a].y - particlesArray[b].y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 120) {
+                        opacityValue = 1 - (distance / 120);
+                        ctx.strokeStyle = 'rgba(192, 132, 252, ' + opacityValue * 0.15 + ')'; // เส้นสีม่วงอ่อนจางๆ
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        // ลูปอนิเมชันรันต่อเนื่อง 60 FPS
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+            }
+            connect();
+            requestAnimationFrame(animate);
+        }
+
+        init();
+        animate();
+    </script>
+</body>
+</html>
