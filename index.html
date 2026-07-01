@@ -155,7 +155,6 @@
         .info-label { font-weight: 600; color: var(--text-light); width: 100px; display: inline-block; font-size: 0.95rem; }
         .info-value { color: var(--text-light); font-size: 0.95rem; }
 
-        /* Tech Cyber Timeline Design */
         .tech-timeline {
             position: relative;
             padding-left: 35px;
@@ -348,8 +347,94 @@
             text-align: center;
         }
 
+        /* ------------------------------------------------------------- */
+        /* Contact Form (Cyber Theme based on Screenshot 2026-07-01 153836.png) */
+        /* ------------------------------------------------------------- */
+        .contact-section-card {
+            background: var(--bg-card-dark);
+            border: 1px solid var(--border-tech);
+            border-radius: 16px;
+            padding: 45px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-section-card h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--text-light);
+            letter-spacing: -0.5px;
+        }
+
+        .btn-tech-mail {
+            background-color: var(--tech-cyan);
+            color: var(--bg-card-dark) !important;
+            font-weight: 600;
+            border: 1px solid var(--tech-cyan);
+            padding: 12px 28px;
+            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+            text-decoration: none;
+        }
+
+        .btn-tech-mail:hover {
+            background-color: transparent;
+            color: var(--tech-cyan) !important;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+        }
+
+        .form-tech-label {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .form-tech-input {
+            background-color: rgba(31, 41, 55, 0.5) !important;
+            border: 1px solid var(--border-tech) !important;
+            color: var(--text-light) !important;
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+
+        .form-tech-input:focus {
+            background-color: rgba(31, 41, 55, 0.8) !important;
+            border-color: var(--tech-cyan) !important;
+            box-shadow: 0 0 8px rgba(56, 189, 248, 0.2) !important;
+            outline: none;
+        }
+
+        .form-tech-input::placeholder {
+            color: rgba(156, 163, 175, 0.5);
+        }
+
+        .btn-form-submit {
+            background-color: transparent;
+            color: var(--tech-cyan);
+            border: 1px solid var(--tech-cyan);
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            width: 100%;
+            transition: all 0.2s ease;
+            font-family: 'JetBrains Mono', sans-serif;
+        }
+
+        .btn-form-submit:hover {
+            background-color: rgba(56, 189, 248, 0.1);
+            border-color: var(--tech-cyan);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+        }
+
         @media print {
-            .navbar { display: none !important; }
+            .navbar, #contact-form-section { display: none !important; }
             body { background-color: #ffffff; color: #000000; }
         }
     </style>
@@ -371,6 +456,7 @@
                     <li class="nav-item"><a class="nav-link px-3" href="#skills"><i class="fa-solid fa-layer-group me-1"></i> Skills</a></li>
                     <li class="nav-item"><a class="nav-link px-3" href="#projects"><i class="fa-solid fa-cubes me-1"></i> Projects</a></li>
                     <li class="nav-item"><a class="nav-link px-3" href="#certificates"><i class="fa-regular fa-id-card me-1"></i> Certificates</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 text-info" href="#contact-form-section"><i class="fa-regular fa-envelope me-1"></i> Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -456,14 +542,13 @@
             </div>
         </section>
 
-        <!-- Education & Experience Timeline Section (Updated year to 2025 based on Screenshot 2026-07-01 153213.png) -->
+        <!-- Education & Experience Timeline Section -->
         <section id="education" class="mb-5">
             <div class="d-flex align-items-center mb-4">
                 <div class="section-title-box m-0">เส้นทางการศึกษา</div>
             </div>
 
             <div class="tech-timeline">
-                <!-- Item 1: 2025 - ปัจจุบัน (อัปเดตตามคำขอ) -->
                 <div class="timeline-item">
                     <div class="timeline-icon"><i class="fa-solid fa-graduation-cap"></i></div>
                     <div class="timeline-year">2025 — ปัจจุบัน</div>
@@ -472,7 +557,6 @@
                     <div class="timeline-desc">ศึกษาด้านสถาปัตยกรรมซอฟต์แวร์ การพัฒนาระบบ Back-end และการประยุกต์ใช้ปัญญาประดิษฐ์ในงานวิศวกรรม</div>
                 </div>
 
-                <!-- Item 2: 2024 -->
                 <div class="timeline-item">
                     <div class="timeline-icon"><i class="fa-solid fa-microchip"></i></div>
                     <div class="timeline-year">2024</div>
@@ -481,7 +565,6 @@
                     <div class="timeline-desc">นำโมเดลภาษาขนาดใหญ่มาบูรณาการเพื่อพัฒนาระบบผู้ช่วยตอบคำถามทางวิชาการของภาควิชา</div>
                 </div>
 
-                <!-- Item 3: 2023 -->
                 <div class="timeline-item">
                     <div class="timeline-icon"><i class="fa-solid fa-code"></i></div>
                     <div class="timeline-year">2023</div>
@@ -490,7 +573,6 @@
                     <div class="timeline-desc">ผ่านการรับรองหลักสูตรพื้นฐานการเขียนโปรแกรมภาษา Python</div>
                 </div>
 
-                <!-- Item 4: 2022 -->
                 <div class="timeline-item">
                     <div class="timeline-icon"><i class="fa-solid fa-school"></i></div>
                     <div class="timeline-year">2022</div>
@@ -614,7 +696,7 @@
                             <p class="small lh-base mb-0" style="color: var(--text-description);">ฝึกฝนทักษะทดสอบช่องโหว่ความปลอดภัยผ่านแพลตฟอร์ม CTF มุ่งเน้นการวิเคราะห์ช่องโหว่เว็บ (Web Vulnerabilities) เพื่อป้องกันการโจมตีและทำ Hardening ความปลอดภัยในสภาพแวดล้อมจำลองการทำงานของแอปพลิเคชัน</p>
                             <div class="project-tech-stack">
                                 <span class="tech-pill">CTF Practice</span>
-                                <span class="tech-pill">Nmap</span>
+                                *   <span class="tech-pill">Nmap</span>
                                 <span class="tech-pill">Wireshark</span>
                             </div>
                         </div>
@@ -624,7 +706,7 @@
         </section>
 
         <!-- Certificates Section -->
-        <section id="certificates" class="mb-4">
+        <section id="certificates" class="mb-5">
             <div class="d-flex align-items-center mb-4">
                 <div class="section-title-box m-0">Certificates & Achievements</div>
             </div>
@@ -676,6 +758,49 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ------------------------------------------------------------- -->
+        <!-- Contact Form Section (New Section from Screenshot 2026-07-01 153836.png) -->
+        <!-- ------------------------------------------------------------- -->
+        <section id="contact-form-section" class="mb-4">
+            <div class="contact-section-card text-center">
+                <h2>มาร่วมงานกัน</h2>
+                <p class="readable-description mb-4 text-white-50">
+                    เปิดรับโอกาสฝึกงานและความร่วมมือด้าน <span style="color: var(--tech-cyan);">Back-end</span>, <span style="color: var(--tech-purple);">AI</span> และ <span style="color: var(--tech-green);">Data Engineering</span>
+                </p>
+                
+                <!-- Direct Mailto Button -->
+                <a href="mailto:thatchanon.w@psru.ac.th?subject=ติดต่อร่วมงานจาก Portfolio" class="btn-tech-mail mb-5">
+                    <i class="fa-regular fa-envelope"></i> ส่งอีเมลถึงผม
+                </a>
+
+                <!-- Contact HTML Form Interface -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-7 text-start">
+                        <form action="https://formspree.io/f/xoqogwpe" method="POST">
+                            <!-- Hidden Field for your explicit target email -->
+                            <input type="hidden" name="_to" value="thatchanon.w@psru.ac.th">
+                            
+                            <div class="mb-3">
+                                <label for="userName" class="form-tech-label">ชื่อของคุณ</label>
+                                <input type="text" class="form-control form-tech-input" id="userName" name="name" placeholder="ชื่อ-นามสกุล" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="userEmail" class="form-tech-label">อีเมลติดต่อกลับ</label>
+                                <input type="email" class="form-control form-tech-input" id="userEmail" name="email" placeholder="you@example.com" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="userMessage" class="form-tech-label">ข้อความ</label>
+                                <textarea class="form-control form-tech-input" id="userMessage" name="message" rows="5" placeholder="รายละเอียดที่อยากติดต่อ..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-form-submit">
+                                <i class="fa-solid fa-paper-plane me-2"></i> SEND MESSAGE
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
