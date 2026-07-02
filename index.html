@@ -10,13 +10,13 @@
     
     <style>
         :root {
-            --bg-dark-main: #0f1115;       /* สีพื้นหลังหลัก เทาเข้มเกือบดำ */
-            --bg-card-dark: rgba(28, 31, 38, 0.85); /* พื้นหลังการ์ด เทาเข้มโปร่งแสง */
-            --border-tech: rgba(148, 163, 184, 0.25); /* ขอบสีเทาเงินจางๆ */
-            --tech-gray-light: #f1f5f9;   /* สีเทาขาวสว่าง */
-            --tech-silver: #cbd5e1;       /* สีเทาเงินเมทัลลิก */
-            --tech-slate: #64748b;        /* สีเทาหม่นสเลท */
-            --tech-green-muted: #86efac;  /* สีเขียวพาสเทลสำหรับสถานะ */
+            --bg-dark-main: #0f1115;       
+            --bg-card-dark: rgba(28, 31, 38, 0.85); 
+            --border-tech: rgba(148, 163, 184, 0.25); 
+            --tech-gray-light: #f1f5f9;   
+            --tech-silver: #cbd5e1;       
+            --tech-slate: #64748b;        
+            --tech-green-muted: #86efac;  
             --text-light: #f8fafc;        
             --text-muted: #94a3b8;        
             --text-description: #e2e8f0;  
@@ -31,7 +31,6 @@
             overflow-x: hidden;
         }
 
-        /* --- Canvas Background Setup --- */
         #bg-canvas {
             position: fixed;
             top: 0;
@@ -128,7 +127,6 @@
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
         }
 
-        /* เอฟเฟกต์ Cursor กระพริบสำหรับตัวหนังสือขยับ */
         .typed-cursor {
             opacity: 1;
             animation: blink 0.7s infinite;
@@ -371,28 +369,6 @@
             font-family: 'JetBrains Mono', monospace;
         }
 
-        /* ปรับแต่งส่วน GPA ให้สว่าง ชัดเจน และอ่านง่ายขึ้นตามจุดประสงค์ */
-        .gpa-box {
-            background: #0f1115;
-            border: 1px solid rgba(255, 255, 255, 0.3); /* ปรับขอบให้ชัดขึ้นเล็กน้อย */
-            padding: 12px 10px;
-            border-radius: 8px;
-            text-align: center;
-        }
-        .gpa-title {
-            display: block;
-            color: #cbd5e1 !important; /* เปลี่ยนจากสีมืดมาเป็นสีเทาสว่าง (tech-silver) */
-            font-size: 0.75rem !important; /* ขยายขนาดให้อ่านง่ายขึ้น */
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            margin-bottom: 4px;
-        }
-        .gpa-number {
-            font-size: 1.2rem !important; /* ขยายตัวเลขให้เด่นชัด */
-            color: #ffffff !important; /* ตัวเลขสีขาวบริสุทธิ์ */
-            font-weight: 700;
-        }
-
         @media print {
             .navbar, #contact-form-section, #bg-canvas { display: none !important; }
             body { background-color: #ffffff; color: #000000; }
@@ -401,7 +377,6 @@
 </head>
 <body>
 
-    <!-- HTML Canvas พื้นหลังกลุ่มดาวเรขาคณิตขนาดใหญ่ ตอบสนองตามเมาส์ -->
     <canvas id="bg-canvas"></canvas>
 
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
@@ -464,20 +439,22 @@
                                 <div class="p-3 rounded-3" style="background: rgba(51, 65, 85, 0.2); border: 1px solid var(--border-tech);">
                                     <span class="info-value d-block small mb-2 text-white-50">มหาวิทยาลัยราชภัฏพิบูลสงคราม</span>
                                     <div class="row g-2">
+                                        
+                                        <!-- ส่วนแก้ไขคะแนนแบบดัก Inline Style เพื่อความคมชัดสูงสุดและป้องกันการจม -->
                                         <div class="col-6">
-                                            <!-- อัปเดตคะแนนเป็น 2.98 และปรับสไตล์ตัวหนังสือให้อ่านง่ายชัดเจนขึ้น -->
-                                            <div class="gpa-box">
-                                                <span class="gpa-title">GPAX</span>
-                                                <b class="gpa-number">2.98</b>
+                                            <div style="background: #0f1115; border: 1px solid rgba(255, 255, 255, 0.4); padding: 12px 10px; border-radius: 8px; text-align: center;">
+                                                <span style="display: block; color: #f1f5f9 !important; font-size: 0.85rem !important; font-weight: 700 !important; letter-spacing: 0.5px; margin-bottom: 4px;">GPAX</span>
+                                                <b style="font-size: 1.4rem !important; color: #ffffff !important; font-weight: 800 !important; font-family: 'JetBrains Mono', monospace;">2.98</b>
                                             </div>
                                         </div>
+                                        
                                         <div class="col-6">
-                                            <!-- อัปเดตคะแนนเป็น 3.32 และปรับสไตล์ตัวหนังสือให้อ่านง่ายชัดเจนขึ้น -->
-                                            <div class="gpa-box">
-                                                <span class="gpa-title">Major</span>
-                                                <b class="gpa-number">3.32</b>
+                                            <div style="background: #0f1115; border: 1px solid rgba(255, 255, 255, 0.4); padding: 12px 10px; border-radius: 8px; text-align: center;">
+                                                <span style="display: block; color: #f1f5f9 !important; font-size: 0.85rem !important; font-weight: 700 !important; letter-spacing: 0.5px; margin-bottom: 4px;">Major</span>
+                                                <b style="font-size: 1.4rem !important; color: #ffffff !important; font-weight: 800 !important; font-family: 'JetBrains Mono', monospace;">3.32</b>
                                             </div>
                                         </div>
+
                                     </div>
                                 </div>
                                 <div class="d-flex align-items-center gap-3 px-2">
@@ -658,7 +635,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- เติมเต็มการ์ดโปรเจกต์ที่ 3 ให้ครบถ้วนสมบูรณ์ -->
                 <div class="col">
                     <div class="custom-card">
                         <div class="cert-img-wrapper">
@@ -681,7 +657,6 @@
         
     </div>
 
-    <!-- ฟังก์ชัน Typewriter พื้นฐานสำหรับส่วนหัวข้อ (ถ้าจำเป็น) -->
     <script>
         const textElement = document.getElementById('dynamic-text');
         if(textElement) {
