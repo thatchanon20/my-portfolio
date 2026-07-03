@@ -10,13 +10,13 @@
     
     <style>
         :root {
-            --bg-dark-main: #0f1115;       
-            --bg-card-dark: rgba(28, 31, 38, 0.85); 
-            --border-tech: rgba(148, 163, 184, 0.25); 
-            --tech-gray-light: #f1f5f9;   
-            --tech-silver: #cbd5e1;       
-            --tech-slate: #64748b;        
-            --tech-green-muted: #86efac;  
+            --bg-dark-main: #0f1115;       /* สีพื้นหลังหลัก เทาเข้มเกือบดำ */
+            --bg-card-dark: rgba(28, 31, 38, 0.85); /* พื้นหลังการ์ด เทาเข้มโปร่งแสง */
+            --border-tech: rgba(148, 163, 184, 0.25); /* ขอบสีเทาเงินจางๆ */
+            --tech-gray-light: #f1f5f9;   /* สีเทาขาวสว่าง */
+            --tech-silver: #cbd5e1;       /* สีเทาเงินเมทัลลิก */
+            --tech-slate: #64748b;        /* สีเทาหม่นสเลท */
+            --tech-green-muted: #86efac;  /* สีเขียวพาสเทลสำหรับสถานะ */
             --text-light: #f8fafc;        
             --text-muted: #94a3b8;        
             --text-description: #e2e8f0;  
@@ -31,6 +31,7 @@
             overflow-x: hidden;
         }
 
+        /* --- Canvas Background Setup --- */
         #bg-canvas {
             position: fixed;
             top: 0;
@@ -125,18 +126,6 @@
             object-fit: cover;
             flex-shrink: 0;
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
-        }
-
-        .typed-cursor {
-            opacity: 1;
-            animation: blink 0.7s infinite;
-            color: var(--tech-silver);
-            margin-left: 2px;
-        }
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0; }
-            100% { opacity: 1; }
         }
 
         .status-badge {
@@ -369,6 +358,91 @@
             font-family: 'JetBrains Mono', monospace;
         }
 
+        .gpa-box {
+            background: #0f1115;
+            border: 1px solid var(--border-tech);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .contact-section-card {
+            background: var(--bg-card-dark);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-tech);
+            border-radius: 16px;
+            padding: 45px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .contact-section-card h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--text-light);
+            letter-spacing: -0.5px;
+        }
+
+        .btn-tech-mail {
+            background-color: var(--tech-gray-light);
+            color: #0f1115 !important;
+            font-weight: 600;
+            border: 1px solid var(--tech-gray-light);
+            padding: 12px 28px;
+            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .btn-tech-mail:hover {
+            background-color: transparent;
+            color: var(--tech-gray-light) !important;
+        }
+
+        .form-tech-label {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .form-tech-input {
+            background-color: rgba(15, 17, 21, 0.6) !important;
+            border: 1px solid var(--border-tech) !important;
+            color: var(--text-light) !important;
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+
+        .form-tech-input:focus {
+            background-color: rgba(15, 17, 21, 0.8) !important;
+            border-color: var(--tech-silver) !important;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.1) !important;
+            outline: none;
+        }
+
+        .btn-form-submit {
+            background-color: transparent;
+            color: var(--tech-silver);
+            border: 1px solid var(--tech-silver);
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            width: 100%;
+            transition: all 0.2s ease;
+            font-family: 'JetBrains Mono', sans-serif;
+        }
+
+        .btn-form-submit:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-color: var(--tech-gray-light);
+        }
+
         @media print {
             .navbar, #contact-form-section, #bg-canvas { display: none !important; }
             body { background-color: #ffffff; color: #000000; }
@@ -402,7 +476,6 @@
 
     <div class="a4-container px-3 px-md-0 my-5">
         
-        <!-- Profile Section -->
         <section id="profile" class="mb-5">
             <div class="profile-header-card">
                 <div class="profile-banner">
@@ -412,10 +485,7 @@
                         </div>
                         <h1 class="code-font fw-bold">THATCHANON</h1>
                         <h3 class="text-white-50 code-font fs-4">WAINIPLEE</h3>
-                        
-                        <p class="small mb-0 mt-2 code-font text-white-50">
-                            <span id="dynamic-text"></span><span class="typed-cursor">|</span>
-                        </p>
+                        <p class="small mb-0 mt-2 code-font text-white-50">Computer Engineering Student · Full-Stack Developer & Software Engineer</p>
                     </div>
                     <img src="images/20.jpg" class="profile-img-circle" alt="นายฐัฏชนนท์ วัยนิพลี" onerror="this.src='https://via.placeholder.com/140?text=Profile'">
                 </div>
@@ -439,22 +509,12 @@
                                 <div class="p-3 rounded-3" style="background: rgba(51, 65, 85, 0.2); border: 1px solid var(--border-tech);">
                                     <span class="info-value d-block small mb-2 text-white-50">มหาวิทยาลัยราชภัฏพิบูลสงคราม</span>
                                     <div class="row g-2">
-                                        
-                                        <!-- ส่วนแก้ไขคะแนนแบบดัก Inline Style เพื่อความคมชัดสูงสุดและป้องกันการจม -->
                                         <div class="col-6">
-                                            <div style="background: #0f1115; border: 1px solid rgba(255, 255, 255, 0.4); padding: 12px 10px; border-radius: 8px; text-align: center;">
-                                                <span style="display: block; color: #f1f5f9 !important; font-size: 0.85rem !important; font-weight: 700 !important; letter-spacing: 0.5px; margin-bottom: 4px;">GPAX</span>
-                                                <b style="font-size: 1.4rem !important; color: #ffffff !important; font-weight: 800 !important; font-family: 'JetBrains Mono', monospace;">2.98</b>
-                                            </div>
+                                            <div class="gpa-box"><span class="d-block text-muted" style="font-size:0.65rem;">GPAX</span><b class="text-white small">3.58</b></div>
                                         </div>
-                                        
                                         <div class="col-6">
-                                            <div style="background: #0f1115; border: 1px solid rgba(255, 255, 255, 0.4); padding: 12px 10px; border-radius: 8px; text-align: center;">
-                                                <span style="display: block; color: #f1f5f9 !important; font-size: 0.85rem !important; font-weight: 700 !important; letter-spacing: 0.5px; margin-bottom: 4px;">Major</span>
-                                                <b style="font-size: 1.4rem !important; color: #ffffff !important; font-weight: 800 !important; font-family: 'JetBrains Mono', monospace;">3.32</b>
-                                            </div>
+                                            <div class="gpa-box"><span class="d-block text-muted" style="font-size:0.65rem;">Major</span><b class="text-white small">3.80</b></div>
                                         </div>
-
                                     </div>
                                 </div>
                                 <div class="d-flex align-items-center gap-3 px-2">
@@ -493,7 +553,6 @@
             </div>
         </section>
 
-        <!-- Education Section -->
         <section id="education" class="mb-5">
             <div class="d-flex align-items-center mb-4">
                 <div class="section-title-box m-0">เส้นทางการศึกษา</div>
@@ -534,7 +593,6 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
         <section id="skills" class="mb-5">
             <div class="d-flex align-items-center mb-4">
                 <div class="section-title-box m-0">Technical Skills</div>
@@ -594,7 +652,6 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
         <section id="projects" class="mb-5">
             <div class="d-flex align-items-center mb-4">
                 <div class="section-title-box m-0">Project Experience</div>
@@ -621,7 +678,7 @@
                 <div class="col">
                     <div class="custom-card">
                         <div class="cert-img-wrapper">
-                            <img src="images/14.png" class="cert-img" alt="Smart Contract Integration" onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Blockchain+Integration'">
+                            <img src="images/11.png" class="cert-img" alt="Smart Contract Integration" onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Blockchain+Integration'">
                         </div>
                         <div class="p-4">
                             <span class="project-tag">BLOCKCHAIN DEVELOPER</span>
@@ -638,30 +695,258 @@
                 <div class="col">
                     <div class="custom-card">
                         <div class="cert-img-wrapper">
-                            <img src="images/11.png" class="cert-img" alt="Frontend Platform" onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Frontend+Platform'">
+                            <img src="images/11.png" class="cert-img" alt="Fullstack Integration" onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Fullstack+UI'">
                         </div>
                         <div class="p-4">
-                            <span class="project-tag">FRONTEND DEVELOPER</span>
-                            <h5 class="fw-bold text-white mb-2 fs-6">Web Application Interface</h5>
-                            <p class="small lh-base mb-0" style="color: var(--text-description);">พัฒนาหน้าต่างผู้ใช้งาน (User Interface) ให้มีความลื่นไหลและรองรับการแสดงผลทุกหน้าจอด้วย React.js และ Bootstrap เพื่อสร้างประสบการณ์การใช้งานที่มีประสิทธิภาพสูงสุด</p>
+                            <span class="project-tag">FULL-STACK DESIGN</span>
+                            <h5 class="fw-bold text-white mb-2 fs-6">CPE Interactive Web Application</h5>
+                            <p class="small lh-base mb-0" style="color: var(--text-description);">ออกแบบอินเตอร์เฟซและสถาปัตยกรรมเว็บพอร์ตโฟลิโอแบบ Responsive เชื่อมโยงระบบฟอร์มข้อมูลติดต่อหลังบ้านเข้ากับแพลตฟอร์ม API จัดการโค้ดให้สอดคล้องตามหลักการจัดองค์ประกอบที่ง่ายต่อการนำไปบำรุงรักษาต่อ (Maintainability)</p>
                             <div class="project-tech-stack">
-                                <span class="tech-pill">React.js</span>
                                 <span class="tech-pill">JavaScript</span>
-                                <span class="tech-pill">Bootstrap</span>
+                                <span class="tech-pill">Bootstrap 5</span>
+                                <span class="tech-pill">Formspree API</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        
+
+        <section id="certificates" class="mb-5">
+            <div class="d-flex align-items-center mb-4">
+                <div class="section-title-box m-0">Certificates & Achievements</div>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-3 g-3">
+                <div class="col">
+                    <div class="custom-card">
+                        <div class="cert-img-wrapper">
+                            <img src="images/01.png" class="cert-img" alt="Python Essentials 1 Certificate" onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Python+Essentials+1'">
+                        </div>
+                        <div class="p-4">
+                            <div class="d-flex align-items-start gap-2">
+                                <div class="text-secondary mt-1"><i class="fa-solid fa-certificate"></i></div>
+                                <div>
+                                    <h6 class="fw-bold text-white mb-1 small">Python Essentials Certificate</h6>
+                                    <p class="small mb-0 code-font" style="font-size:0.75rem; color: var(--text-muted);">Cisco Networking Academy</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="custom-card">
+                        <div class="cert-img-wrapper">
+                            <img src="images/02.png" class="cert-img" alt="Software Engineering MOOC" onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Software+Engineering'">
+                        </div>
+                        <div class="p-4">
+                            <div class="d-flex align-items-start gap-2">
+                                <div class="text-secondary mt-1"><i class="fa-solid fa-laptop-code"></i></div>
+                                <div>
+                                    <h6 class="fw-bold text-white mb-1 small">Full-Stack Web Development Course</h6>
+                                    <p class="small mb-0 code-font" style="font-size:0.75rem; color: var(--text-muted);">Online Tech Academy</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="custom-card">
+                        <div class="cert-img-wrapper">
+                            <img src="images/03.png" class="cert-img" alt="Programming Certificate" onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=OOP+Programming'">
+                        </div>
+                        <div class="p-4">
+                            <div class="d-flex align-items-start gap-2">
+                                <div class="text-secondary mt-1"><i class="fa-solid fa-code-branch"></i></div>
+                                <div>
+                                    <h6 class="fw-bold text-white mb-1 small">Object-Oriented Programming Fundamentals</h6>
+                                    <p class="small mb-0 code-font" style="font-size:0.75rem; color: var(--text-muted);">CPE Academic Workshop</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-form-section" class="mb-4">
+            <div class="contact-section-card text-center">
+                <h2>มาร่วมงานกัน</h2>
+                <p class="readable-description mb-4 text-white-50">
+                    เปิดรับโอกาสฝึกงานและความร่วมมือด้าน <span style="color: var(--tech-silver);">Back-end Dev</span>, <span style="color: var(--tech-silver);">Full-Stack</span> และ <span style="color: var(--tech-silver);">Software Engineering</span>
+                </p>
+                
+                <a href="mailto:thatchanon.w@psru.ac.th?subject=ติดต่อร่วมงานจาก Software Portfolio" class="btn-tech-mail mb-5">
+                    <i class="fa-regular fa-envelope"></i> ส่งอีเมลถึงผม
+                </a>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-7 text-start">
+                        <form action="https://formspree.io/f/xoqogwpe" method="POST">
+                            <input type="hidden" name="_to" value="thatchanon.w@psru.ac.th">
+                            
+                            <div class="mb-3">
+                                <label for="userName" class="form-tech-label">ชื่อของคุณ</label>
+                                <input type="text" class="form-control form-tech-input" id="userName" name="name" placeholder="ชื่อ-นามสกุล" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="userEmail" class="form-tech-label">อีเมลติดต่อกลับ</label>
+                                <input type="email" class="form-control form-tech-input" id="userEmail" name="email" placeholder="you@example.com" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="userMessage" class="form-tech-label">ข้อความ</label>
+                                <textarea class="form-control form-tech-input" id="userMessage" name="message" rows="5" placeholder="รายละเอียดโปรเจกต์หรืองานที่อยากติดต่อตำแหน่งพัฒนาซอฟต์แวร์..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-form-submit">
+                                <i class="fa-solid fa-paper-plane me-2"></i> SEND MESSAGE
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center py-5 mt-5 border-top" style="border-color: var(--border-tech) !important; color: var(--text-muted);">
+            <p class="mb-0 small code-font">&copy; 2026 Thatchanon Wainiplee. Computer Engineering & Software Developer Portfolio.</p>
+        </footer>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
     <script>
-        const textElement = document.getElementById('dynamic-text');
-        if(textElement) {
-            textElement.textContent = "Computer Engineering Student | Software Engineer Trainee";
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let particlesArray = [];
+        const maxParticles = 45; // ลดจำนวนลงเล็กน้อยเพื่อให้โครงข่ายขนาดใหญ่ดูโปร่ง คลีน และสวยงาม
+
+        // ออบเจกต์เก็บพิกัดของเมาส์ และระยะตรวจจับการขยับตามเมาส์
+        const mouse = {
+            x: null,
+            y: null,
+            radius: 220 // รัศมีวงกว้างขึ้นในการดึงดูดจุดรอบๆ เมาส์
+        };
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // ดักจับการเคลื่อนที่ของเมาส์
+        window.addEventListener('mousemove', (event) => {
+            mouse.x = event.clientX;
+            mouse.y = event.clientY;
+        });
+
+        // เมื่อเมาส์เลื่อนออกจากหน้าจอ ให้ล้างค่าไม่ให้จุดค้างวิ่งตาม
+        window.addEventListener('mouseout', () => {
+            mouse.x = null;
+            mouse.y = null;
+        });
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            init();
+        });
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                // [ปรับให้ใหญ่ขึ้น] เพิ่มขนาดจุดวงกลมให้เห็นชัดเจนขึ้น มีมิติความลึกตื้น
+                this.size = Math.random() * 3.5 + 1.5; 
+                this.speedX = Math.random() * 0.4 - 0.2;
+                this.speedY = Math.random() * 0.4 - 0.2;
+                this.baseX = this.x;
+                this.baseY = this.y;
+            }
+            update() {
+                // คำนวณระยะห่างระหว่างจุดกับเมาส์ปัจจุบัน
+                if (mouse.x != null && mouse.y != null) {
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    // ถ้าจุดอยู่ใกล้เมาส์ในระยะรัศมีที่กำหนด จะเกิดแรงดึงขยับตามเมาส์แบบเบาๆ
+                    if (distance < mouse.radius) {
+                        let force = (mouse.radius - distance) / mouse.radius;
+                        // ขยับจุดเคลื่อนที่มุ่งหน้าเข้าหาตำแหน่งเมาส์อย่างนุ่มนวล
+                        this.x += (dx / distance) * force * 1.8;
+                        this.y += (dy / distance) * force * 1.8;
+                    }
+                }
+
+                // การเคลื่อนที่ลอยไปมาอิสระปกติ
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                // ชนขอบหน้าจอแล้วสะท้อนกลับ
+                if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
+                if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(203, 213, 225, 0.25)'; // สีเทาเงินเมทัลลิกแบบโปร่งแสง
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
         }
+
+        function init() {
+            particlesArray = [];
+            for (let i = 0; i < maxParticles; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+
+        function connect() {
+            for (let a = 0; a < particlesArray.length; a++) {
+                for (let b = a; b < particlesArray.length; b++) {
+                    let dx = particlesArray[a].x - particlesArray[b].x;
+                    let dy = particlesArray[a].y - particlesArray[b].y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+
+                    // [ปรับให้ใหญ่ขึ้น] เพิ่มระยะความยาวเส้นเชื่อมต่อระหว่างคู่จุดสูงสุดเป็น 220px
+                    if (distance < 220) {
+                        let opacity = (1 - (distance / 220)) * 0.08; 
+                        ctx.strokeStyle = `rgba(203, 213, 225, ${opacity})`;
+                        ctx.lineWidth = 1.2; // ปรับเส้นหนาขึ้นเล็กน้อยให้คมชัดสวยงาม
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                        ctx.stroke();
+                    }
+                }
+
+                // เชื่อมเส้นโครงข่ายพิเศษเข้าหาตำแหน่งเมาส์โดยตรง หากจุดใดวิ่งเข้าใกล้เมาส์
+                if (mouse.x != null && mouse.y != null) {
+                    let mdx = particlesArray[a].x - mouse.x;
+                    let mdy = particlesArray[a].y - mouse.y;
+                    let mDistance = Math.sqrt(mdx * mdx + mdy * mdy);
+                    if (mDistance < mouse.radius) {
+                        let mOpacity = (1 - (mDistance / mouse.radius)) * 0.12;
+                        ctx.strokeStyle = `rgba(241, 245, 249, ${mOpacity})`; // เส้นเชื่อมเมาส์จะสว่างนวลขึ้นเล็กน้อย
+                        ctx.lineWidth = 1.0;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(mouse.x, mouse.y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+            }
+            connect();
+            requestAnimationFrame(animate);
+        }
+
+        init();
+        animate();
     </script>
 </body>
 </html>
