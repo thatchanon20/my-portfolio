@@ -10,13 +10,13 @@
     
     <style>
         :root {
-            --bg-dark-main: #0f1115;       /* สีพื้นหลังหลัก เทาเข้มเกือบดำ */
-            --bg-card-dark: rgba(28, 31, 38, 0.85); /* พื้นหลังการ์ด เทาเข้มโปร่งแสง */
-            --border-tech: rgba(148, 163, 184, 0.25); /* ขอบสีเทาเงินจางๆ */
-            --tech-gray-light: #f1f5f9;   /* สีเทาขาวสว่าง */
-            --tech-silver: #cbd5e1;       /* สีเทาเงินเมทัลลิก */
-            --tech-slate: #64748b;        /* สีเทาหม่นสเลท */
-            --tech-green-muted: #86efac;  /* สีเขียวพาสเทลสำหรับสถานะ */
+            --bg-dark-main: #0f1115;       
+            --bg-card-dark: rgba(28, 31, 38, 0.85); 
+            --border-tech: rgba(148, 163, 184, 0.25); 
+            --tech-gray-light: #f1f5f9;   
+            --tech-silver: #cbd5e1;       
+            --tech-slate: #64748b;        
+            --tech-green-muted: #86efac;  
             --text-light: #f8fafc;        
             --text-muted: #94a3b8;        
             --text-description: #e2e8f0;  
@@ -31,7 +31,6 @@
             overflow-x: hidden;
         }
 
-        /* --- Canvas Background Setup --- */
         #bg-canvas {
             position: fixed;
             top: 0;
@@ -128,7 +127,6 @@
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
         }
 
-        /* เอฟเฟกต์ Cursor กระพริบสำหรับตัวหนังสือขยับ */
         .typed-cursor {
             opacity: 1;
             animation: blink 0.7s infinite;
@@ -371,15 +369,299 @@
             font-family: 'JetBrains Mono', monospace;
         }
 
-        /* ปรับปรุงกล่อง GPAX/Major เพื่อให้อ่านง่ายและชัดเจนขึ้น */
-        .gpa-box {
-            background: rgba(15, 17, 21, 0.85); /* เข้มขึ้นเพื่อตัดกับตัวหนังสือ */
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 12px 10px;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+        @media print {
+            .navbar, #contact-form-section, #bg-canvas { display: none !important; }
+            body { background-color: #ffffff; color: #000000; }
         }
+    </style>
+</head>
+<body>
 
-        .contact-section-card {
-            background: var(--bg-
+    <canvas id="bg-canvas"></canvas>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-uppercase d-flex align-items-center" href="#">
+                <i class="fa-solid fa-code text-secondary me-2"></i>&lt;Thatchanon.W /&gt;
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-2 list-unstyled mb-0">
+                    <li class="nav-item"><a class="nav-link px-3" href="#profile"><i class="fa-regular fa-circle-user me-1"></i> About</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#education"><i class="fa-solid fa-graduation-cap me-1"></i> Education</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#skills"><i class="fa-solid fa-layer-group me-1"></i> Skills</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#projects"><i class="fa-solid fa-cubes me-1"></i> Projects</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#certificates"><i class="fa-regular fa-id-card me-1"></i> Certificates</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 text-white fw-bold" href="#contact-form-section"><i class="fa-regular fa-envelope me-1"></i> Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="a4-container px-3 px-md-0 my-5">
+        
+        <!-- Profile Section -->
+        <section id="profile" class="mb-5">
+            <div class="profile-header-card">
+                <div class="profile-banner">
+                    <div>
+                        <div class="status-badge mb-2">
+                            <span class="status-dot"></span> Open for Software Developer Internship
+                        </div>
+                        <h1 class="code-font fw-bold">THATCHANON</h1>
+                        <h3 class="text-white-50 code-font fs-4">WAINIPLEE</h3>
+                        
+                        <p class="small mb-0 mt-2 code-font text-white-50">
+                            <span id="dynamic-text"></span><span class="typed-cursor">|</span>
+                        </p>
+                    </div>
+                    <img src="images/20.jpg" class="profile-img-circle" alt="นายฐัฏชนนท์ วัยนิพลี" onerror="this.src='https://via.placeholder.com/140?text=Profile'">
+                </div>
+
+                <div class="p-4">
+                    <div class="row g-4">
+                        <div class="col-lg-4">
+                            <div class="section-title-box">Personal Info</div>
+                            <h5 class="fw-bold text-white mb-3">นายฐัฏชนนท์ วัยนิพลี</h5>
+                            <p class="readable-description mb-3">นักศึกษาคณะวิศวกรรมศาสตร์ สาขาวิศวกรรมคอมพิวเตอร์ ที่มีความสนใจและมุ่งมั่นในสายงานการพัฒนาซอฟต์แวร์ (Software Engineering) การออกแบบระบบ Back-end สถาปัตยกรรมระบบเว็บแอปพลิเคชัน และเทคโนโลยี Full-Stack</p>
+                            <div class="d-flex flex-column gap-2">
+                                <div><span class="info-label">ID:</span><span class="info-value code-font text-secondary fw-bold">6612247017</span></div>
+                                <div><span class="info-label">Birthdate:</span><span class="info-value">20 มิ.ย. 2548</span></div>
+                                <div><span class="info-label">Target Role:</span><span class="info-value text-white fw-bold">Full-Stack / Software Engineer</span></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 border-start border-end px-lg-4" style="border-color: var(--border-tech) !important;">
+                            <div class="section-title-box">Academic Scores</div>
+                            <div class="d-flex flex-column gap-3">
+                                <div class="p-3 rounded-3" style="background: rgba(51, 65, 85, 0.2); border: 1px solid var(--border-tech);">
+                                    <span class="info-value d-block small mb-2 text-white-50">มหาวิทยาลัยราชภัฏพิบูลสงคราม</span>
+                                    <div class="row g-2">
+                                        
+                                        <!-- ส่วนแก้ไขคะแนนแบบดัก Inline Style เพื่อความคมชัดสูงสุดและป้องกันการจม -->
+                                        <div class="col-6">
+                                            <div style="background: #0f1115; border: 1px solid rgba(255, 255, 255, 0.4); padding: 12px 10px; border-radius: 8px; text-align: center;">
+                                                <span style="display: block; color: #f1f5f9 !important; font-size: 0.85rem !important; font-weight: 700 !important; letter-spacing: 0.5px; margin-bottom: 4px;">GPAX</span>
+                                                <b style="font-size: 1.4rem !important; color: #ffffff !important; font-weight: 800 !important; font-family: 'JetBrains Mono', monospace;">2.98</b>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-6">
+                                            <div style="background: #0f1115; border: 1px solid rgba(255, 255, 255, 0.4); padding: 12px 10px; border-radius: 8px; text-align: center;">
+                                                <span style="display: block; color: #f1f5f9 !important; font-size: 0.85rem !important; font-weight: 700 !important; letter-spacing: 0.5px; margin-bottom: 4px;">Major</span>
+                                                <b style="font-size: 1.4rem !important; color: #ffffff !important; font-weight: 800 !important; font-family: 'JetBrains Mono', monospace;">3.32</b>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center gap-3 px-2">
+                                    <div class="contact-icon-circle"><i class="fa-solid fa-school"></i></div>
+                                    <div>
+                                        <div class="fw-bold text-white small">มัธยมศึกษาตอนปลาย</div>
+                                        <span class="info-value d-block small" style="color: var(--text-muted);">โรงเรียนตะพานหิน</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="section-title-box">Contact Channels</div>
+                            <div class="contact-grid">
+                                <a href="tel:0863539051" class="contact-item-box">
+                                    <div class="contact-icon-circle"><i class="fa-solid fa-phone"></i></div>
+                                    <span class="fw-medium small code-font text-white">086-3539051</span>
+                                </a>
+                                <a href="mailto:thatchanon.w@psru.ac.th" class="contact-item-box">
+                                    <div class="contact-icon-circle"><i class="fa-solid fa-envelope"></i></div>
+                                    <span class="fw-medium small code-font text-white text-truncate" style="max-width:110px;">thatchanon.w</span>
+                                </a>
+                                <a href="https://instagram.com/mhxn_tch" target="_blank" class="contact-item-box">
+                                    <div class="contact-icon-circle"><i class="fa-brands fa-instagram"></i></div>
+                                    <span class="fw-medium small code-font text-white">mhxn_tch</span>
+                                </a>
+                                <a href="#" target="_blank" class="contact-item-box">
+                                    <div class="contact-icon-circle"><i class="fa-brands fa-facebook-f"></i></div>
+                                    <span class="fw-medium small text-white text-truncate" style="max-width:110px;">ThatchanonW</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="mb-5">
+            <div class="d-flex align-items-center mb-4">
+                <div class="section-title-box m-0">เส้นทางการศึกษา</div>
+            </div>
+
+            <div class="tech-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <div class="timeline-year">2025 — ปัจจุบัน</div>
+                    <div class="timeline-title">วิศวกรรมคอมพิวเตอร์</div>
+                    <div class="timeline-subtitle">มหาวิทยาลัยราชภัฏพิบูลสงคราม</div>
+                    <div class="timeline-desc">เน้นศึกษาโครงสร้างสถาปัตยกรรมซอฟต์แวร์ (Software Architecture) การออกแบบฐานข้อมูล และการนำระบบขึ้นคลาวด์โปรดักชัน</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fa-solid fa-microchip"></i></div>
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-title">วิจัยและพัฒนาสถาปัตยกรรมระบบ CPE AI CHAT BOT</div>
+                    <div class="timeline-subtitle">ภาควิชาวิศวกรรมคอมพิวเตอร์</div>
+                    <div class="timeline-desc">ออกแบบและจัดการระบบโครงสร้าง API สำหรับเชื่อมโยงโมเดลภาษาขนาดใหญ่ (LLM) เข้าสู่ระบบหลังบ้านของซอฟต์แวร์แชทบอทประจำภาควิชา</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fa-solid fa-code"></i></div>
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-title">Python Essentials 1</div>
+                    <div class="timeline-subtitle">Cisco Networking Academy</div>
+                    <div class="timeline-desc">ผ่านการรับรองหลักสูตรการเขียนโปรแกรมด้วยภาษา Python และการจัดการโครงสร้างข้อมูลแบบ Object-Oriented Programming (OOP)</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fa-solid fa-school"></i></div>
+                    <div class="timeline-year">2022</div>
+                    <div class="timeline-title">มัธยมศึกษาตอนปลาย</div>
+                    <div class="timeline-subtitle">สายวิทยาศาสตร์-คณิตศาสตร์</div>
+                    <div class="timeline-desc">จุดเริ่มต้นของการเรียนรู้ตรรกศาสตร์และการเขียนอัลกอริทึมควบคุมซอฟต์แวร์คอมพิวเตอร์เบื้องต้น</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="mb-5">
+            <div class="d-flex align-items-center mb-4">
+                <div class="section-title-box m-0">Technical Skills</div>
+                <span class="small ms-3 code-font" style="color: var(--text-muted);"># core_stack</span>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-3 g-3">
+                <div class="col">
+                    <div class="skill-cat-card">
+                        <div class="skill-cat-header text-white">
+                            <span><i class="fa-solid fa-code me-2"></i>Web Development</span>
+                            <span class="badge code-font" style="font-size:0.7rem; background:rgba(255,255,255,0.1); color:var(--tech-silver)">8 skills</span>
+                        </div>
+                        <div class="skill-badge-container">
+                            <span class="skill-tag">HTML5/CSS3</span>
+                            <span class="skill-tag">JavaScript ES6</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Express.js</span>
+                            <span class="skill-tag">React.js</span>
+                            <span class="skill-tag">Next.js</span>
+                            <span class="skill-tag">RESTful APIs</span>
+                            <span class="skill-tag">Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill-cat-card">
+                        <div class="skill-cat-header text-white">
+                            <span><i class="fa-solid fa-database me-2"></i>Databases & Tools</span>
+                            <span class="badge code-font" style="font-size:0.7rem; background:rgba(255,255,255,0.1); color:var(--tech-silver)">6 skills</span>
+                        </div>
+                        <div class="skill-badge-container">
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">Git / GitHub</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Postman</span>
+                            <span class="skill-tag">Prisma ORM</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill-cat-card">
+                        <div class="skill-cat-header text-white">
+                            <span><i class="fa-solid fa-gears me-2"></i>Engineering Core</span>
+                            <span class="badge bg-secondary code-font" style="font-size:0.7rem">5 skills</span>
+                        </div>
+                        <div class="skill-badge-container">
+                            <span class="skill-tag">OOP Concept</span>
+                            <span class="skill-tag">Python Dev</span>
+                            <span class="skill-tag">Data Structures</span>
+                            <span class="skill-tag">Software Testing</span>
+                            <span class="skill-tag">Agile/Scrum</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="mb-5">
+            <div class="d-flex align-items-center mb-4">
+                <div class="section-title-box m-0">Project Experience</div>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-3 g-3">
+                <div class="col">
+                    <div class="custom-card">
+                        <div class="cert-img-wrapper">
+                            <img src="images/11.png" class="cert-img" alt="WasteCoin Backend System" onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Backend+System'">
+                        </div>
+                        <div class="p-4">
+                            <span class="project-tag">BACKEND DEVELOPER</span>
+                            <h5 class="fw-bold text-white mb-2 fs-6">WasteCoin Core Backend Service</h5>
+                            <p class="small lh-base mb-0" style="color: var(--text-description);">ออกแบบและพัฒนาบริการส่วนหลังบ้าน (Backend API Services) ด้วย Node.js และ Express ทำการเชื่อมต่อฐานข้อมูล MongoDB รองรับฟีเจอร์คำนวณคาร์บอนเครดิตและระบบแต้มเหรียญพร้อมระบบตรวจสอบความถูกต้องข้อมูลผ่าน REST API</p>
+                            <div class="project-tech-stack">
+                                <span class="tech-pill">Node.js</span>
+                                <span class="tech-pill">Express</span>
+                                <span class="tech-pill">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="custom-card">
+                        <div class="cert-img-wrapper">
+                            <img src="images/14.png" class="cert-img" alt="Smart Contract Integration" onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Blockchain+Integration'">
+                        </div>
+                        <div class="p-4">
+                            <span class="project-tag">BLOCKCHAIN DEVELOPER</span>
+                            <h5 class="fw-bold text-white mb-2 fs-6">Web3 Smart Contract Integration</h5>
+                            <p class="small lh-base mb-0" style="color: var(--text-description);">เขียนซอฟต์แวร์สัญญาอัจฉริยะด้วยภาษา Solidity ควบคุมตรรกะเงื่อนไขการทำงานบนบล็อกเชนผ่านกรอบงาน Hardhat พร้อมพัฒนาฟังก์ชันหลังบ้านคอยดึงอีเวนต์เพื่ออัปเดตสเตตัสในฐานข้อมูลแอปพลิเคชันอย่างสม่ำเสมอ</p>
+                            <div class="project-tech-stack">
+                                <span class="tech-pill">Solidity</span>
+                                <span class="tech-pill">Hardhat</span>
+                                <span class="tech-pill">Ethers.js</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="custom-card">
+                        <div class="cert-img-wrapper">
+                            <img src="images/11.png" class="cert-img" alt="Frontend Platform" onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Frontend+Platform'">
+                        </div>
+                        <div class="p-4">
+                            <span class="project-tag">FRONTEND DEVELOPER</span>
+                            <h5 class="fw-bold text-white mb-2 fs-6">Web Application Interface</h5>
+                            <p class="small lh-base mb-0" style="color: var(--text-description);">พัฒนาหน้าต่างผู้ใช้งาน (User Interface) ให้มีความลื่นไหลและรองรับการแสดงผลทุกหน้าจอด้วย React.js และ Bootstrap เพื่อสร้างประสบการณ์การใช้งานที่มีประสิทธิภาพสูงสุด</p>
+                            <div class="project-tech-stack">
+                                <span class="tech-pill">React.js</span>
+                                <span class="tech-pill">JavaScript</span>
+                                <span class="tech-pill">Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+
+    <script>
+        const textElement = document.getElementById('dynamic-text');
+        if(textElement) {
+            textElement.textContent = "Computer Engineering Student | Software Engineer Trainee";
+        }
+    </script>
+</body>
+</html>
