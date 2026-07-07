@@ -716,12 +716,224 @@
                         <div class="p-4">
                             <span class="project-tag">FULL-STACK DEVELOPER</span>
                             <h5 class="fw-bold text-white mb-2 fs-6">WasteCoin Web Application</h5>
-                            <p class="small lh-base mb-0" style="color: var(--text-description);">ออกแบบและพัฒนาหน้าต่างเว็บแอปพลิเคชันสำหรับอำนวยความสะดวกในการใช้งานเชื่อมโยงระบบหลังบ้านและหน้าบ้านเข้าด้วยกันอย่างไร้รอยต่อ</p>
+                            <p class="small lh-base mb-0" style="color: var(--text-description);">พัฒนาโครงสร้างหน้าบ้านเชื่อมโยงหลังบ้านแบบ Full-Stack รองรับการทำ Responsive Web Design ให้สามารถแสดงผลได้อย่างสวยงามบนทุกอุปกรณ์ พร้อมจัดการข้อมูลแบบเรียลไทม์</p>
+                            <div class="project-tech-stack">
+                                <span class="tech-pill">React.js</span>
+                                <span class="tech-pill">Node.js</span>
+                                <span class="tech-pill">Bootstrap</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <section id="contact-form-section" class="mb-5">
+            <div class="contact-section-card">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-5">
+                        <div class="section-title-box">Get In Touch</div>
+                        <h2>สนใจร่วมงานกันหรือพูดคุยปรึกษา?</h2>
+                        <p class="readable-description my-3">คุณสามารถส่งข้อความหาผมได้โดยตรงผ่านแบบฟอร์มนี้ หรือส่งอีเมลผ่านช่องทางติดต่อปกติ ผมจะรีบติดต่อกลับให้เร็วที่สุดครับ</p>
+                        <a href="mailto:thatchanon.w@psru.ac.th" class="btn-tech-mail mt-2">
+                            <i class="fa-regular fa-paper-plane"></i> Direct Mail To Me
+                        </a>
+                    </div>
+                    <div class="col-lg-7">
+                        <form action="#" method="POST">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-tech-label">ชื่อของคุณ (Name)</label>
+                                    <input type="text" class="form-control form-tech-input" placeholder="John Doe" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-tech-label">อีเมลติดต่อ (Email)</label>
+                                    <input type="email" class="form-control form-tech-input" placeholder="john@example.com" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-tech-label">หัวข้อ (Subject)</label>
+                                    <input type="text" class="form-control form-tech-input" placeholder="เรื่องที่ต้องการติดต่อ..." required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-tech-label">ข้อความ (Message)</label>
+                                    <textarea class="form-control form-tech-input" rows="4" placeholder="พิมพ์ข้อความของคุณที่นี่..." required></textarea>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <button type="submit" class="btn btn-form-submit">
+                                        <i class="fa-solid fa-terminal me-2"></i>SEND_MESSAGE()
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </div>
+
+    <footer class="py-4 border-top text-center mt-5" style="border-color: var(--border-tech) !important; background-color: rgba(15, 17, 21, 0.8);">
+        <p class="small mb-0 code-font text-muted">&copy; 2026 Thatchanon Wainiplee. Developed with HTML, Bootstrap 5 & JavaScript.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // --- 1. Typing Effect (เอฟเฟกต์ตัวหนังสือวิ่ง) ---
+        const phrases = [
+            "const developer = new SoftwareEngineer();",
+            "building_scalable_backend_systems.sh",
+            "while(learning) { design_better_code(); }",
+            "System.out.println('Hello, Tech World!');"
+        ];
+        let currentPhraseIndex = 0;
+        let currentCharIndex = 0;
+        let isDeleting = false;
+        const dynamicTextSpan = document.getElementById("dynamic-text");
+
+        function typeEffect() {
+            const currentPhrase = phrases[currentPhraseIndex];
+            
+            if (isDeleting) {
+                dynamicTextSpan.textContent = currentPhrase.substring(0, currentCharIndex - 1);
+                currentCharIndex--;
+            } else {
+                dynamicTextSpan.textContent = currentPhrase.substring(0, currentCharIndex + 1);
+                currentCharIndex++;
+            }
+
+            let typingSpeed = isDeleting ? 30 : 70;
+
+            if (!isDeleting && currentCharIndex === currentPhrase.length) {
+                typingSpeed = 2000; // หยุดแช่ไว้หลังจากพิมพ์เสร็จ
+                isDeleting = true;
+            } else if (isDeleting && currentCharIndex === 0) {
+                isDeleting = false;
+                currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+                typingSpeed = 500; // เว้นช่วงก่อนพิมพ์คำถัดไป
+            }
+
+            setTimeout(typeEffect, typingSpeed);
+        }
+        
+        // เริ่มต้นทำงานพิมพ์ดีด
+        document.addEventListener("DOMContentLoaded", () => {
+            if(dynamicTextSpan) typeEffect();
+        });
+
+        // --- 2. Interactive Canvas Particles Background (เครือข่ายลากเส้นตามเมาส์) ---
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let particlesArray = [];
+        const numberOfParticles = 45;
+        
+        const mouse = {
+            x: null,
+            y: null,
+            radius: 120
+        };
+
+        window.addEventListener('mousemove', (event) => {
+            mouse.x = event.clientX;
+            mouse.y = event.clientY;
+        });
+
+        window.addEventListener('mouseout', () => {
+            mouse.x = null;
+            mouse.y = null;
+        });
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            initParticles();
+        }
+        window.addEventListener('resize', resizeCanvas);
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1;
+                this.speedX = (Math.random() * 0.4) - 0.2;
+                this.speedY = (Math.random() * 0.4) - 0.2;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                // ชนขอบเด้งกลับ
+                if (this.x < 0 || this.x > canvas.width) this.speedX = -this.speedX;
+                if (this.y < 0 || this.y > canvas.height) this.speedY = -this.speedY;
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(226, 232, 240, 0.35)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particlesArray = [];
+            for (let i = 0; i < numberOfParticles; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+
+        function connectParticles() {
+            let opacityValue = 1;
+            for (let a = 0; a < particlesArray.length; a++) {
+                for (let b = a; b < particlesArray.length; b++) {
+                    let dx = particlesArray[a].x - particlesArray[b].x;
+                    let dy = particlesArray[a].y - particlesArray[b].y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 110) {
+                        opacityValue = 1 - (distance / 110);
+                        ctx.strokeStyle = `rgba(148, 163, 184, ${opacityValue * 0.15})`;
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                        ctx.stroke();
+                    }
+                }
+                
+                // เชื่อมโยงกับมาร์กเกอร์จุดเมาส์
+                if (mouse.x != null && mouse.y != null) {
+                    let mdx = particlesArray[a].x - mouse.x;
+                    let mdy = particlesArray[a].y - mouse.y;
+                    let mDistance = Math.sqrt(mdx * mdx + mdy * mdy);
+                    if (mDistance < mouse.radius) {
+                        opacityValue = 1 - (mDistance / mouse.radius);
+                        ctx.strokeStyle = `rgba(74, 222, 128, ${opacityValue * 0.25})`; // แสงสีเขียวล้อมเมาส์อ่อนๆ
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(mouse.x, mouse.y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+            }
+            connectParticles();
+            requestAnimationFrame(animate);
+        }
+
+        // เริ่มต้นรันระบบ Canvas
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        initParticles();
+        animate();
+    </script>
 </body>
 </html>
