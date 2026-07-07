@@ -13,13 +13,13 @@
             --bg-dark-main: #0f1115;       /* สีพื้นหลังหลัก เทาเข้มเกือบดำ */
             --bg-card-dark: rgba(28, 31, 38, 0.85); /* พื้นหลังการ์ด เทาเข้มโปร่งแสง */
             --border-tech: rgba(148, 163, 184, 0.25); /* ขอบสีเทาเงินจางๆ */
-            --tech-gray-light: #f1f5f9;   /* สีเทาขาวสว่าง */
-            --tech-silver: #cbd5e1;       /* สีเทาเงินเมทัลลิก */
-            --tech-slate: #64748b;        /* สีเทาหม่นสเลท */
-            --tech-green-muted: #86efac;  /* สีเขียวพาสเทลสำหรับสถานะ */
-            --text-light: #f8fafc;        
-            --text-muted: #94a3b8;        
-            --text-description: #e2e8f0;  
+            --tech-gray-light: #ffffff;   /* ปรับเป็นสีขาวบริสุทธิ์เพื่อความชัดเจนสูงสุด */
+            --tech-silver: #e2e8f0;       /* ปรับสีเงินให้สว่างขึ้นเพื่อให้อ่านง่าย */
+            --tech-slate: #cbd5e1;        /* ปรับสีสเลทให้ออกขาวนวลเพื่อเพิ่ม Contrast */
+            --tech-green-muted: #4ade80;  /* ปรับสีเขียวให้สว่างสดใสเด่นชัดขึ้น */
+            --text-light: #ffffff;        /* ปรับตัวอักษรหลักเป็นสีขาว 100% */
+            --text-muted: #e2e8f0;        /* ปรับข้อความรองให้อ่านง่าย ไม่จมหาย */
+            --text-description: #f1f5f9;  /* ปรับสีบรรยายให้ออกขาวสว่างคมชัด */
         }
 
         body {
@@ -113,7 +113,7 @@
             font-weight: 700; 
             margin: 5px 0; 
             letter-spacing: -1px;
-            background: linear-gradient(to right, #ffffff, #94a3b8);
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -496,9 +496,9 @@
                             <span class="status-dot"></span> Open for Software Developer Internship
                         </div>
                         <h1 class="code-font fw-bold">THATCHANON</h1>
-                        <h3 class="text-white-50 code-font fs-4">WAINIPLEE</h3>
+                        <h3 class="text-white code-font fs-4">WAINIPLEE</h3>
                         
-                        <p class="small mb-0 mt-2 code-font text-white-50">
+                        <p class="small mb-0 mt-2 code-font text-white">
                             <span id="dynamic-text"></span><span class="typed-cursor">|</span>
                         </p>
                     </div>
@@ -512,7 +512,7 @@
                             <h5 class="fw-bold text-white mb-3">นายฐัฏชนนท์ วัยนิพลี</h5>
                             <p class="readable-description mb-3">นักศึกษาคณะวิศวกรรมศาสตร์ สาขาวิศวกรรมคอมพิวเตอร์ ที่มีความสนใจและมุ่งมั่นในสายงานการพัฒนาซอฟต์แวร์ (Software Engineering) การออกแบบระบบ Back-end สถาปัตยกรรมระบบเว็บแอปพลิเคชัน และเทคโนโลยี Full-Stack</p>
                             <div class="d-flex flex-column gap-2">
-                                <div><span class="info-label">ID:</span><span class="info-value code-font text-secondary fw-bold">6612247017</span></div>
+                                <div><span class="info-label">ID:</span><span class="info-value code-font text-white fw-bold">6612247017</span></div>
                                 <div><span class="info-label">Birthdate:</span><span class="info-value">20 มิ.ย. 2548</span></div>
                                 <div><span class="info-label">Target Role:</span><span class="info-value text-white fw-bold">Full-Stack / Software Engineer</span></div>
                             </div>
@@ -522,7 +522,7 @@
                             <div class="section-title-box">Academic Scores</div>
                             <div class="d-flex flex-column gap-3">
                                 <div class="p-3 rounded-3" style="background: rgba(51, 65, 85, 0.2); border: 1px solid var(--border-tech);">
-                                    <span class="info-value d-block small mb-2 text-white-50">มหาวิทยาลัยราชภัฏพิบูลสงคราม</span>
+                                    <span class="info-value d-block small mb-2 text-white">มหาวิทยาลัยราชภัฏพิบูลสงคราม</span>
                                     <div class="row g-2">
                                         <div class="col-6">
                                             <div class="gpa-box"><span class="d-block text-muted" style="font-size:0.65rem;">GPAX</span><b class="text-white small">2.98</b></div>
@@ -716,155 +716,12 @@
                         <div class="p-4">
                             <span class="project-tag">FULL-STACK DEVELOPER</span>
                             <h5 class="fw-bold text-white mb-2 fs-6">WasteCoin Web Application</h5>
-                            <p class="small lh-base mb-0" style="color: var(--text-description);">เชื่อมต่อแอปพลิเคชันหน้าบ้านส่วนเชื่อมต่อผู้ใช้ (Frontend) เข้ากับบริการหลังบ้านและเครือข่ายบล็อกเชน จัดการ Application State ด้วย React Context อย่างเป็นระบบ</p>
-                            <div class="project-tech-stack">
-                                <span class="tech-pill">React.js</span>
-                                <span class="tech-pill">Next.js</span>
-                                <span class="tech-pill">Node.js</span>
-                            </div>
+                            <p class="small lh-base mb-0" style="color: var(--text-description);">ออกแบบและพัฒนาหน้าต่างเว็บแอปพลิเคชันสำหรับอำนวยความสะดวกในการใช้งานเชื่อมโยงระบบหลังบ้านและหน้าบ้านเข้าด้วยกันอย่างไร้รอยต่อ</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <section id="contact-form-section" class="mb-5">
-            <div class="contact-section-card">
-                <div class="row g-4">
-                    <div class="col-lg-6">
-                        <h2>Get In Touch</h2>
-                        <p class="text-muted">หากคุณสนใจร่วมงาน คุยเรื่องโปรเจกต์ หรือต้องการติดต่อสัมภาษณ์ฝึกงาน สามารถส่งข้อความผ่านฟอร์มนี้มาได้เลยครับ</p>
-                    </div>
-                    <div class="col-lg-6">
-                        <form id="contact-form">
-                            <div class="mb-3">
-                                <label class="form-tech-label">Name</label>
-                                <input type="text" class="form-control form-tech-input" placeholder="Your Name" required>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-tech-label">Email</label>
-                                <input type="email" class="form-control form-tech-input" placeholder="your@email.com" required>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-tech-label">Message</label>
-                                <textarea class="form-control form-tech-input" rows="4" placeholder="Your Message" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-form-submit">Send Message</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-        // --- 1. Typewriter Effect สำหรับข้อความวิ่งขยับได้ ---
-        const words = ["Software Engineer Student", "Full-Stack Developer Enthusiast", "Backend API Developer"];
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const dynamicText = document.getElementById("dynamic-text");
-
-        function typeEffect() {
-            const currentWord = words[wordIndex];
-            if (isDeleting) {
-                dynamicText.textContent = currentWord.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                dynamicText.textContent = currentWord.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
-            let typeSpeed = isDeleting ? 40 : 80;
-
-            if (!isDeleting && charIndex === currentWord.length) {
-                typeSpeed = 1800; // หยุดแช่ไว้เมื่อพิมพ์จบคำ
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length;
-                typeSpeed = 400; // เว้นจังหวะก่อนเริ่มพิมพ์คำใหม่
-            }
-
-            setTimeout(typeEffect, typeSpeed);
-        }
-        document.addEventListener("DOMContentLoaded", () => setTimeout(typeEffect, 400));
-
-
-        // --- 2. Interactive Constellation Canvas Background (ดาวเรขาคณิตพื้นหลังขยับได้) ---
-        const canvas = document.getElementById('bg-canvas');
-        const ctx = canvas.getContext('2d');
-        let particles = [];
-
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
-
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2 + 0.5;
-                this.speedX = Math.random() * 0.4 - 0.2;
-                this.speedY = Math.random() * 0.4 - 0.2;
-            }
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
-                if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
-            }
-            draw() {
-                ctx.fillStyle = 'rgba(203, 213, 225, 0.25)';
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-
-        function initParticles() {
-            particles = [];
-            const particleDensity = (canvas.width * canvas.height) / 9500;
-            for (let i = 0; i < particleDensity; i++) {
-                particles.push(new Particle());
-            }
-        }
-        initParticles();
-
-        function connectParticles() {
-            for (let a = 0; a < particles.length; a++) {
-                for (let b = a; b < particles.length; b++) {
-                    let dx = particles[a].x - particles[b].x;
-                    let dy = particles[a].y - particles[b].y;
-                    let distance = Math.sqrt(dx * dx + dy * dy);
-                    if (distance < 110) {
-                        let opacity = (1 - (distance / 110)) * 0.12;
-                        ctx.strokeStyle = `rgba(148, 163, 184, ${opacity})`;
-                        ctx.lineWidth = 0.7;
-                        ctx.beginPath();
-                        ctx.moveTo(particles[a].x, particles[a].y);
-                        ctx.lineTo(particles[b].x, particles[b].y);
-                        ctx.stroke();
-                    }
-                }
-            }
-        }
-
-        function animateCanvas() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(p => {
-                p.update();
-                p.draw();
-            });
-            connectParticles();
-            requestAnimationFrame(animateCanvas);
-        }
-        animateCanvas();
-    </script>
 </body>
 </html>
