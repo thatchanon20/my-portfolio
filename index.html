@@ -464,6 +464,7 @@
 </head>
 <body>
 
+    <!-- HTML Canvas พื้นหลังกลุ่มดาวเรขาคณิตขนาดใหญ่ ตอบสนองตามเมาส์ -->
     <canvas id="bg-canvas"></canvas>
 
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
@@ -480,6 +481,7 @@
                     <li class="nav-item"><a class="nav-link px-3" href="#education"><i class="fa-solid fa-graduation-cap me-1"></i> Education</a></li>
                     <li class="nav-item"><a class="nav-link px-3" href="#skills"><i class="fa-solid fa-layer-group me-1"></i> Skills</a></li>
                     <li class="nav-item"><a class="nav-link px-3" href="#projects"><i class="fa-solid fa-cubes me-1"></i> Projects</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#certificates"><i class="fa-regular fa-id-card me-1"></i> Certificates</a></li>
                     <li class="nav-item"><a class="nav-link px-3 text-white fw-bold" href="#contact-form-section"><i class="fa-regular fa-envelope me-1"></i> Contact</a></li>
                 </ul>
             </div>
@@ -488,6 +490,7 @@
 
     <div class="a4-container px-3 px-md-0 my-5">
         
+        <!-- Profile Section -->
         <section id="profile" class="mb-5">
             <div class="profile-header-card">
                 <div class="profile-banner">
@@ -498,6 +501,7 @@
                         <h1 class="code-font fw-bold">THATCHANON</h1>
                         <h3 class="text-white-50 code-font fs-4">WAINIPLEE</h3>
                         
+                        <!-- จุดแก้ไขตามรูป Screenshot: เปลี่ยนเป็น Text ขยับได้ด้วยฟังก์ชัน Typewriter ด้านล่าง -->
                         <p class="small mb-0 mt-2 code-font text-white-50">
                             <span id="dynamic-text"></span><span class="typed-cursor">|</span>
                         </p>
@@ -551,7 +555,7 @@
                                 </a>
                                 <a href="mailto:thatchanon.w@psru.ac.th" class="contact-item-box">
                                     <div class="contact-icon-circle"><i class="fa-solid fa-envelope"></i></div>
-                                    <span class="fw-medium small code-font text-white">thatchanon.w@psru.ac.th</span>
+                                    <span class="fw-medium small code-font text-white text-truncate" style="max-width:110px;">thatchanon.w</span>
                                 </a>
                                 <a href="https://instagram.com/mhxn_tch" target="_blank" class="contact-item-box">
                                     <div class="contact-icon-circle"><i class="fa-brands fa-instagram"></i></div>
@@ -559,7 +563,7 @@
                                 </a>
                                 <a href="#" target="_blank" class="contact-item-box">
                                     <div class="contact-icon-circle"><i class="fa-brands fa-facebook-f"></i></div>
-                                    <span class="fw-medium small text-white">ThatchanonW</span>
+                                    <span class="fw-medium small text-white text-truncate" style="max-width:110px;">ThatchanonW</span>
                                 </a>
                             </div>
                         </div>
@@ -568,6 +572,7 @@
             </div>
         </section>
 
+        <!-- Education Section -->
         <section id="education" class="mb-5">
             <div class="d-flex align-items-center mb-4">
                 <div class="section-title-box m-0">เส้นทางการศึกษา</div>
@@ -608,6 +613,7 @@
             </div>
         </section>
 
+        <!-- Skills Section -->
         <section id="skills" class="mb-5">
             <div class="d-flex align-items-center mb-4">
                 <div class="section-title-box m-0">Technical Skills</div>
@@ -667,6 +673,7 @@
             </div>
         </section>
 
+        <!-- Projects Section -->
         <section id="projects" class="mb-5">
             <div class="d-flex align-items-center mb-4">
                 <div class="section-title-box m-0">Project Experience</div>
@@ -707,20 +714,19 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class="col">
                     <div class="custom-card">
                         <div class="cert-img-wrapper">
-                            <img src="images/11.png" class="cert-img" alt="Fullstack Integration" onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Fullstack+Integration'">
+                            <img src="images/11.png" class="cert-img" alt="Fullstack Integration" onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Fullstack+UI'">
                         </div>
                         <div class="p-4">
-                            <span class="project-tag">FULL-STACK DEVELOPER</span>
-                            <h5 class="fw-bold text-white mb-2 fs-6">WasteCoin Web Application</h5>
-                            <p class="small lh-base mb-0" style="color: var(--text-description);">เชื่อมต่อแอปพลิเคชันหน้าบ้านส่วนเชื่อมต่อผู้ใช้ (Frontend) เข้ากับบริการหลังบ้านและเครือข่ายบล็อกเชน จัดการ Application State ด้วย React Context อย่างเป็นระบบ</p>
+                            <span class="project-tag">FULL-STACK DESIGN</span>
+                            <h5 class="fw-bold text-white mb-2 fs-6">CPE Interactive Web Application</h5>
+                            <p class="small lh-base mb-0" style="color: var(--text-description);">ออกแบบอินเตอร์เฟซและสถาปัตยกรรมเว็บพอร์ตโฟลิโอแบบ Responsive เชื่อมโยงระบบฟอร์มข้อมูลติดต่อหลังบ้านเข้ากับแพลตฟอร์ม API จัดการโค้ดให้สอดคล้องตามหลักการจัดองค์ประกอบที่ง่ายต่อการนำไปบำรุงรักษาต่อ (Maintainability)</p>
                             <div class="project-tech-stack">
-                                <span class="tech-pill">React.js</span>
-                                <span class="tech-pill">Next.js</span>
-                                <span class="tech-pill">Node.js</span>
+                                <span class="tech-pill">JavaScript</span>
+                                <span class="tech-pill">Bootstrap 5</span>
+                                <span class="tech-pill">Formspree API</span>
                             </div>
                         </div>
                     </div>
@@ -728,143 +734,284 @@
             </div>
         </section>
 
-        <section id="contact-form-section" class="mb-5">
-            <div class="contact-section-card">
-                <div class="row g-4">
-                    <div class="col-lg-6">
-                        <h2>Get In Touch</h2>
-                        <p class="text-muted">หากคุณสนใจร่วมงาน คุยเรื่องโปรเจกต์ หรือต้องการติดต่อสัมภาษณ์ฝึกงาน สามารถส่งข้อความผ่านฟอร์มนี้มาได้เลยครับ</p>
+        <!-- Certificates Section -->
+        <section id="certificates" class="mb-5">
+            <div class="d-flex align-items-center mb-4">
+                <div class="section-title-box m-0">Certificates & Achievements</div>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-3 g-3">
+                <div class="col">
+                    <div class="custom-card">
+                        <div class="cert-img-wrapper">
+                            <img src="images/01.png" class="cert-img" alt="Python Essentials 1 Certificate" onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Python+Essentials+1'">
+                        </div>
+                        <div class="p-4">
+                            <div class="d-flex align-items-start gap-2">
+                                <div class="text-secondary mt-1"><i class="fa-solid fa-certificate"></i></div>
+                                <div>
+                                    <h6 class="fw-bold text-white mb-1 small">Python Essentials Certificate</h6>
+                                    <p class="small mb-0 code-font" style="font-size:0.75rem; color: var(--text-muted);">Cisco Networking Academy</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-6">
-                        <form id="contact-form">
+                </div>
+                <div class="col">
+                    <div class="custom-card">
+                        <div class="cert-img-wrapper">
+                            <img src="images/02.png" class="cert-img" alt="Software Engineering MOOC" onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Software+Engineering'">
+                        </div>
+                        <div class="p-4">
+                            <div class="d-flex align-items-start gap-2">
+                                <div class="text-secondary mt-1"><i class="fa-solid fa-laptop-code"></i></div>
+                                <div>
+                                    <h6 class="fw-bold text-white mb-1 small">Full-Stack Web Development Course</h6>
+                                    <p class="small mb-0 code-font" style="font-size:0.75rem; color: var(--text-muted);">Online Tech Academy</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="custom-card">
+                        <div class="cert-img-wrapper">
+                            <img src="images/03.png" class="cert-img" alt="Programming Certificate" onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=OOP+Programming'">
+                        </div>
+                        <div class="p-4">
+                            <div class="d-flex align-items-start gap-2">
+                                <div class="text-secondary mt-1"><i class="fa-solid fa-code-branch"></i></div>
+                                <div>
+                                    <h6 class="fw-bold text-white mb-1 small">Object-Oriented Programming Fundamentals</h6>
+                                    <p class="small mb-0 code-font" style="font-size:0.75rem; color: var(--text-muted);">CPE Academic Workshop</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section id="contact-form-section" class="mb-4">
+            <div class="contact-section-card text-center">
+                <h2>มาร่วมงานกัน</h2>
+                <p class="readable-description mb-4 text-white-50">
+                    เปิดรับโอกาสฝึกงานและความร่วมมือด้าน <span style="color: var(--tech-silver);">Back-end Dev</span>, <span style="color: var(--tech-silver);">Full-Stack</span> และ <span style="color: var(--tech-silver);">Software Engineering</span>
+                </p>
+                
+                <a href="mailto:thatchanon.w@psru.ac.th?subject=ติดต่อร่วมงานจาก Software Portfolio" class="btn-tech-mail mb-5">
+                    <i class="fa-regular fa-envelope"></i> ส่งอีเมลถึงผม
+                </a>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-7 text-start">
+                        <form action="https://formspree.io/f/xoqogwpe" method="POST">
+                            <input type="hidden" name="_to" value="thatchanon.w@psru.ac.th">
+                            
                             <div class="mb-3">
-                                <label class="form-tech-label">Name</label>
-                                <input type="text" class="form-control form-tech-input" placeholder="Your Name" required>
+                                <label for="userName" class="form-tech-label">ชื่อของคุณ</label>
+                                <input type="text" class="form-control form-tech-input" id="userName" name="name" placeholder="ชื่อ-นามสกุล" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-tech-label">Email</label>
-                                <input type="email" class="form-control form-tech-input" placeholder="your@email.com" required>
+                                <label for="userEmail" class="form-tech-label">อีเมลติดต่อกลับ</label>
+                                <input type="email" class="form-control form-tech-input" id="userEmail" name="email" placeholder="you@example.com" required>
                             </div>
-                            <div class="mb-3">
-                                <label class="form-tech-label">Message</label>
-                                <textarea class="form-control form-tech-input" rows="4" placeholder="Your Message" required></textarea>
+                            <div class="mb-4">
+                                <label for="userMessage" class="form-tech-label">ข้อความ</label>
+                                <textarea class="form-control form-tech-input" id="userMessage" name="message" rows="5" placeholder="รายละเอียดโปรเจกต์หรืองานที่อยากติดต่อตำแหน่งพัฒนาซอฟต์แวร์..." required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-form-submit">Send Message</button>
+                            <button type="submit" class="btn btn-form-submit">
+                                <i class="fa-solid fa-paper-plane me-2"></i> SEND MESSAGE
+                            </button>
                         </form>
                     </div>
                 </div>
             </div>
         </section>
+
+        <footer class="text-center py-5 mt-5 border-top" style="border-color: var(--border-tech) !important; color: var(--text-muted);">
+            <p class="mb-0 small code-font">&copy; 2026 Thatchanon Wainiplee. Computer Engineering & Software Developer Portfolio.</p>
+        </footer>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+    
+    <!-- JavaScript สำหรับพื้นหลังกลุ่มดาว และเอฟเฟกต์ตัวหนังสือพิมพ์ดีดขยับเปลี่ยนคำอัตโนมัติ -->
     <script>
-        // --- 1. Typewriter Effect สำหรับข้อความวิ่งขยับได้ ---
-        const words = ["Software Engineer Student", "Full-Stack Developer Enthusiast", "Backend API Developer"];
+        // --- 1. Script เอฟเฟกต์ตัวหนังสือขยับเปลี่ยนคำ (Typewriter Effect) ---
+        const words = [
+            "Computer Engineering Student",
+            "Full-Stack Developer",
+            "Software Engineer",
+            "Backend API Specialist"
+        ];
+        
         let wordIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
-        const dynamicText = document.getElementById("dynamic-text");
-
+        const dynamicTextElem = document.getElementById("dynamic-text");
+        
         function typeEffect() {
             const currentWord = words[wordIndex];
+            
             if (isDeleting) {
-                dynamicText.textContent = currentWord.substring(0, charIndex - 1);
+                // เอฟเฟกต์ลบตัวอักษร
+                dynamicTextElem.textContent = currentWord.substring(0, charIndex - 1);
                 charIndex--;
             } else {
-                dynamicText.textContent = currentWord.substring(0, charIndex + 1);
+                // เอฟเฟกต์พิมพ์ตัวอักษร
+                dynamicTextElem.textContent = currentWord.substring(0, charIndex + 1);
                 charIndex++;
             }
-
+            
+            // กำหนดความเร็วในการพิมพ์/ลบ
             let typeSpeed = isDeleting ? 40 : 80;
-
+            
+            // ถ้าพิมพ์คำนั้นๆ เสร็จสมบูรณ์แล้ว
             if (!isDeleting && charIndex === currentWord.length) {
-                typeSpeed = 1800; // หยุดแช่ไว้เมื่อพิมพ์จบคำ
+                typeSpeed = 2000; // หยุดแช่คำค้างไว้เพื่อให้อ่านง่ายเป็นเวลา 2 วินาที
                 isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
+            } 
+            // ถ้าลบคำจนหมดแล้ว เพื่อสลับไปคำถัดไป
+            else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length;
+                wordIndex = (wordIndex + 1) % words.length; // สลับไปยัง index คำถัดไปใน Array
                 typeSpeed = 400; // เว้นจังหวะก่อนเริ่มพิมพ์คำใหม่
             }
-
+            
             setTimeout(typeEffect, typeSpeed);
         }
-        document.addEventListener("DOMContentLoaded", () => setTimeout(typeEffect, 400));
+        
+        // เริ่มทำงานฟังก์ชันสลับคำเมื่อหน้าเว็บโหลดเสร็จ
+        document.addEventListener("DOMContentLoaded", () => {
+            typeEffect();
+        });
 
 
-        // --- 2. Interactive Constellation Canvas Background (ดาวเรขาคณิตพื้นหลังขยับได้) ---
+        // --- 2. Script พื้นหลังกลุ่มดาวเรขาคณิต (Interactive Large Constellation) ---
         const canvas = document.getElementById('bg-canvas');
         const ctx = canvas.getContext('2d');
-        let particles = [];
 
-        function resizeCanvas() {
+        let particlesArray = [];
+        const maxParticles = 45; 
+
+        const mouse = {
+            x: null,
+            y: null,
+            radius: 220 
+        };
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        window.addEventListener('mousemove', (event) => {
+            mouse.x = event.clientX;
+            mouse.y = event.clientY;
+        });
+
+        window.addEventListener('mouseout', () => {
+            mouse.x = null;
+            mouse.y = null;
+        });
+
+        window.addEventListener('resize', () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
-        }
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
+            init();
+        });
 
         class Particle {
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2 + 0.5;
+                this.size = Math.random() * 3.5 + 1.5; 
                 this.speedX = Math.random() * 0.4 - 0.2;
                 this.speedY = Math.random() * 0.4 - 0.2;
+                this.baseX = this.x;
+                this.baseY = this.y;
             }
             update() {
+                if (mouse.x != null && mouse.y != null) {
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < mouse.radius) {
+                        let force = (mouse.radius - distance) / mouse.radius;
+                        this.x += (dx / distance) * force * 1.8;
+                        this.y += (dy / distance) * force * 1.8;
+                    }
+                }
+
                 this.x += this.speedX;
                 this.y += this.speedY;
+
                 if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
                 if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
             }
             draw() {
-                ctx.fillStyle = 'rgba(203, 213, 225, 0.25)';
+                ctx.fillStyle = 'rgba(203, 213, 225, 0.25)'; 
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 ctx.fill();
             }
         }
 
-        function initParticles() {
-            particles = [];
-            const particleDensity = (canvas.width * canvas.height) / 9500;
-            for (let i = 0; i < particleDensity; i++) {
-                particles.push(new Particle());
+        function init() {
+            particlesArray = [];
+            for (let i = 0; i < maxParticles; i++) {
+                particlesArray.push(new Particle());
             }
         }
-        initParticles();
 
-        function connectParticles() {
-            for (let a = 0; a < particles.length; a++) {
-                for (let b = a; b < particles.length; b++) {
-                    let dx = particles[a].x - particles[b].x;
-                    let dy = particles[a].y - particles[b].y;
+        function connect() {
+            for (let a = 0; a < particlesArray.length; a++) {
+                for (let b = a; b < particlesArray.length; b++) {
+                    let dx = particlesArray[a].x - particlesArray[b].x;
+                    let dy = particlesArray[a].y - particlesArray[b].y;
                     let distance = Math.sqrt(dx * dx + dy * dy);
-                    if (distance < 110) {
-                        let opacity = (1 - (distance / 110)) * 0.12;
-                        ctx.strokeStyle = `rgba(148, 163, 184, ${opacity})`;
-                        ctx.lineWidth = 0.7;
+
+                    if (distance < 220) {
+                        let opacity = (1 - (distance / 220)) * 0.08; 
+                        ctx.strokeStyle = `rgba(203, 213, 225, ${opacity})`;
+                        ctx.lineWidth = 1.2; 
                         ctx.beginPath();
-                        ctx.moveTo(particles[a].x, particles[a].y);
-                        ctx.lineTo(particles[b].x, particles[b].y);
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                        ctx.stroke();
+                    }
+                }
+
+                if (mouse.x != null && mouse.y != null) {
+                    let mdx = particlesArray[a].x - mouse.x;
+                    let mdy = particlesArray[a].y - mouse.y;
+                    let mDistance = Math.sqrt(mdx * mdx + mdy * mdy);
+                    if (mDistance < mouse.radius) {
+                        let mOpacity = (1 - (mDistance / mouse.radius)) * 0.12;
+                        ctx.strokeStyle = `rgba(241, 245, 249, ${mOpacity})`; 
+                        ctx.lineWidth = 1.0;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(mouse.x, mouse.y);
                         ctx.stroke();
                     }
                 }
             }
         }
 
-        function animateCanvas() {
+        function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(p => {
-                p.update();
-                p.draw();
-            });
-            connectParticles();
-            requestAnimationFrame(animateCanvas);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+            }
+            connect();
+            requestAnimationFrame(animate);
         }
-        animateCanvas();
+
+        init();
+        animate();
     </script>
 </body>
 </html>
