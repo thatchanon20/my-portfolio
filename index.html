@@ -128,7 +128,6 @@
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
         }
 
-        /* เอฟเฟกต์ Cursor กระพริบสำหรับตัวหนังสือขยับ */
         .typed-cursor {
             opacity: 1;
             animation: blink 0.7s infinite;
@@ -457,7 +456,7 @@
         }
 
         @media print {
-            .navbar, #contact-form-section, #bg-canvas { display: none !important; }
+            .navbar, #contact-form-section, #bg-canvas, #certificates { display: none !important; }
             body { background-color: #ffffff; color: #000000; }
         }
     </style>
@@ -480,6 +479,7 @@
                     <li class="nav-item"><a class="nav-link px-3" href="#education"><i class="fa-solid fa-graduation-cap me-1"></i> Education</a></li>
                     <li class="nav-item"><a class="nav-link px-3" href="#skills"><i class="fa-solid fa-layer-group me-1"></i> Skills</a></li>
                     <li class="nav-item"><a class="nav-link px-3" href="#projects"><i class="fa-solid fa-cubes me-1"></i> Projects</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#certificates"><i class="fa-solid fa-award me-1"></i> Certificates</a></li>
                     <li class="nav-item"><a class="nav-link px-3 text-white fw-bold" href="#contact-form-section"><i class="fa-regular fa-envelope me-1"></i> Contact</a></li>
                 </ul>
             </div>
@@ -488,6 +488,7 @@
 
     <div class="a4-container px-3 px-md-0 my-5">
         
+        <!-- About / Profile Section -->
         <section id="profile" class="mb-5">
             <div class="profile-header-card">
                 <div class="profile-banner">
@@ -568,6 +569,7 @@
             </div>
         </section>
 
+        <!-- Education Section -->
         <section id="education" class="mb-5">
             <div class="d-flex align-items-center mb-4">
                 <div class="section-title-box m-0">เส้นทางการศึกษา</div>
@@ -608,6 +610,7 @@
             </div>
         </section>
 
+        <!-- Skills Section -->
         <section id="skills" class="mb-5">
             <div class="d-flex align-items-center mb-4">
                 <div class="section-title-box m-0">Technical Skills</div>
@@ -667,6 +670,7 @@
             </div>
         </section>
 
+        <!-- Projects Section -->
         <section id="projects" class="mb-5">
             <div class="d-flex align-items-center mb-4">
                 <div class="section-title-box m-0">Project Experience</div>
@@ -707,7 +711,6 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class="col">
                     <div class="custom-card">
                         <div class="cert-img-wrapper">
@@ -728,6 +731,53 @@
             </div>
         </section>
 
+        <!-- Certificates & Credentials Section (ดึงกลับมาเพิ่มเรียบร้อย) -->
+        <section id="certificates" class="mb-5">
+            <div class="d-flex align-items-center mb-4">
+                <div class="section-title-box m-0">Certificates & Credentials</div>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-3 g-3">
+                <div class="col">
+                    <div class="custom-card">
+                        <div class="cert-img-wrapper">
+                            <img src="images/11.png" class="cert-img" alt="Python Essentials 1 Certificate" onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Python+Essentials+1'">
+                        </div>
+                        <div class="p-4">
+                            <span class="project-tag">CISCO ACADEMY</span>
+                            <h5 class="fw-bold text-white mb-2 fs-6">Python Essentials 1</h5>
+                            <p class="small lh-base mb-0" style="color: var(--text-description);">ใบสัมฤทธิ์บัตรรับรองความรู้พื้นฐานและโครงสร้างภาษา Python อัลกอริทึม ตรรกะการประมวลผล ตลอดจนแนวคิด Object-Oriented Programming (OOP) ออกโดยสถาบัน Cisco Networking Academy</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="custom-card">
+                        <div class="cert-img-wrapper">
+                            <img src="images/12.png" class="cert-img" alt="Cisco Networking Academy Certificate" onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Cisco+Network+Badge'">
+                        </div>
+                        <div class="p-4">
+                            <span class="project-tag">CREDENTIAL BADGE</span>
+                            <h5 class="fw-bold text-white mb-2 fs-6">Cisco Programming Core Verification</h5>
+                            <p class="small lh-base mb-0" style="color: var(--text-description);">ตราสัญลักษณ์ดิจิทัล (Digital Badge) ยืนยันทักษะกระบวนการคิดวิเคราะห์เชิงวิศวกรรมและการแก้ปัญหาโจทย์คอมพิวเตอร์ด้วยภาษา Python ระดับสากล</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="custom-card">
+                        <div class="cert-img-wrapper">
+                            <img src="images/13.png" class="cert-img" alt="Academic Excellence Certificate" onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Academic+Certificate'">
+                        </div>
+                        <div class="p-4">
+                            <span class="project-tag">ACADEMIC HONORS</span>
+                            <h5 class="fw-bold text-white mb-2 fs-6">Computer Engineering Achievement</h5>
+                            <p class="small lh-base mb-0" style="color: var(--text-description);">เกียรติบัตรรับรองกิจกรรมและการทดสอบความรู้ความสามารถเฉพาะทางด้านวิศวกรรมคอมพิวเตอร์และวิทยาการคำนวณภายในสถาบันการศึกษา</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
         <section id="contact-form-section" class="mb-5">
             <div class="contact-section-card">
                 <div class="row g-4 align-items-center">
@@ -776,10 +826,12 @@
         <p class="small mb-0 code-font text-muted">&copy; 2026 Thatchanon Wainiplee. Developed with HTML, Bootstrap 5 & JavaScript.</p>
     </footer>
 
+    <!-- Bootstrap 5 JavaScript Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Scripts: Typing Effect & Interactive Particle Network -->
     <script>
-        // --- 1. Typing Effect (เอฟเฟกต์ตัวหนังสือวิ่ง) ---
+        // --- 1. Typing Effect ---
         const phrases = [
             "const developer = new SoftwareEngineer();",
             "building_scalable_backend_systems.sh",
@@ -805,23 +857,22 @@
             let typingSpeed = isDeleting ? 30 : 70;
 
             if (!isDeleting && currentCharIndex === currentPhrase.length) {
-                typingSpeed = 2000; // หยุดแช่ไว้หลังจากพิมพ์เสร็จ
+                typingSpeed = 2000;
                 isDeleting = true;
             } else if (isDeleting && currentCharIndex === 0) {
                 isDeleting = false;
                 currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
-                typingSpeed = 500; // เว้นช่วงก่อนพิมพ์คำถัดไป
+                typingSpeed = 500;
             }
 
             setTimeout(typeEffect, typingSpeed);
         }
         
-        // เริ่มต้นทำงานพิมพ์ดีด
         document.addEventListener("DOMContentLoaded", () => {
             if(dynamicTextSpan) typeEffect();
         });
 
-        // --- 2. Interactive Canvas Particles Background (เครือข่ายลากเส้นตามเมาส์) ---
+        // --- 2. Interactive Canvas Particles Background ---
         const canvas = document.getElementById('bg-canvas');
         const ctx = canvas.getContext('2d');
 
@@ -863,7 +914,6 @@
                 this.x += this.speedX;
                 this.y += this.speedY;
 
-                // ชนขอบเด้งกลับ
                 if (this.x < 0 || this.x > canvas.width) this.speedX = -this.speedX;
                 if (this.y < 0 || this.y > canvas.height) this.speedY = -this.speedY;
             }
@@ -901,14 +951,13 @@
                     }
                 }
                 
-                // เชื่อมโยงกับมาร์กเกอร์จุดเมาส์
                 if (mouse.x != null && mouse.y != null) {
                     let mdx = particlesArray[a].x - mouse.x;
                     let mdy = particlesArray[a].y - mouse.y;
                     let mDistance = Math.sqrt(mdx * mdx + mdy * mdy);
                     if (mDistance < mouse.radius) {
                         opacityValue = 1 - (mDistance / mouse.radius);
-                        ctx.strokeStyle = `rgba(74, 222, 128, ${opacityValue * 0.25})`; // แสงสีเขียวล้อมเมาส์อ่อนๆ
+                        ctx.strokeStyle = `rgba(74, 222, 128, ${opacityValue * 0.25})`;
                         ctx.lineWidth = 1;
                         ctx.beginPath();
                         ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
@@ -929,7 +978,6 @@
             requestAnimationFrame(animate);
         }
 
-        // เริ่มต้นรันระบบ Canvas
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
         initParticles();
