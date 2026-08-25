@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-
+    
     <style>
         :root {
             --bg-dark-main: #0f1115;
@@ -17,9 +17,9 @@
             --tech-silver: #cbd5e1;
             --tech-slate: #64748b;
             --tech-green-muted: #86efac;
-            --text-light: #f8fafc;
-            --text-muted: #94a3b8;
-            --text-description: #e2e8f0;
+            --text-light: #f8fafc;        
+            --text-muted: #94a3b8;        
+            --text-description: #e2e8f0;  
         }
 
         body {
@@ -68,9 +68,9 @@
             color: var(--text-light) !important;
         }
 
-        .nav-link {
-            color: var(--text-muted) !important;
-            font-size: 0.9rem;
+        .nav-link { 
+            color: var(--text-muted) !important; 
+            font-size: 0.9rem; 
             transition: all 0.2s ease;
             font-weight: 500;
         }
@@ -99,7 +99,7 @@
             align-items: center;
             position: relative;
         }
-
+        
         .profile-banner::before {
             content: '';
             position: absolute;
@@ -109,17 +109,17 @@
             pointer-events: none;
         }
 
-        .profile-banner h1 {
+        .profile-banner h1 { 
             font-family: 'JetBrains Mono', sans-serif;
-            font-size: 3.2rem;
-            font-weight: 700;
-            margin: 5px 0;
+            font-size: 3.2rem; 
+            font-weight: 700; 
+            margin: 5px 0; 
             letter-spacing: -1px;
             background: linear-gradient(to right, #ffffff, #94a3b8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
+        
         .profile-img-circle {
             width: 140px;
             height: 140px;
@@ -157,17 +157,12 @@
         }
 
         .status-dot {
-            width: 6px;
-            height: 6px;
-            background-color: var(--tech-green-muted);
-            border-radius: 50%;
+            width: 6px; height: 6px; background-color: var(--tech-green-muted); border-radius: 50%;
             animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
-            0% { opacity: 0.4; }
-            50% { opacity: 1; }
-            100% { opacity: 0.4; }
+            0% { opacity: 0.4; } 50% { opacity: 1; } 100% { opacity: 0.4; }
         }
 
         .section-title-box {
@@ -191,18 +186,8 @@
             line-height: 1.6;
         }
 
-        .info-label {
-            font-weight: 600;
-            color: var(--text-light);
-            width: 100px;
-            display: inline-block;
-            font-size: 0.95rem;
-        }
-
-        .info-value {
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
+        .info-label { font-weight: 600; color: var(--text-light); width: 100px; display: inline-block; font-size: 0.95rem; }
+        .info-value { color: var(--text-light); font-size: 0.95rem; }
 
         .tech-timeline {
             position: relative;
@@ -307,10 +292,10 @@
             font-family: 'JetBrains Mono', monospace;
         }
 
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
+        .contact-grid { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 12px; 
         }
 
         .contact-item-box {
@@ -333,26 +318,18 @@
         }
 
         .contact-icon-circle {
-            width: 32px;
-            height: 32px;
-            border-radius: 6px;
-            background: rgba(51, 65, 85, 0.5);
-            color: var(--text-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            flex-shrink: 0;
+            width: 32px; height: 32px; border-radius: 6px; background: rgba(51, 65, 85, 0.5); color: var(--text-light);
+            display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0;
             border: 1px solid var(--border-tech);
         }
 
-        .custom-card {
-            border: 1px solid var(--border-tech);
-            border-radius: 12px;
-            background: var(--bg-card-dark);
+        .custom-card { 
+            border: 1px solid var(--border-tech); 
+            border-radius: 12px; 
+            background: var(--bg-card-dark); 
             backdrop-filter: blur(10px);
-            overflow: hidden;
-            height: 100%;
+            overflow: hidden; 
+            height: 100%; 
             transition: all 0.3s ease;
         }
 
@@ -361,11 +338,11 @@
             border-color: var(--tech-silver);
             box-shadow: 0 10px 25px rgba(0,0,0,0.4);
         }
-
-        .cert-img-wrapper {
-            height: 180px;
-            background-color: #0f1115;
-            border-bottom: 1px solid var(--border-tech);
+        
+        .cert-img-wrapper { 
+            height: 180px; 
+            background-color: #0f1115; 
+            border-bottom: 1px solid var(--border-tech); 
             position: relative;
             display: flex;
             align-items: center;
@@ -373,10 +350,10 @@
             overflow: hidden;
         }
 
-        .cert-img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: cover;
+        .cert-img { 
+            max-width: 100%; 
+            max-height: 100%; 
+            object-fit: cover; 
             width: 100%;
             height: 100%;
             transition: transform 0.3s ease;
@@ -398,8 +375,8 @@
             display: inline-block;
             margin-bottom: 12px;
             font-family: 'JetBrains Mono', monospace;
-            background: rgba(255, 255, 255, 0.08);
-            color: var(--tech-silver);
+            background: rgba(255, 255, 255, 0.08); 
+            color: var(--tech-silver); 
             border: 1px solid var(--border-tech);
         }
 
@@ -506,21 +483,14 @@
         }
 
         @media print {
-            .navbar, #contact-form-section, #bg-canvas {
-                display: none !important;
-            }
-
-            body {
-                background-color: #ffffff;
-                color: #000000;
-            }
+            .navbar, #contact-form-section, #bg-canvas { display: none !important; }
+            body { background-color: #ffffff; color: #000000; }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- HTML Canvas พื้นหลังกลุ่มดาวเรขาคณิตขนาดใหญ่ ตอบสนองตามเมาส์ -->
     <canvas id="bg-canvas"></canvas>
 
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
@@ -535,82 +505,47 @@
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto gap-2 list-unstyled mb-0">
-                    <li class="nav-item">
-                        <a class="nav-link px-3" href="#profile">
-                            <i class="fa-regular fa-circle-user me-1"></i> About
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link px-3" href="#education">
-                            <i class="fa-solid fa-graduation-cap me-1"></i> Education
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link px-3" href="#skills">
-                            <i class="fa-solid fa-layer-group me-1"></i> Skills
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link px-3" href="#projects">
-                            <i class="fa-solid fa-cubes me-1"></i> Projects
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link px-3" href="#certificates">
-                            <i class="fa-regular fa-id-card me-1"></i> Certificates
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link px-3 text-white fw-bold" href="#contact-form-section">
-                            <i class="fa-regular fa-envelope me-1"></i> Contact
-                        </a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#profile"><i class="fa-regular fa-circle-user me-1"></i> About</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#education"><i class="fa-solid fa-graduation-cap me-1"></i> Education</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#skills"><i class="fa-solid fa-layer-group me-1"></i> Skills</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#projects"><i class="fa-solid fa-cubes me-1"></i> Projects</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#certificates"><i class="fa-regular fa-id-card me-1"></i> Certificates</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 text-white fw-bold" href="#contact-form-section"><i class="fa-regular fa-envelope me-1"></i> Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <div class="a4-container px-3 px-md-0 my-5">
-
-        <!-- Profile Section -->
+        
         <section id="profile" class="mb-5">
             <div class="profile-header-card">
 
                 <div class="profile-banner">
                     <div>
                         <div class="status-badge mb-2">
-                            <span class="status-dot"></span>
-                            Open for Software Developer Internship
+                            <span class="status-dot"></span> Open for Software Developer Internship
                         </div>
 
                         <h1 class="code-font fw-bold">THATCHANON</h1>
-
                         <h3 class="text-white-50 code-font fs-4">WAINIPLEE</h3>
 
-                        <!-- จุดแก้ไขตามรูป Screenshot: เปลี่ยนเป็น Text ขยับได้ด้วยฟังก์ชัน Typewriter ด้านล่าง -->
                         <p class="small mb-0 mt-2 code-font text-white-50">
-                            <span id="dynamic-text"></span>
-                            <span class="typed-cursor">|</span>
+                            <span id="dynamic-text"></span><span class="typed-cursor">|</span>
                         </p>
                     </div>
 
-                    <img
-                        src="images/20.jpg"
-                        class="profile-img-circle"
-                        alt="นายฐัฏชนนท์ วัยนิพลี"
-                        onerror="this.src='https://via.placeholder.com/140?text=Profile'"
-                    >
+                    <img src="images/20.jpg"
+                         class="profile-img-circle"
+                         alt="นายฐัฏชนนท์ วัยนิพลี"
+                         onerror="this.src='https://via.placeholder.com/140?text=Profile'">
                 </div>
 
                 <div class="p-4">
                     <div class="row g-4">
 
                         <div class="col-lg-4">
+
                             <div class="section-title-box">Personal Info</div>
 
                             <h5 class="fw-bold text-white mb-3">
@@ -646,18 +581,16 @@
                             </div>
                         </div>
 
-                        <div
-                            class="col-lg-4 border-start border-end px-lg-4"
-                            style="border-color: var(--border-tech) !important;"
-                        >
+                        <div class="col-lg-4 border-start border-end px-lg-4"
+                             style="border-color: var(--border-tech) !important;">
+
                             <div class="section-title-box">Academic Scores</div>
 
                             <div class="d-flex flex-column gap-3">
 
-                                <div
-                                    class="p-3 rounded-3"
-                                    style="background: rgba(51, 65, 85, 0.2); border: 1px solid var(--border-tech);"
-                                >
+                                <div class="p-3 rounded-3"
+                                     style="background: rgba(51, 65, 85, 0.2); border: 1px solid var(--border-tech);">
+
                                     <span class="info-value d-block small mb-2 text-white-50">
                                         มหาวิทยาลัยราชภัฏพิบูลสงคราม
                                     </span>
@@ -666,26 +599,20 @@
 
                                         <div class="col-6">
                                             <div class="gpa-box">
-                                                <span
-                                                    class="d-block text-muted"
-                                                    style="font-size:0.65rem;"
-                                                >
+                                                <span class="d-block text-muted"
+                                                      style="font-size:0.65rem;">
                                                     GPAX
                                                 </span>
-
                                                 <b class="text-white small">2.98</b>
                                             </div>
                                         </div>
 
                                         <div class="col-6">
                                             <div class="gpa-box">
-                                                <span
-                                                    class="d-block text-muted"
-                                                    style="font-size:0.65rem;"
-                                                >
+                                                <span class="d-block text-muted"
+                                                      style="font-size:0.65rem;">
                                                     Major
                                                 </span>
-
                                                 <b class="text-white small">3.32</b>
                                             </div>
                                         </div>
@@ -694,6 +621,7 @@
                                 </div>
 
                                 <div class="d-flex align-items-center gap-3 px-2">
+
                                     <div class="contact-icon-circle">
                                         <i class="fa-solid fa-school"></i>
                                     </div>
@@ -703,13 +631,12 @@
                                             มัธยมศึกษาตอนปลาย
                                         </div>
 
-                                        <span
-                                            class="info-value d-block small"
-                                            style="color: var(--text-muted);"
-                                        >
+                                        <span class="info-value d-block small"
+                                              style="color: var(--text-muted);">
                                             โรงเรียนตะพานหิน
                                         </span>
                                     </div>
+
                                 </div>
 
                             </div>
@@ -721,10 +648,10 @@
 
                             <div class="contact-grid">
 
-                                <a
-                                    href="tel:0863539051"
-                                    class="contact-item-box"
-                                >
+                                <!-- PHONE -->
+                                <a href="tel:0863539051"
+                                   class="contact-item-box">
+
                                     <div class="contact-icon-circle">
                                         <i class="fa-solid fa-phone"></i>
                                     </div>
@@ -732,30 +659,29 @@
                                     <span class="fw-medium small code-font text-white">
                                         086-3539051
                                     </span>
+
                                 </a>
 
-                                <a
-                                    href="mailto:thatchanon.w@psru.ac.th"
-                                    class="contact-item-box"
-                                >
+                                <!-- EMAIL -->
+                                <a href="mailto:thatchanon.w@psru.ac.th"
+                                   class="contact-item-box">
+
                                     <div class="contact-icon-circle">
                                         <i class="fa-solid fa-envelope"></i>
                                     </div>
 
-                                    <span
-                                        class="fw-medium small code-font text-white text-truncate"
-                                        style="max-width:110px;"
-                                    >
+                                    <span class="fw-medium small code-font text-white text-truncate"
+                                          style="max-width:110px;">
                                         thatchanon.w
                                     </span>
+
                                 </a>
 
-                                <!-- Instagram -->
-                                <a
-                                    href="https://www.instagram.com/mhxn_tcn?igsi=MTlpN3BrbmJ1Z2tmaQ%3D%3D&utm_source=qr"
-                                    target="_blank"
-                                    class="contact-item-box"
-                                >
+                                <!-- INSTAGRAM -->
+                                <a href="https://www.instagram.com/mhxn_tcn?igsi=MTlpN3BrbmJ1Z2tmaQ%3D%3D&utm_source=qr"
+                                   target="_blank"
+                                   class="contact-item-box">
+
                                     <div class="contact-icon-circle">
                                         <i class="fa-brands fa-instagram"></i>
                                     </div>
@@ -763,24 +689,23 @@
                                     <span class="fw-medium small code-font text-white">
                                         mhxn_tch
                                     </span>
+
                                 </a>
 
-                                <!-- Facebook -->
-                                <a
-                                    href="https://www.facebook.com/share/1Pesf98wzR/?mibextid=wwXIfr"
-                                    target="_blank"
-                                    class="contact-item-box"
-                                >
+                                <!-- FACEBOOK -->
+                                <a href="https://www.facebook.com/share/1Pesf98wzR/?mibextid=wwXIfr"
+                                   target="_blank"
+                                   class="contact-item-box">
+
                                     <div class="contact-icon-circle">
                                         <i class="fa-brands fa-facebook-f"></i>
                                     </div>
 
-                                    <span
-                                        class="fw-medium small text-white text-truncate"
-                                        style="max-width:110px;"
-                                    >
+                                    <span class="fw-medium small text-white text-truncate"
+                                          style="max-width:110px;">
                                         Thatchanon Winiplee
                                     </span>
+
                                 </a>
 
                             </div>
@@ -791,7 +716,6 @@
             </div>
         </section>
 
-        <!-- Education Section -->
         <section id="education" class="mb-5">
 
             <div class="d-flex align-items-center mb-4">
@@ -803,6 +727,7 @@
             <div class="tech-timeline">
 
                 <div class="timeline-item">
+
                     <div class="timeline-icon">
                         <i class="fa-solid fa-graduation-cap"></i>
                     </div>
@@ -820,12 +745,15 @@
                     </div>
 
                     <div class="timeline-desc">
-                        เน้นศึกษาโครงสร้างสถาปัตยกรรมซอฟต์แวร์ (Software Architecture)
-                        การออกแบบฐานข้อมูล และการนำระบบขึ้นคลาวด์โปรดักชัน
+                        เน้นศึกษาโครงสร้างสถาปัตยกรรมซอฟต์แวร์
+                        (Software Architecture) การออกแบบฐานข้อมูล
+                        และการนำระบบขึ้นคลาวด์โปรดักชัน
                     </div>
+
                 </div>
 
                 <div class="timeline-item">
+
                     <div class="timeline-icon">
                         <i class="fa-solid fa-microchip"></i>
                     </div>
@@ -847,9 +775,11 @@
                         สำหรับเชื่อมโยงโมเดลภาษาขนาดใหญ่ (LLM)
                         เข้าสู่ระบบหลังบ้านของซอฟต์แวร์แชทบอทประจำภาควิชา
                     </div>
+
                 </div>
 
                 <div class="timeline-item">
+
                     <div class="timeline-icon">
                         <i class="fa-solid fa-code"></i>
                     </div>
@@ -870,9 +800,11 @@
                         ผ่านการรับรองหลักสูตรการเขียนโปรแกรมด้วยภาษา Python
                         และการจัดการโครงสร้างข้อมูลแบบ Object-Oriented Programming (OOP)
                     </div>
+
                 </div>
 
                 <div class="timeline-item">
+
                     <div class="timeline-icon">
                         <i class="fa-solid fa-school"></i>
                     </div>
@@ -893,12 +825,12 @@
                         จุดเริ่มต้นของการเรียนรู้ตรรกศาสตร์และการเขียนอัลกอริทึม
                         ควบคุมซอฟต์แวร์คอมพิวเตอร์เบื้องต้น
                     </div>
+
                 </div>
 
             </div>
         </section>
 
-        <!-- Skills Section -->
         <section id="skills" class="mb-5">
 
             <div class="d-flex align-items-center mb-4">
@@ -906,10 +838,8 @@
                     Technical Skills
                 </div>
 
-                <span
-                    class="small ms-3 code-font"
-                    style="color: var(--text-muted);"
-                >
+                <span class="small ms-3 code-font"
+                      style="color: var(--text-muted);">
                     # core_stack
                 </span>
             </div>
@@ -917,20 +847,21 @@
             <div class="row row-cols-1 row-cols-md-3 g-3">
 
                 <div class="col">
+
                     <div class="skill-cat-card">
 
                         <div class="skill-cat-header text-white">
+
                             <span>
                                 <i class="fa-solid fa-code me-2"></i>
                                 Web Development
                             </span>
 
-                            <span
-                                class="badge code-font"
-                                style="font-size:0.7rem; background:rgba(255,255,255,0.1); color:var(--tech-silver)"
-                            >
+                            <span class="badge code-font"
+                                  style="font-size:0.7rem; background:rgba(255,255,255,0.1); color:var(--tech-silver)">
                                 8 skills
                             </span>
+
                         </div>
 
                         <div class="skill-badge-container">
@@ -948,20 +879,21 @@
                 </div>
 
                 <div class="col">
+
                     <div class="skill-cat-card">
 
                         <div class="skill-cat-header text-white">
+
                             <span>
                                 <i class="fa-solid fa-database me-2"></i>
                                 Databases & Tools
                             </span>
 
-                            <span
-                                class="badge code-font"
-                                style="font-size:0.7rem; background:rgba(255,255,255,0.1); color:var(--tech-silver)"
-                            >
+                            <span class="badge code-font"
+                                  style="font-size:0.7rem; background:rgba(255,255,255,0.1); color:var(--tech-silver)">
                                 6 skills
                             </span>
+
                         </div>
 
                         <div class="skill-badge-container">
@@ -977,20 +909,21 @@
                 </div>
 
                 <div class="col">
+
                     <div class="skill-cat-card">
 
                         <div class="skill-cat-header text-white">
+
                             <span>
                                 <i class="fa-solid fa-gears me-2"></i>
                                 Engineering Core
                             </span>
 
-                            <span
-                                class="badge bg-secondary code-font"
-                                style="font-size:0.7rem"
-                            >
+                            <span class="badge bg-secondary code-font"
+                                  style="font-size:0.7rem">
                                 5 skills
                             </span>
+
                         </div>
 
                         <div class="skill-badge-container">
@@ -1007,7 +940,6 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
         <section id="projects" class="mb-5">
 
             <div class="d-flex align-items-center mb-4">
@@ -1019,15 +951,14 @@
             <div class="row row-cols-1 row-cols-md-3 g-3">
 
                 <div class="col">
+
                     <div class="custom-card">
 
                         <div class="cert-img-wrapper">
-                            <img
-                                src="images/11.png"
-                                class="cert-img"
-                                alt="WasteCoin Backend System"
-                                onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Backend+System'"
-                            >
+                            <img src="images/11.png"
+                                 class="cert-img"
+                                 alt="WasteCoin Backend System"
+                                 onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Backend+System'">
                         </div>
 
                         <div class="p-4">
@@ -1040,10 +971,8 @@
                                 CPE AI Chat Bot
                             </h5>
 
-                            <p
-                                class="small lh-base mb-0"
-                                style="color: var(--text-description);"
-                            >
+                            <p class="small lh-base mb-0"
+                               style="color: var(--text-description);">
                                 ทำงานร่วมกับเพื่อนในกลุ่มเพื่อเชื่อมต่อระบบ Back-end
                                 เข้ากับ Front-end UI •ดำเนินการวิจัยและแก้ไขข้อผิดพลาด
                                 (Debugging) เพื่อ พัฒนาประสิทธิภาพของระบบอย่างต่อเนื่อง
@@ -1060,15 +989,14 @@
                 </div>
 
                 <div class="col">
+
                     <div class="custom-card">
 
                         <div class="cert-img-wrapper">
-                            <img
-                                src="images/chatbot1.png"
-                                class="cert-img"
-                                alt="Smart Contract Integration"
-                                onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Blockchain+Integration'"
-                            >
+                            <img src="images/chatbot1.png"
+                                 class="cert-img"
+                                 alt="Smart Contract Integration"
+                                 onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Blockchain+Integration'">
                         </div>
 
                         <div class="p-4">
@@ -1081,10 +1009,8 @@
                                 CPE AI Chat Bot
                             </h5>
 
-                            <p
-                                class="small lh-base mb-0"
-                                style="color: var(--text-description);"
-                            >
+                            <p class="small lh-base mb-0"
+                               style="color: var(--text-description);">
                                 พัฒนาแชทบอทเฉพาะทางเพื่อให้ข้อมูลเกี่ยวกับการเรียน
                                 ในสาขาวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยราชภัฏพิบูล สงคราม
                                 •ใช้ Python ในการพัฒนา Back-end logic พร้อมระบบ
@@ -1102,15 +1028,14 @@
                 </div>
 
                 <div class="col">
+
                     <div class="custom-card">
 
                         <div class="cert-img-wrapper">
-                            <img
-                                src="images/111.png"
-                                class="cert-img"
-                                alt="Fullstack Integration"
-                                onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Fullstack+UI'"
-                            >
+                            <img src="images/111.png"
+                                 class="cert-img"
+                                 alt="Fullstack Integration"
+                                 onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Fullstack+UI'">
                         </div>
 
                         <div class="p-4">
@@ -1123,10 +1048,8 @@
                                 PJ01
                             </h5>
 
-                            <p
-                                class="small lh-base mb-0"
-                                style="color: var(--text-description);"
-                            >
+                            <p class="small lh-base mb-0"
+                               style="color: var(--text-description);">
                                 ชื่อผลงาน: oslo.clothes
                                 (เว็บไซต์ร้านเสื้อผ้าสไตล์มินิมอล)
                                 •เครื่องมือที่ใช้: พัฒนาด้วย VS Code โดยใช้ภาษา
@@ -1150,7 +1073,6 @@
             </div>
         </section>
 
-        <!-- Certificates Section -->
         <section id="certificates" class="mb-5">
 
             <div class="d-flex align-items-center mb-4">
@@ -1162,18 +1084,18 @@
             <div class="row row-cols-1 row-cols-md-3 g-3">
 
                 <div class="col">
+
                     <div class="custom-card">
 
                         <div class="cert-img-wrapper">
-                            <img
-                                src="images/01.png"
-                                class="cert-img"
-                                alt="Python Essentials 1 Certificate"
-                                onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Python+Essentials+1'"
-                            >
+                            <img src="images/01.png"
+                                 class="cert-img"
+                                 alt="Python Essentials 1 Certificate"
+                                 onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Python+Essentials+1'">
                         </div>
 
                         <div class="p-4">
+
                             <div class="d-flex align-items-start gap-2">
 
                                 <div class="text-secondary mt-1">
@@ -1181,37 +1103,37 @@
                                 </div>
 
                                 <div>
+
                                     <h6 class="fw-bold text-white mb-1 small">
                                         Python Essentials Certificate
                                     </h6>
 
-                                    <p
-                                        class="small mb-0 code-font"
-                                        style="font-size:0.75rem; color: var(--text-muted);"
-                                    >
+                                    <p class="small mb-0 code-font"
+                                       style="font-size:0.75rem; color: var(--text-muted);">
                                         Cisco Networking Academy
                                     </p>
+
                                 </div>
 
                             </div>
-                        </div>
 
+                        </div>
                     </div>
                 </div>
 
                 <div class="col">
+
                     <div class="custom-card">
 
                         <div class="cert-img-wrapper">
-                            <img
-                                src="images/02.png"
-                                class="cert-img"
-                                alt="Software Engineering MOOC"
-                                onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Software+Engineering'"
-                            >
+                            <img src="images/02.png"
+                                 class="cert-img"
+                                 alt="Software Engineering MOOC"
+                                 onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Software+Engineering'">
                         </div>
 
                         <div class="p-4">
+
                             <div class="d-flex align-items-start gap-2">
 
                                 <div class="text-secondary mt-1">
@@ -1219,37 +1141,37 @@
                                 </div>
 
                                 <div>
+
                                     <h6 class="fw-bold text-white mb-1 small">
                                         Full-Stack Web Development Course
                                     </h6>
 
-                                    <p
-                                        class="small mb-0 code-font"
-                                        style="font-size:0.75rem; color: var(--text-muted);"
-                                    >
+                                    <p class="small mb-0 code-font"
+                                       style="font-size:0.75rem; color: var(--text-muted);">
                                         Online Tech Academy
                                     </p>
+
                                 </div>
 
                             </div>
-                        </div>
 
+                        </div>
                     </div>
                 </div>
 
                 <div class="col">
+
                     <div class="custom-card">
 
                         <div class="cert-img-wrapper">
-                            <img
-                                src="images/03.png"
-                                class="cert-img"
-                                alt="Programming Certificate"
-                                onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=OOP+Programming'"
-                            >
+                            <img src="images/03.png"
+                                 class="cert-img"
+                                 alt="Programming Certificate"
+                                 onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=OOP+Programming'">
                         </div>
 
                         <div class="p-4">
+
                             <div class="d-flex align-items-start gap-2">
 
                                 <div class="text-secondary mt-1">
@@ -1257,28 +1179,27 @@
                                 </div>
 
                                 <div>
+
                                     <h6 class="fw-bold text-white mb-1 small">
                                         Object-Oriented Programming Fundamentals
                                     </h6>
 
-                                    <p
-                                        class="small mb-0 code-font"
-                                        style="font-size:0.75rem; color: var(--text-muted);"
-                                    >
+                                    <p class="small mb-0 code-font"
+                                       style="font-size:0.75rem; color: var(--text-muted);">
                                         CPE Academic Workshop
                                     </p>
+
                                 </div>
 
                             </div>
-                        </div>
 
+                        </div>
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- Contact Form Section -->
         <section id="contact-form-section" class="mb-4">
 
             <div class="contact-section-card text-center">
@@ -1298,11 +1219,9 @@
                         Software Engineering
                     </span>
                 </p>
-
-                <a
-                    href="mailto:thatchanon.w@psru.ac.th?subject=ติดต่อร่วมงานจาก Software Portfolio"
-                    class="btn-tech-mail mb-5"
-                >
+                
+                <a href="mailto:thatchanon.w@psru.ac.th?subject=ติดต่อร่วมงานจาก Software Portfolio"
+                   class="btn-tech-mail mb-5">
                     <i class="fa-regular fa-envelope"></i>
                     ส่งอีเมลถึงผม
                 </a>
@@ -1311,77 +1230,67 @@
 
                     <div class="col-lg-7 text-start">
 
-                        <form
-                            action="https://formspree.io/f/xoqogwpe"
-                            method="POST"
-                        >
+                        <form action="https://formspree.io/f/xoqogwpe"
+                              method="POST">
 
-                            <input
-                                type="hidden"
-                                name="_to"
-                                value="thatchanon.w@psru.ac.th"
-                            >
-
+                            <input type="hidden"
+                                   name="_to"
+                                   value="thatchanon.w@psru.ac.th">
+                            
                             <div class="mb-3">
-                                <label
-                                    for="userName"
-                                    class="form-tech-label"
-                                >
+
+                                <label for="userName"
+                                       class="form-tech-label">
                                     ชื่อของคุณ
                                 </label>
 
-                                <input
-                                    type="text"
-                                    class="form-control form-tech-input"
-                                    id="userName"
-                                    name="name"
-                                    placeholder="ชื่อ-นามสกุล"
-                                    required
-                                >
+                                <input type="text"
+                                       class="form-control form-tech-input"
+                                       id="userName"
+                                       name="name"
+                                       placeholder="ชื่อ-นามสกุล"
+                                       required>
+
                             </div>
 
                             <div class="mb-3">
-                                <label
-                                    for="userEmail"
-                                    class="form-tech-label"
-                                >
+
+                                <label for="userEmail"
+                                       class="form-tech-label">
                                     อีเมลติดต่อกลับ
                                 </label>
 
-                                <input
-                                    type="email"
-                                    class="form-control form-tech-input"
-                                    id="userEmail"
-                                    name="email"
-                                    placeholder="you@example.com"
-                                    required
-                                >
+                                <input type="email"
+                                       class="form-control form-tech-input"
+                                       id="userEmail"
+                                       name="email"
+                                       placeholder="you@example.com"
+                                       required>
+
                             </div>
 
                             <div class="mb-4">
-                                <label
-                                    for="userMessage"
-                                    class="form-tech-label"
-                                >
+
+                                <label for="userMessage"
+                                       class="form-tech-label">
                                     ข้อความ
                                 </label>
 
-                                <textarea
-                                    class="form-control form-tech-input"
-                                    id="userMessage"
-                                    name="message"
-                                    rows="5"
-                                    placeholder="รายละเอียดโปรเจกต์หรืองานที่อยากติดต่อตำแหน่งพัฒนาซอฟต์แวร์..."
-                                    required
-                                ></textarea>
+                                <textarea class="form-control form-tech-input"
+                                          id="userMessage"
+                                          name="message"
+                                          rows="5"
+                                          placeholder="รายละเอียดโปรเจกต์หรืองานที่อยากติดต่อตำแหน่งพัฒนาซอฟต์แวร์..."
+                                          required></textarea>
+
                             </div>
 
-                            <button
-                                type="submit"
-                                class="btn btn-form-submit"
-                            >
+                            <button type="submit"
+                                    class="btn btn-form-submit">
+
                                 <i class="fa-solid fa-paper-plane me-2"></i>
                                 SEND MESSAGE
+
                             </button>
 
                         </form>
@@ -1392,24 +1301,21 @@
             </div>
         </section>
 
-        <footer
-            class="text-center py-5 mt-5 border-top"
-            style="border-color: var(--border-tech) !important; color: var(--text-muted);"
-        >
+        <footer class="text-center py-5 mt-5 border-top"
+                style="border-color: var(--border-tech) !important; color: var(--text-muted);">
+
             <p class="mb-0 small code-font">
                 &copy; 2026 Thatchanon Wainiplee.
                 Computer Engineering & Software Developer Portfolio.
             </p>
+
         </footer>
 
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- JavaScript สำหรับพื้นหลังกลุ่มดาว และเอฟเฟกต์ตัวหนังสือพิมพ์ดีดขยับเปลี่ยนคำอัตโนมัติ -->
+    
     <script>
-
-        // --- 1. Script เอฟเฟกต์ตัวหนังสือขยับเปลี่ยนคำ (Typewriter Effect) ---
 
         const words = [
             "Computer Engineering Student",
@@ -1417,20 +1323,20 @@
             "Software Engineer",
             "Backend API Specialist"
         ];
-
+        
         let wordIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
 
-        const dynamicTextElem = document.getElementById("dynamic-text");
-
+        const dynamicTextElem =
+            document.getElementById("dynamic-text");
+        
         function typeEffect() {
 
             const currentWord = words[wordIndex];
-
+            
             if (isDeleting) {
 
-                // เอฟเฟกต์ลบตัวอักษร
                 dynamicTextElem.textContent =
                     currentWord.substring(0, charIndex - 1);
 
@@ -1438,45 +1344,49 @@
 
             } else {
 
-                // เอฟเฟกต์พิมพ์ตัวอักษร
                 dynamicTextElem.textContent =
                     currentWord.substring(0, charIndex + 1);
 
                 charIndex++;
+
             }
-
-            // กำหนดความเร็วในการพิมพ์/ลบ
-            let typeSpeed = isDeleting ? 40 : 80;
-
-            // ถ้าพิมพ์คำนั้นๆ เสร็จสมบูรณ์แล้ว
-            if (!isDeleting && charIndex === currentWord.length) {
+            
+            let typeSpeed =
+                isDeleting ? 40 : 80;
+            
+            if (
+                !isDeleting &&
+                charIndex === currentWord.length
+            ) {
 
                 typeSpeed = 2000;
                 isDeleting = true;
 
-            }
+            } 
 
-            // ถ้าลบคำจนหมดแล้ว เพื่อสลับไปคำถัดไป
-            else if (isDeleting && charIndex === 0) {
+            else if (
+                isDeleting &&
+                charIndex === 0
+            ) {
 
                 isDeleting = false;
-
                 wordIndex =
                     (wordIndex + 1) % words.length;
 
                 typeSpeed = 400;
-            }
 
+            }
+            
             setTimeout(typeEffect, typeSpeed);
         }
+        
+        document.addEventListener(
+            "DOMContentLoaded",
+            () => {
+                typeEffect();
+            }
+        );
 
-        // เริ่มทำงานฟังก์ชันสลับคำเมื่อหน้าเว็บโหลดเสร็จ
-        document.addEventListener("DOMContentLoaded", () => {
-            typeEffect();
-        });
-
-
-        // --- 2. Script พื้นหลังกลุ่มดาวเรขาคณิต (Interactive Large Constellation) ---
 
         const canvas =
             document.getElementById('bg-canvas');
@@ -1486,52 +1396,72 @@
 
         let particlesArray = [];
 
-        const maxParticles = 45;
+        const maxParticles = 45; 
 
         const mouse = {
             x: null,
             y: null,
-            radius: 220
+            radius: 220 
         };
 
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        canvas.width =
+            window.innerWidth;
 
-        window.addEventListener('mousemove', (event) => {
+        canvas.height =
+            window.innerHeight;
 
-            mouse.x = event.clientX;
-            mouse.y = event.clientY;
+        window.addEventListener(
+            'mousemove',
+            (event) => {
 
-        });
+                mouse.x =
+                    event.clientX;
 
-        window.addEventListener('mouseout', () => {
+                mouse.y =
+                    event.clientY;
 
-            mouse.x = null;
-            mouse.y = null;
+            }
+        );
 
-        });
+        window.addEventListener(
+            'mouseout',
+            () => {
 
-        window.addEventListener('resize', () => {
+                mouse.x = null;
+                mouse.y = null;
 
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            }
+        );
 
-            init();
+        window.addEventListener(
+            'resize',
+            () => {
 
-        });
+                canvas.width =
+                    window.innerWidth;
+
+                canvas.height =
+                    window.innerHeight;
+
+                init();
+
+            }
+        );
 
         class Particle {
 
             constructor() {
 
                 this.x =
-                    Math.random() * canvas.width;
+                    Math.random() *
+                    canvas.width;
 
                 this.y =
-                    Math.random() * canvas.height;
+                    Math.random() *
+                    canvas.height;
 
                 this.size =
-                    Math.random() * 3.5 + 1.5;
+                    Math.random() * 3.5 + 1.5; 
 
                 this.speedX =
                     Math.random() * 0.4 - 0.2;
@@ -1539,8 +1469,11 @@
                 this.speedY =
                     Math.random() * 0.4 - 0.2;
 
-                this.baseX = this.x;
-                this.baseY = this.y;
+                this.baseX =
+                    this.x;
+
+                this.baseY =
+                    this.y;
             }
 
             update() {
@@ -1557,48 +1490,59 @@
                         mouse.y - this.y;
 
                     let distance =
-                        Math.sqrt(dx * dx + dy * dy);
-
-                    if (distance < mouse.radius) {
+                        Math.sqrt(
+                            dx * dx +
+                            dy * dy
+                        );
+                    
+                    if (
+                        distance <
+                        mouse.radius
+                    ) {
 
                         let force =
                             (mouse.radius - distance)
                             / mouse.radius;
 
                         this.x +=
-                            (dx / distance)
-                            * force
-                            * 1.8;
+                            (dx / distance) *
+                            force *
+                            1.8;
 
                         this.y +=
-                            (dy / distance)
-                            * force
-                            * 1.8;
+                            (dy / distance) *
+                            force *
+                            1.8;
                     }
                 }
 
-                this.x += this.speedX;
-                this.y += this.speedY;
+                this.x +=
+                    this.speedX;
+
+                this.y +=
+                    this.speedY;
 
                 if (
                     this.x > canvas.width ||
                     this.x < 0
                 ) {
-                    this.speedX = -this.speedX;
+                    this.speedX =
+                        -this.speedX;
                 }
 
                 if (
                     this.y > canvas.height ||
                     this.y < 0
                 ) {
-                    this.speedY = -this.speedY;
+                    this.speedY =
+                        -this.speedY;
                 }
             }
 
             draw() {
 
                 ctx.fillStyle =
-                    'rgba(203, 213, 225, 0.25)';
+                    'rgba(203, 213, 225, 0.25)'; 
 
                 ctx.beginPath();
 
@@ -1627,6 +1571,7 @@
                 particlesArray.push(
                     new Particle()
                 );
+
             }
         }
 
@@ -1653,18 +1598,24 @@
                         particlesArray[b].y;
 
                     let distance =
-                        Math.sqrt(dx * dx + dy * dy);
+                        Math.sqrt(
+                            dx * dx +
+                            dy * dy
+                        );
 
-                    if (distance < 220) {
+                    if (
+                        distance < 220
+                    ) {
 
                         let opacity =
                             (1 - (distance / 220))
-                            * 0.08;
+                            * 0.08; 
 
                         ctx.strokeStyle =
                             `rgba(203, 213, 225, ${opacity})`;
 
-                        ctx.lineWidth = 1.2;
+                        ctx.lineWidth =
+                            1.2; 
 
                         ctx.beginPath();
 
@@ -1696,18 +1647,25 @@
                         mouse.y;
 
                     let mDistance =
-                        Math.sqrt(mdx * mdx + mdy * mdy);
+                        Math.sqrt(
+                            mdx * mdx +
+                            mdy * mdy
+                        );
 
-                    if (mDistance < mouse.radius) {
+                    if (
+                        mDistance <
+                        mouse.radius
+                    ) {
 
                         let mOpacity =
                             (1 - (mDistance / mouse.radius))
                             * 0.12;
 
                         ctx.strokeStyle =
-                            `rgba(241, 245, 249, ${mOpacity})`;
+                            `rgba(241, 245, 249, ${mOpacity})`; 
 
-                        ctx.lineWidth = 1.0;
+                        ctx.lineWidth =
+                            1.0;
 
                         ctx.beginPath();
 
@@ -1744,11 +1702,14 @@
 
                 particlesArray[i].update();
                 particlesArray[i].draw();
+
             }
 
             connect();
 
-            requestAnimationFrame(animate);
+            requestAnimationFrame(
+                animate
+            );
         }
 
         init();
