@@ -1,1721 +1,1663 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thatchanon W. | Software Engineer Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg-dark-main: #0f1115;
-            --bg-card-dark: rgba(28, 31, 38, 0.85);
-            --border-tech: rgba(148, 163, 184, 0.25);
-            --tech-gray-light: #f1f5f9;
-            --tech-silver: #cbd5e1;
-            --tech-slate: #64748b;
-            --tech-green-muted: #86efac;
-            --text-light: #f8fafc;        
-            --text-muted: #94a3b8;        
-            --text-description: #e2e8f0;  
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thatchanon W. | Software Engineer Portfolio</title>
 
-        body {
-            font-family: 'Sarabun', sans-serif;
-            background-color: var(--bg-dark-main);
-            color: var(--text-light);
-            scroll-behavior: smooth;
-            position: relative;
-            overflow-x: hidden;
-        }
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
-        #bg-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -1;
-            pointer-events: none;
-        }
+<style>
+:root{
+    --bg:#0f1115;
+    --card:rgba(28,31,38,.85);
+    --border:rgba(148,163,184,.25);
+    --light:#f8fafc;
+    --silver:#cbd5e1;
+    --muted:#94a3b8;
+    --desc:#e2e8f0;
+    --green:#86efac;
+}
 
-        .code-font {
-            font-family: 'JetBrains Mono', 'Sarabun', monospace;
-        }
+*{box-sizing:border-box}
 
-        .a4-container {
-            width: 100%;
-            max-width: 1140px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
+html{scroll-behavior:smooth}
 
-        .navbar {
-            background-color: rgba(15, 17, 21, 0.9) !important;
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-tech);
-            padding: 15px 0;
-            z-index: 1050;
-        }
+body{
+    margin:0;
+    font-family:'Sarabun',sans-serif;
+    background:var(--bg);
+    color:var(--light);
+    overflow-x:hidden;
+}
 
-        .navbar-brand {
-            font-family: 'JetBrains Mono', sans-serif;
-            letter-spacing: 0.5px;
-            font-size: 1.1rem;
-            color: var(--text-light) !important;
-        }
+#bg-canvas{
+    position:fixed;
+    inset:0;
+    width:100vw;
+    height:100vh;
+    z-index:-1;
+    pointer-events:none;
+}
 
-        .nav-link { 
-            color: var(--text-muted) !important; 
-            font-size: 0.9rem; 
-            transition: all 0.2s ease;
-            font-weight: 500;
-        }
+.code-font{font-family:'JetBrains Mono','Sarabun',monospace}
 
-        .nav-link:hover {
-            color: var(--tech-gray-light) !important;
-        }
+.a4-container{
+    width:100%;
+    max-width:1140px;
+    margin:auto;
+    position:relative;
+    z-index:1;
+}
 
-        .profile-header-card {
-            background: var(--bg-card-dark);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            border: 1px solid var(--border-tech);
-            overflow: hidden;
-            margin-bottom: 35px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            position: relative;
-        }
+/* Navbar */
+.navbar{
+    background:rgba(15,17,21,.9)!important;
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+    padding:15px 0;
+    z-index:1050;
+}
 
-        .profile-banner {
-            background: radial-gradient(circle at top right, rgba(47, 54, 66, 0.8), rgba(15, 17, 21, 0.9));
-            padding: 50px 40px;
-            border-bottom: 1px solid var(--border-tech);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-        }
-        
-        .profile-banner::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-            background-size: 25px 25px;
-            pointer-events: none;
-        }
+.navbar-brand{
+    font-family:'JetBrains Mono',sans-serif;
+    font-size:1.1rem;
+    letter-spacing:.5px;
+    color:var(--light)!important;
+}
 
-        .profile-banner h1 { 
-            font-family: 'JetBrains Mono', sans-serif;
-            font-size: 3.2rem; 
-            font-weight: 700; 
-            margin: 5px 0; 
-            letter-spacing: -1px;
-            background: linear-gradient(to right, #ffffff, #94a3b8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .profile-img-circle {
-            width: 140px;
-            height: 140px;
-            border-radius: 12px;
-            border: 2px solid var(--border-tech);
-            object-fit: cover;
-            flex-shrink: 0;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
-        }
+.nav-link{
+    color:var(--muted)!important;
+    font-size:.9rem;
+    font-weight:500;
+    transition:.2s;
+}
 
-        .typed-cursor {
-            opacity: 1;
-            animation: blink 0.7s infinite;
-            color: var(--tech-silver);
-            margin-left: 2px;
-        }
+.nav-link:hover{color:var(--light)!important}
 
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0; }
-            100% { opacity: 1; }
-        }
+/* Profile */
+.profile-header-card,
+.custom-card,
+.skill-cat-card,
+.contact-section-card{
+    background:var(--card);
+    backdrop-filter:blur(10px);
+    border:1px solid var(--border);
+}
 
-        .status-badge {
-            background-color: rgba(134, 239, 172, 0.1);
-            color: var(--tech-green-muted);
-            border: 1px solid rgba(134, 239, 172, 0.25);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-weight: 500;
-        }
+.profile-header-card{
+    border-radius:16px;
+    overflow:hidden;
+    margin-bottom:35px;
+    box-shadow:0 10px 30px rgba(0,0,0,.5);
+}
 
-        .status-dot {
-            width: 6px; height: 6px; background-color: var(--tech-green-muted); border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
+.profile-banner{
+    position:relative;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:50px 40px;
+    border-bottom:1px solid var(--border);
+    background:radial-gradient(circle at top right,rgba(47,54,66,.8),rgba(15,17,21,.9));
+}
 
-        @keyframes pulse {
-            0% { opacity: 0.4; } 50% { opacity: 1; } 100% { opacity: 0.4; }
-        }
+.profile-banner:before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background-image:
+        linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);
+    background-size:25px 25px;
+    pointer-events:none;
+}
 
-        .section-title-box {
-            font-family: 'JetBrains Mono', sans-serif;
-            background-color: rgba(51, 65, 85, 0.8);
-            color: var(--tech-silver);
-            padding: 5px 12px;
-            border-radius: 6px;
-            display: inline-block;
-            margin-bottom: 20px;
-            font-weight: 600;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            border: 1px solid var(--border-tech);
-            letter-spacing: 1px;
-        }
+.profile-banner h1{
+    font-family:'JetBrains Mono',sans-serif;
+    font-size:3.2rem;
+    font-weight:700;
+    margin:5px 0;
+    letter-spacing:-1px;
+    background:linear-gradient(to right,#fff,#94a3b8);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
 
-        .readable-description {
-            color: var(--text-description);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
+.profile-img-circle{
+    width:140px;
+    height:140px;
+    border-radius:12px;
+    border:2px solid var(--border);
+    object-fit:cover;
+    flex-shrink:0;
+    box-shadow:0 0 20px rgba(255,255,255,.05);
+}
 
-        .info-label { font-weight: 600; color: var(--text-light); width: 100px; display: inline-block; font-size: 0.95rem; }
-        .info-value { color: var(--text-light); font-size: 0.95rem; }
+.status-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:4px 12px;
+    border-radius:20px;
+    background:rgba(134,239,172,.1);
+    color:var(--green);
+    border:1px solid rgba(134,239,172,.25);
+    font-size:.8rem;
+    font-weight:500;
+}
 
-        .tech-timeline {
-            position: relative;
-            padding-left: 35px;
-            margin-left: 15px;
-            border-left: 2px solid var(--border-tech);
-        }
+.status-dot{
+    width:6px;
+    height:6px;
+    background:var(--green);
+    border-radius:50%;
+    animation:pulse 2s infinite;
+}
 
-        .timeline-item {
-            position: relative;
-            margin-bottom: 40px;
-        }
+@keyframes pulse{
+    0%,100%{opacity:.4}
+    50%{opacity:1}
+}
 
-        .timeline-item:last-child {
-            margin-bottom: 10px;
-        }
+.typed-cursor{
+    color:var(--silver);
+    margin-left:2px;
+    animation:blink .7s infinite;
+}
 
-        .timeline-icon {
-            position: absolute;
-            left: -53px;
-            top: 2px;
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            background: #0f1115;
-            border: 2px solid var(--tech-silver);
-            color: var(--tech-silver);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.85rem;
-            z-index: 2;
-        }
+@keyframes blink{
+    0%,100%{opacity:1}
+    50%{opacity:0}
+}
 
-        .timeline-year {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--tech-silver);
-            margin-bottom: 6px;
-            letter-spacing: 0.5px;
-        }
+/* Common */
+.section-title-box{
+    display:inline-block;
+    margin-bottom:20px;
+    padding:5px 12px;
+    border-radius:6px;
+    background:rgba(51,65,85,.8);
+    border:1px solid var(--border);
+    color:var(--silver);
+    font-family:'JetBrains Mono',sans-serif;
+    font-size:.75rem;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
 
-        .timeline-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text-light);
-            margin-bottom: 6px;
-        }
+.readable-description{
+    color:var(--desc);
+    font-size:.95rem;
+    line-height:1.6;
+}
 
-        .timeline-subtitle {
-            font-size: 1rem;
-            font-weight: 500;
-            color: var(--text-muted);
-            margin-bottom: 10px;
-        }
+.info-label{
+    display:inline-block;
+    width:100px;
+    color:var(--light);
+    font-size:.95rem;
+    font-weight:600;
+}
 
-        .timeline-desc {
-            color: var(--text-description);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            max-width: 850px;
-        }
+.info-value{
+    color:var(--light);
+    font-size:.95rem;
+}
 
-        .skill-cat-card {
-            background: var(--bg-card-dark);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-tech);
-            border-radius: 10px;
-            padding: 20px;
-            height: 100%;
-            transition: all 0.2s ease;
-        }
+/* Contact */
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
 
-        .skill-cat-card:hover {
-            border-color: var(--tech-silver);
-            transform: translateY(-2px);
-        }
+.contact-item-box{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:14px;
+    background:rgba(51,65,85,.2);
+    border:1px solid var(--border);
+    border-radius:10px;
+    color:inherit;
+    text-decoration:none;
+    transition:.2s;
+}
 
-        .skill-cat-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-            font-weight: 600;
-        }
+.contact-item-box:hover{
+    background:rgba(51,65,85,.4);
+    border-color:var(--silver);
+    color:var(--light)!important;
+}
 
-        .skill-badge-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
+.contact-icon-circle{
+    width:32px;
+    height:32px;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:6px;
+    background:rgba(51,65,85,.5);
+    border:1px solid var(--border);
+    color:var(--light);
+    font-size:.9rem;
+}
 
-        .skill-tag {
-            background: rgba(15, 17, 21, 0.6);
-            border: 1px solid var(--border-tech);
-            color: var(--text-light);
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            font-family: 'JetBrains Mono', monospace;
-        }
+/* Timeline */
+.tech-timeline{
+    position:relative;
+    margin-left:15px;
+    padding-left:35px;
+    border-left:2px solid var(--border);
+}
 
-        .contact-grid { 
-            display: grid; 
-            grid-template-columns: repeat(2, 1fr); 
-            gap: 12px; 
-        }
+.timeline-item{
+    position:relative;
+    margin-bottom:40px;
+}
 
-        .contact-item-box {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 14px;
-            background: rgba(51, 65, 85, 0.2);
-            border-radius: 10px;
-            border: 1px solid var(--border-tech);
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.2s ease;
-        }
+.timeline-item:last-child{margin-bottom:10px}
 
-        .contact-item-box:hover {
-            background: rgba(51, 65, 85, 0.4);
-            border-color: var(--tech-silver);
-            color: var(--tech-gray-light) !important;
-        }
+.timeline-icon{
+    position:absolute;
+    left:-53px;
+    top:2px;
+    width:34px;
+    height:34px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:var(--bg);
+    border:2px solid var(--silver);
+    color:var(--silver);
+    font-size:.85rem;
+    z-index:2;
+}
 
-        .contact-icon-circle {
-            width: 32px; height: 32px; border-radius: 6px; background: rgba(51, 65, 85, 0.5); color: var(--text-light);
-            display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0;
-            border: 1px solid var(--border-tech);
-        }
+.timeline-year{
+    margin-bottom:6px;
+    color:var(--silver);
+    font-family:'JetBrains Mono',monospace;
+    font-size:.95rem;
+    font-weight:700;
+}
 
-        .custom-card { 
-            border: 1px solid var(--border-tech); 
-            border-radius: 12px; 
-            background: var(--bg-card-dark); 
-            backdrop-filter: blur(10px);
-            overflow: hidden; 
-            height: 100%; 
-            transition: all 0.3s ease;
-        }
+.timeline-title{
+    margin-bottom:6px;
+    color:var(--light);
+    font-size:1.25rem;
+    font-weight:700;
+}
 
-        .custom-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--tech-silver);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-        }
-        
-        .cert-img-wrapper { 
-            height: 180px; 
-            background-color: #0f1115; 
-            border-bottom: 1px solid var(--border-tech); 
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
+.timeline-subtitle{
+    margin-bottom:10px;
+    color:var(--muted);
+    font-size:1rem;
+    font-weight:500;
+}
 
-        .cert-img { 
-            max-width: 100%; 
-            max-height: 100%; 
-            object-fit: cover; 
-            width: 100%;
-            height: 100%;
-            transition: transform 0.3s ease;
-            filter: grayscale(20%);
-        }
+.timeline-desc{
+    max-width:850px;
+    color:var(--desc);
+    font-size:.95rem;
+    line-height:1.6;
+}
 
-        .custom-card:hover .cert-img {
-            transform: scale(1.05);
-            filter: grayscale(0%);
-        }
+/* Skills */
+.skill-cat-card{
+    height:100%;
+    padding:20px;
+    border-radius:10px;
+    transition:.2s;
+}
 
-        .project-tag {
-            font-size: 0.7rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            padding: 4px 10px;
-            border-radius: 4px;
-            display: inline-block;
-            margin-bottom: 12px;
-            font-family: 'JetBrains Mono', monospace;
-            background: rgba(255, 255, 255, 0.08); 
-            color: var(--tech-silver); 
-            border: 1px solid var(--border-tech);
-        }
+.skill-cat-card:hover{
+    border-color:var(--silver);
+    transform:translateY(-2px);
+}
 
-        .project-tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 15px;
-        }
+.skill-cat-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:15px;
+    font-size:.95rem;
+    font-weight:600;
+}
 
-        .tech-pill {
-            font-size: 0.72rem;
-            background: #0f1115;
-            border: 1px solid var(--border-tech);
-            color: var(--tech-silver);
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-family: 'JetBrains Mono', monospace;
-        }
+.skill-badge-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+}
 
-        .gpa-box {
-            background: #0f1115;
-            border: 1px solid var(--border-tech);
-            padding: 10px;
-            border-radius: 8px;
-            text-align: center;
-        }
+.skill-tag{
+    padding:4px 10px;
+    border-radius:6px;
+    background:rgba(15,17,21,.6);
+    border:1px solid var(--border);
+    color:var(--light);
+    font-family:'JetBrains Mono',monospace;
+    font-size:.8rem;
+}
 
-        .contact-section-card {
-            background: var(--bg-card-dark);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-tech);
-            border-radius: 16px;
-            padding: 45px 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-        }
+/* Cards */
+.custom-card{
+    height:100%;
+    overflow:hidden;
+    border-radius:12px;
+    transition:.3s;
+}
 
-        .contact-section-card h2 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--text-light);
-            letter-spacing: -0.5px;
-        }
+.custom-card:hover{
+    transform:translateY(-4px);
+    border-color:var(--silver);
+    box-shadow:0 10px 25px rgba(0,0,0,.4);
+}
 
-        .btn-tech-mail {
-            background-color: var(--tech-gray-light);
-            color: #0f1115 !important;
-            font-weight: 600;
-            border: 1px solid var(--tech-gray-light);
-            padding: 12px 28px;
-            border-radius: 30px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.2s ease;
-            text-decoration: none;
-        }
+.cert-img-wrapper{
+    position:relative;
+    height:180px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    background:var(--bg);
+    border-bottom:1px solid var(--border);
+}
 
-        .btn-tech-mail:hover {
-            background-color: transparent;
-            color: var(--tech-gray-light) !important;
-        }
+.cert-img{
+    width:100%;
+    height:100%;
+    max-width:100%;
+    max-height:100%;
+    object-fit:cover;
+    filter:grayscale(20%);
+    transition:.3s;
+}
 
-        .form-tech-label {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            font-weight: 500;
-            margin-bottom: 8px;
-        }
+.custom-card:hover .cert-img{
+    transform:scale(1.05);
+    filter:grayscale(0);
+}
 
-        .form-tech-input {
-            background-color: rgba(15, 17, 21, 0.6) !important;
-            border: 1px solid var(--border-tech) !important;
-            color: var(--text-light) !important;
-            padding: 12px 16px;
-            border-radius: 10px;
-            font-size: 0.95rem;
-            transition: all 0.2s ease;
-        }
+.project-tag{
+    display:inline-block;
+    margin-bottom:12px;
+    padding:4px 10px;
+    border-radius:4px;
+    background:rgba(255,255,255,.08);
+    border:1px solid var(--border);
+    color:var(--silver);
+    font-family:'JetBrains Mono',monospace;
+    font-size:.7rem;
+    font-weight:600;
+    letter-spacing:.5px;
+}
 
-        .form-tech-input:focus {
-            background-color: rgba(15, 17, 21, 0.8) !important;
-            border-color: var(--tech-silver) !important;
-            box-shadow: 0 0 8px rgba(255, 255, 255, 0.1) !important;
-            outline: none;
-        }
+.project-tech-stack{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    margin-top:15px;
+}
 
-        .btn-form-submit {
-            background-color: transparent;
-            color: var(--tech-silver);
-            border: 1px solid var(--tech-silver);
-            padding: 12px 24px;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            width: 100%;
-            transition: all 0.2s ease;
-            font-family: 'JetBrains Mono', sans-serif;
-        }
+.tech-pill{
+    padding:2px 8px;
+    border-radius:4px;
+    background:var(--bg);
+    border:1px solid var(--border);
+    color:var(--silver);
+    font-family:'JetBrains Mono',monospace;
+    font-size:.72rem;
+}
 
-        .btn-form-submit:hover {
-            background-color: rgba(255, 255, 255, 0.05);
-            border-color: var(--tech-gray-light);
-        }
+.gpa-box{
+    padding:10px;
+    border-radius:8px;
+    background:var(--bg);
+    border:1px solid var(--border);
+    text-align:center;
+}
 
-        @media print {
-            .navbar, #contact-form-section, #bg-canvas { display: none !important; }
-            body { background-color: #ffffff; color: #000000; }
-        }
-    </style>
+/* Contact Form */
+.contact-section-card{
+    padding:45px 30px;
+    border-radius:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+.contact-section-card h2{
+    color:var(--light);
+    font-size:2.2rem;
+    font-weight:700;
+}
+
+.btn-tech-mail{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:12px 28px;
+    border-radius:30px;
+    background:var(--light);
+    border:1px solid var(--light);
+    color:var(--bg)!important;
+    font-weight:600;
+    text-decoration:none;
+    transition:.2s;
+}
+
+.btn-tech-mail:hover{
+    background:transparent;
+    color:var(--light)!important;
+}
+
+.form-tech-label{
+    display:block;
+    margin-bottom:8px;
+    color:var(--muted);
+    font-size:.95rem;
+    font-weight:500;
+}
+
+.form-tech-input{
+    padding:12px 16px;
+    border-radius:10px;
+    background:rgba(15,17,21,.6)!important;
+    border:1px solid var(--border)!important;
+    color:var(--light)!important;
+    font-size:.95rem;
+}
+
+.form-tech-input:focus{
+    background:rgba(15,17,21,.8)!important;
+    border-color:var(--silver)!important;
+    box-shadow:0 0 8px rgba(255,255,255,.1)!important;
+}
+
+.btn-form-submit{
+    width:100%;
+    padding:12px 24px;
+    border-radius:10px;
+    background:transparent;
+    border:1px solid var(--silver);
+    color:var(--silver);
+    font-family:'JetBrains Mono',sans-serif;
+    font-size:.95rem;
+    font-weight:600;
+}
+
+.btn-form-submit:hover{
+    background:rgba(255,255,255,.05);
+    border-color:var(--light);
+}
+
+@media print{
+    .navbar,#contact-form-section,#bg-canvas{display:none!important}
+    body{background:#fff;color:#000}
+}
+
+@media(max-width:576px){
+    .profile-banner{
+        padding:35px 20px;
+    }
+
+    .profile-banner h1{
+        font-size:2rem;
+    }
+
+    .profile-img-circle{
+        width:95px;
+        height:95px;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <canvas id="bg-canvas"></canvas>
-
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-uppercase d-flex align-items-center" href="#">
-                <i class="fa-solid fa-code text-secondary me-2"></i>&lt;Thatchanon.W /&gt;
-            </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto gap-2 list-unstyled mb-0">
-                    <li class="nav-item"><a class="nav-link px-3" href="#profile"><i class="fa-regular fa-circle-user me-1"></i> About</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="#education"><i class="fa-solid fa-graduation-cap me-1"></i> Education</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="#skills"><i class="fa-solid fa-layer-group me-1"></i> Skills</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="#projects"><i class="fa-solid fa-cubes me-1"></i> Projects</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="#certificates"><i class="fa-regular fa-id-card me-1"></i> Certificates</a></li>
-                    <li class="nav-item"><a class="nav-link px-3 text-white fw-bold" href="#contact-form-section"><i class="fa-regular fa-envelope me-1"></i> Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="a4-container px-3 px-md-0 my-5">
-        
-        <section id="profile" class="mb-5">
-            <div class="profile-header-card">
-
-                <div class="profile-banner">
-                    <div>
-                        <div class="status-badge mb-2">
-                            <span class="status-dot"></span> Open for Software Developer Internship
-                        </div>
-
-                        <h1 class="code-font fw-bold">THATCHANON</h1>
-                        <h3 class="text-white-50 code-font fs-4">WAINIPLEE</h3>
-
-                        <p class="small mb-0 mt-2 code-font text-white-50">
-                            <span id="dynamic-text"></span><span class="typed-cursor">|</span>
-                        </p>
-                    </div>
-
-                    <img src="images/20.jpg"
-                         class="profile-img-circle"
-                         alt="นายฐัฏชนนท์ วัยนิพลี"
-                         onerror="this.src='https://via.placeholder.com/140?text=Profile'">
-                </div>
-
-                <div class="p-4">
-                    <div class="row g-4">
-
-                        <div class="col-lg-4">
-
-                            <div class="section-title-box">Personal Info</div>
-
-                            <h5 class="fw-bold text-white mb-3">
-                                นายฐัฏชนนท์ วัยนิพลี
-                            </h5>
-
-                            <p class="readable-description mb-3">
-                                นักศึกษาคณะวิศวกรรมศาสตร์ สาขาวิชาวิศวกรรมคอมพิวเตอร์
-                                มุ่งมั่นพัฒนาทักษะสายงาน Front-end Developer
-                                เน้นการสร้าง Web Application ที่มีประสิทธิภาพ สวยงาม
-                                ใช้งานง่าย และตอบโจทย์ผู้ใช้งานจริง
-                            </p>
-
-                            <div class="d-flex flex-column gap-2">
-                                <div>
-                                    <span class="info-label">ID:</span>
-                                    <span class="info-value code-font text-secondary fw-bold">
-                                        6612247017
-                                    </span>
-                                </div>
-
-                                <div>
-                                    <span class="info-label">Birthdate:</span>
-                                    <span class="info-value">20 มิ.ย. 2548</span>
-                                </div>
-
-                                <div>
-                                    <span class="info-label">Target Role:</span>
-                                    <span class="info-value text-white fw-bold">
-                                        Software Engineer
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 border-start border-end px-lg-4"
-                             style="border-color: var(--border-tech) !important;">
-
-                            <div class="section-title-box">Academic Scores</div>
-
-                            <div class="d-flex flex-column gap-3">
-
-                                <div class="p-3 rounded-3"
-                                     style="background: rgba(51, 65, 85, 0.2); border: 1px solid var(--border-tech);">
-
-                                    <span class="info-value d-block small mb-2 text-white-50">
-                                        มหาวิทยาลัยราชภัฏพิบูลสงคราม
-                                    </span>
+<canvas id="bg-canvas"></canvas>
 
-                                    <div class="row g-2">
-
-                                        <div class="col-6">
-                                            <div class="gpa-box">
-                                                <span class="d-block text-muted"
-                                                      style="font-size:0.65rem;">
-                                                    GPAX
-                                                </span>
-                                                <b class="text-white small">2.98</b>
-                                            </div>
-                                        </div>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+<div class="container">
 
-                                        <div class="col-6">
-                                            <div class="gpa-box">
-                                                <span class="d-block text-muted"
-                                                      style="font-size:0.65rem;">
-                                                    Major
-                                                </span>
-                                                <b class="text-white small">3.32</b>
-                                            </div>
-                                        </div>
+<a class="navbar-brand fw-bold text-uppercase d-flex align-items-center" href="#">
+<i class="fa-solid fa-code text-secondary me-2"></i>&lt;Thatchanon.W /&gt;
+</a>
 
-                                    </div>
-                                </div>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+<span class="navbar-toggler-icon"></span>
+</button>
 
-                                <div class="d-flex align-items-center gap-3 px-2">
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto gap-2 list-unstyled mb-0">
 
-                                    <div class="contact-icon-circle">
-                                        <i class="fa-solid fa-school"></i>
-                                    </div>
+<li class="nav-item">
+<a class="nav-link px-3" href="#profile">
+<i class="fa-regular fa-circle-user me-1"></i> About
+</a>
+</li>
 
-                                    <div>
-                                        <div class="fw-bold text-white small">
-                                            มัธยมศึกษาตอนปลาย
-                                        </div>
+<li class="nav-item">
+<a class="nav-link px-3" href="#education">
+<i class="fa-solid fa-graduation-cap me-1"></i> Education
+</a>
+</li>
 
-                                        <span class="info-value d-block small"
-                                              style="color: var(--text-muted);">
-                                            โรงเรียนตะพานหิน
-                                        </span>
-                                    </div>
+<li class="nav-item">
+<a class="nav-link px-3" href="#skills">
+<i class="fa-solid fa-layer-group me-1"></i> Skills
+</a>
+</li>
 
-                                </div>
+<li class="nav-item">
+<a class="nav-link px-3" href="#projects">
+<i class="fa-solid fa-cubes me-1"></i> Projects
+</a>
+</li>
 
-                            </div>
-                        </div>
+<li class="nav-item">
+<a class="nav-link px-3" href="#certificates">
+<i class="fa-regular fa-id-card me-1"></i> Certificates
+</a>
+</li>
 
-                        <div class="col-lg-4">
+<li class="nav-item">
+<a class="nav-link px-3 text-white fw-bold" href="#contact-form-section">
+<i class="fa-regular fa-envelope me-1"></i> Contact
+</a>
+</li>
 
-                            <div class="section-title-box">Contact Channels</div>
+</ul>
+</div>
+</div>
+</nav>
 
-                            <div class="contact-grid">
 
-                                <!-- PHONE -->
-                                <a href="tel:0863539051"
-                                   class="contact-item-box">
+<div class="a4-container px-3 px-md-0 my-5">
 
-                                    <div class="contact-icon-circle">
-                                        <i class="fa-solid fa-phone"></i>
-                                    </div>
+<!-- PROFILE -->
+<section id="profile" class="mb-5">
 
-                                    <span class="fw-medium small code-font text-white">
-                                        086-3539051
-                                    </span>
+<div class="profile-header-card">
 
-                                </a>
+<div class="profile-banner">
 
-                                <!-- EMAIL -->
-                                <a href="mailto:thatchanon.w@psru.ac.th"
-                                   class="contact-item-box">
+<div>
 
-                                    <div class="contact-icon-circle">
-                                        <i class="fa-solid fa-envelope"></i>
-                                    </div>
+<div class="status-badge mb-2">
+<span class="status-dot"></span>
+Open for Software Developer Internship
+</div>
 
-                                    <span class="fw-medium small code-font text-white text-truncate"
-                                          style="max-width:110px;">
-                                        thatchanon.w
-                                    </span>
+<h1 class="code-font fw-bold">THATCHANON</h1>
+<h3 class="text-white-50 code-font fs-4">WAINIPLEE</h3>
 
-                                </a>
+<p class="small mb-0 mt-2 code-font text-white-50">
+<span id="dynamic-text"></span>
+<span class="typed-cursor">|</span>
+</p>
 
-                                <!-- INSTAGRAM -->
-                                <a href="https://www.instagram.com/mhxn_tcn?igsi=MTlpN3BrbmJ1Z2tmaQ%3D%3D&utm_source=qr"
-                                   target="_blank"
-                                   class="contact-item-box">
+</div>
 
-                                    <div class="contact-icon-circle">
-                                        <i class="fa-brands fa-instagram"></i>
-                                    </div>
+<img src="images/20.jpg"
+class="profile-img-circle"
+alt="นายฐัฏชนนท์ วัยนิพลี"
+onerror="this.src='https://via.placeholder.com/140?text=Profile'">
 
-                                    <span class="fw-medium small code-font text-white">
-                                        mhxn_tch
-                                    </span>
+</div>
 
-                                </a>
 
-                                <!-- FACEBOOK -->
-                                <a href="https://www.facebook.com/share/1Pesf98wzR/?mibextid=wwXIfr"
-                                   target="_blank"
-                                   class="contact-item-box">
+<div class="p-4">
 
-                                    <div class="contact-icon-circle">
-                                        <i class="fa-brands fa-facebook-f"></i>
-                                    </div>
+<div class="row g-4">
 
-                                    <span class="fw-medium small text-white text-truncate"
-                                          style="max-width:110px;">
-                                        Thatchanon Winiplee
-                                    </span>
+<!-- Personal -->
+<div class="col-lg-4">
 
-                                </a>
+<div class="section-title-box">Personal Info</div>
 
-                            </div>
-                        </div>
+<h5 class="fw-bold text-white mb-3">
+นายฐัฏชนนท์ วัยนิพลี
+</h5>
 
-                    </div>
-                </div>
-            </div>
-        </section>
+<p class="readable-description mb-3">
+นักศึกษาคณะวิศวกรรมศาสตร์ สาขาวิชาวิศวกรรมคอมพิวเตอร์
+มุ่งมั่นพัฒนาทักษะสายงาน Front-end Developer
+เน้นการสร้าง Web Application ที่มีประสิทธิภาพ สวยงาม
+ใช้งานง่าย และตอบโจทย์ผู้ใช้งานจริง
+</p>
 
-        <section id="education" class="mb-5">
+<div class="d-flex flex-column gap-2">
 
-            <div class="d-flex align-items-center mb-4">
-                <div class="section-title-box m-0">
-                    เส้นทางการศึกษา
-                </div>
-            </div>
+<div>
+<span class="info-label">ID:</span>
+<span class="info-value code-font text-secondary fw-bold">
+6612247017
+</span>
+</div>
 
-            <div class="tech-timeline">
+<div>
+<span class="info-label">Birthdate:</span>
+<span class="info-value">20 มิ.ย. 2548</span>
+</div>
 
-                <div class="timeline-item">
+<div>
+<span class="info-label">Target Role:</span>
+<span class="info-value text-white fw-bold">
+Software Engineer
+</span>
+</div>
 
-                    <div class="timeline-icon">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                    </div>
+</div>
+</div>
 
-                    <div class="timeline-year">
-                        2025 — ปัจจุบัน
-                    </div>
 
-                    <div class="timeline-title">
-                        วิศวกรรมคอมพิวเตอร์
-                    </div>
+<!-- Academic -->
+<div class="col-lg-4 border-start border-end px-lg-4"
+style="border-color:var(--border)!important">
 
-                    <div class="timeline-subtitle">
-                        มหาวิทยาลัยราชภัฏพิบูลสงคราม
-                    </div>
+<div class="section-title-box">Academic Scores</div>
 
-                    <div class="timeline-desc">
-                        เน้นศึกษาโครงสร้างสถาปัตยกรรมซอฟต์แวร์
-                        (Software Architecture) การออกแบบฐานข้อมูล
-                        และการนำระบบขึ้นคลาวด์โปรดักชัน
-                    </div>
+<div class="d-flex flex-column gap-3">
 
-                </div>
+<div class="p-3 rounded-3"
+style="background:rgba(51,65,85,.2);border:1px solid var(--border)">
 
-                <div class="timeline-item">
+<span class="info-value d-block small mb-2 text-white-50">
+มหาวิทยาลัยราชภัฏพิบูลสงคราม
+</span>
 
-                    <div class="timeline-icon">
-                        <i class="fa-solid fa-microchip"></i>
-                    </div>
+<div class="row g-2">
 
-                    <div class="timeline-year">
-                        2024
-                    </div>
+<div class="col-6">
+<div class="gpa-box">
+<span class="d-block text-muted" style="font-size:.65rem">
+GPAX
+</span>
+<b class="text-white small">2.98</b>
+</div>
+</div>
 
-                    <div class="timeline-title">
-                        วิจัยและพัฒนาสถาปัตยกรรมระบบ CPE AI CHAT BOT
-                    </div>
+<div class="col-6">
+<div class="gpa-box">
+<span class="d-block text-muted" style="font-size:.65rem">
+Major
+</span>
+<b class="text-white small">3.32</b>
+</div>
+</div>
 
-                    <div class="timeline-subtitle">
-                        ภาควิชาวิศวกรรมคอมพิวเตอร์
-                    </div>
+</div>
+</div>
 
-                    <div class="timeline-desc">
-                        ออกแบบและจัดการระบบโครงสร้าง API
-                        สำหรับเชื่อมโยงโมเดลภาษาขนาดใหญ่ (LLM)
-                        เข้าสู่ระบบหลังบ้านของซอฟต์แวร์แชทบอทประจำภาควิชา
-                    </div>
 
-                </div>
+<div class="d-flex align-items-center gap-3 px-2">
 
-                <div class="timeline-item">
+<div class="contact-icon-circle">
+<i class="fa-solid fa-school"></i>
+</div>
 
-                    <div class="timeline-icon">
-                        <i class="fa-solid fa-code"></i>
-                    </div>
+<div>
+<div class="fw-bold text-white small">
+มัธยมศึกษาตอนปลาย
+</div>
 
-                    <div class="timeline-year">
-                        2023
-                    </div>
+<span class="info-value d-block small"
+style="color:var(--muted)">
+โรงเรียนตะพานหิน
+</span>
 
-                    <div class="timeline-title">
-                        Python Essentials 1
-                    </div>
+</div>
+</div>
 
-                    <div class="timeline-subtitle">
-                        Cisco Networking Academy
-                    </div>
+</div>
+</div>
 
-                    <div class="timeline-desc">
-                        ผ่านการรับรองหลักสูตรการเขียนโปรแกรมด้วยภาษา Python
-                        และการจัดการโครงสร้างข้อมูลแบบ Object-Oriented Programming (OOP)
-                    </div>
 
-                </div>
+<!-- Contact -->
+<div class="col-lg-4">
 
-                <div class="timeline-item">
+<div class="section-title-box">Contact Channels</div>
 
-                    <div class="timeline-icon">
-                        <i class="fa-solid fa-school"></i>
-                    </div>
+<div class="contact-grid">
 
-                    <div class="timeline-year">
-                        2022
-                    </div>
+<!-- PHONE -->
+<a href="tel:+66863539051"
+class="contact-item-box">
 
-                    <div class="timeline-title">
-                        มัธยมศึกษาตอนปลาย
-                    </div>
+<div class="contact-icon-circle">
+<i class="fa-solid fa-phone"></i>
+</div>
 
-                    <div class="timeline-subtitle">
-                        สายวิทยาศาสตร์-คณิตศาสตร์
-                    </div>
+<span class="fw-medium small code-font text-white">
+086-3539051
+</span>
 
-                    <div class="timeline-desc">
-                        จุดเริ่มต้นของการเรียนรู้ตรรกศาสตร์และการเขียนอัลกอริทึม
-                        ควบคุมซอฟต์แวร์คอมพิวเตอร์เบื้องต้น
-                    </div>
+</a>
 
-                </div>
 
-            </div>
-        </section>
+<!-- EMAIL -->
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=thatchanon.w@psru.ac.th"
+target="_blank"
+class="contact-item-box">
 
-        <section id="skills" class="mb-5">
+<div class="contact-icon-circle">
+<i class="fa-solid fa-envelope"></i>
+</div>
 
-            <div class="d-flex align-items-center mb-4">
-                <div class="section-title-box m-0">
-                    Technical Skills
-                </div>
+<span class="fw-medium small code-font text-white text-truncate"
+style="max-width:110px">
+thatchanon.w
+</span>
 
-                <span class="small ms-3 code-font"
-                      style="color: var(--text-muted);">
-                    # core_stack
-                </span>
-            </div>
+</a>
 
-            <div class="row row-cols-1 row-cols-md-3 g-3">
 
-                <div class="col">
+<!-- INSTAGRAM -->
+<a href="https://www.instagram.com/mhxn_tcn?igsi=MTlpN3BrbmJ1Z2tmaQ%3D%3D&utm_source=qr"
+target="_blank"
+class="contact-item-box">
 
-                    <div class="skill-cat-card">
+<div class="contact-icon-circle">
+<i class="fa-brands fa-instagram"></i>
+</div>
 
-                        <div class="skill-cat-header text-white">
+<span class="fw-medium small code-font text-white">
+mhxn_tcn
+</span>
 
-                            <span>
-                                <i class="fa-solid fa-code me-2"></i>
-                                Web Development
-                            </span>
+</a>
 
-                            <span class="badge code-font"
-                                  style="font-size:0.7rem; background:rgba(255,255,255,0.1); color:var(--tech-silver)">
-                                8 skills
-                            </span>
 
-                        </div>
+<!-- FACEBOOK -->
+<a href="https://www.facebook.com/share/1Pesf98wzR/?mibextid=wwXIfr"
+target="_blank"
+class="contact-item-box">
 
-                        <div class="skill-badge-container">
-                            <span class="skill-tag">HTML5/CSS3</span>
-                            <span class="skill-tag">JavaScript ES6</span>
-                            <span class="skill-tag">Node.js</span>
-                            <span class="skill-tag">Express.js</span>
-                            <span class="skill-tag">React.js</span>
-                            <span class="skill-tag">Next.js</span>
-                            <span class="skill-tag">RESTful APIs</span>
-                            <span class="skill-tag">Bootstrap</span>
-                        </div>
+<div class="contact-icon-circle">
+<i class="fa-brands fa-facebook-f"></i>
+</div>
 
-                    </div>
-                </div>
+<span class="fw-medium small text-white text-truncate"
+style="max-width:110px">
+Thatchanon Winiplee
+</span>
 
-                <div class="col">
+</a>
 
-                    <div class="skill-cat-card">
+</div>
+</div>
 
-                        <div class="skill-cat-header text-white">
+</div>
+</div>
+</div>
+</section>
 
-                            <span>
-                                <i class="fa-solid fa-database me-2"></i>
-                                Databases & Tools
-                            </span>
 
-                            <span class="badge code-font"
-                                  style="font-size:0.7rem; background:rgba(255,255,255,0.1); color:var(--tech-silver)">
-                                6 skills
-                            </span>
+<!-- EDUCATION -->
+<section id="education" class="mb-5">
 
-                        </div>
+<div class="d-flex align-items-center mb-4">
+<div class="section-title-box m-0">
+เส้นทางการศึกษา
+</div>
+</div>
 
-                        <div class="skill-badge-container">
-                            <span class="skill-tag">MySQL</span>
-                            <span class="skill-tag">MongoDB</span>
-                            <span class="skill-tag">Git / GitHub</span>
-                            <span class="skill-tag">Docker</span>
-                            <span class="skill-tag">Postman</span>
-                            <span class="skill-tag">Prisma ORM</span>
-                        </div>
+<div class="tech-timeline">
 
-                    </div>
-                </div>
+<div class="timeline-item">
+<div class="timeline-icon">
+<i class="fa-solid fa-graduation-cap"></i>
+</div>
 
-                <div class="col">
+<div class="timeline-year">2025 — ปัจจุบัน</div>
+<div class="timeline-title">วิศวกรรมคอมพิวเตอร์</div>
+<div class="timeline-subtitle">
+มหาวิทยาลัยราชภัฏพิบูลสงคราม
+</div>
 
-                    <div class="skill-cat-card">
+<div class="timeline-desc">
+เน้นศึกษาโครงสร้างสถาปัตยกรรมซอฟต์แวร์
+(Software Architecture) การออกแบบฐานข้อมูล
+และการนำระบบขึ้นคลาวด์โปรดักชัน
+</div>
+</div>
 
-                        <div class="skill-cat-header text-white">
 
-                            <span>
-                                <i class="fa-solid fa-gears me-2"></i>
-                                Engineering Core
-                            </span>
+<div class="timeline-item">
+<div class="timeline-icon">
+<i class="fa-solid fa-microchip"></i>
+</div>
 
-                            <span class="badge bg-secondary code-font"
-                                  style="font-size:0.7rem">
-                                5 skills
-                            </span>
+<div class="timeline-year">2024</div>
 
-                        </div>
+<div class="timeline-title">
+วิจัยและพัฒนาสถาปัตยกรรมระบบ CPE AI CHAT BOT
+</div>
 
-                        <div class="skill-badge-container">
-                            <span class="skill-tag">OOP Concept</span>
-                            <span class="skill-tag">Python Dev</span>
-                            <span class="skill-tag">Data Structures</span>
-                            <span class="skill-tag">Software Testing</span>
-                            <span class="skill-tag">Agile/Scrum</span>
-                        </div>
+<div class="timeline-subtitle">
+ภาควิชาวิศวกรรมคอมพิวเตอร์
+</div>
 
-                    </div>
-                </div>
+<div class="timeline-desc">
+ออกแบบและจัดการระบบโครงสร้าง API
+สำหรับเชื่อมโยงโมเดลภาษาขนาดใหญ่ (LLM)
+เข้าสู่ระบบหลังบ้านของซอฟต์แวร์แชทบอทประจำภาควิชา
+</div>
+</div>
 
-            </div>
-        </section>
 
-        <section id="projects" class="mb-5">
+<div class="timeline-item">
+<div class="timeline-icon">
+<i class="fa-solid fa-code"></i>
+</div>
 
-            <div class="d-flex align-items-center mb-4">
-                <div class="section-title-box m-0">
-                    Project Experience
-                </div>
-            </div>
+<div class="timeline-year">2023</div>
 
-            <div class="row row-cols-1 row-cols-md-3 g-3">
+<div class="timeline-title">
+Python Essentials 1
+</div>
 
-                <div class="col">
+<div class="timeline-subtitle">
+Cisco Networking Academy
+</div>
 
-                    <div class="custom-card">
+<div class="timeline-desc">
+ผ่านการรับรองหลักสูตรการเขียนโปรแกรมด้วยภาษา Python
+และการจัดการโครงสร้างข้อมูลแบบ
+Object-Oriented Programming (OOP)
+</div>
+</div>
 
-                        <div class="cert-img-wrapper">
-                            <img src="images/11.png"
-                                 class="cert-img"
-                                 alt="WasteCoin Backend System"
-                                 onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Backend+System'">
-                        </div>
 
-                        <div class="p-4">
+<div class="timeline-item">
+<div class="timeline-icon">
+<i class="fa-solid fa-school"></i>
+</div>
 
-                            <span class="project-tag">
-                                FRONTEND DEVELOP
-                            </span>
+<div class="timeline-year">2022</div>
 
-                            <h5 class="fw-bold text-white mb-2 fs-6">
-                                CPE AI Chat Bot
-                            </h5>
+<div class="timeline-title">
+มัธยมศึกษาตอนปลาย
+</div>
 
-                            <p class="small lh-base mb-0"
-                               style="color: var(--text-description);">
-                                ทำงานร่วมกับเพื่อนในกลุ่มเพื่อเชื่อมต่อระบบ Back-end
-                                เข้ากับ Front-end UI •ดำเนินการวิจัยและแก้ไขข้อผิดพลาด
-                                (Debugging) เพื่อ พัฒนาประสิทธิภาพของระบบอย่างต่อเนื่อง
-                            </p>
+<div class="timeline-subtitle">
+สายวิทยาศาสตร์-คณิตศาสตร์
+</div>
 
-                            <div class="project-tech-stack">
-                                <span class="tech-pill">Node.js</span>
-                                <span class="tech-pill">Express</span>
-                                <span class="tech-pill">MongoDB</span>
-                            </div>
+<div class="timeline-desc">
+จุดเริ่มต้นของการเรียนรู้ตรรกศาสตร์และการเขียนอัลกอริทึม
+ควบคุมซอฟต์แวร์คอมพิวเตอร์เบื้องต้น
+</div>
+</div>
 
-                        </div>
-                    </div>
-                </div>
+</div>
+</section>
 
-                <div class="col">
 
-                    <div class="custom-card">
+<!-- SKILLS -->
+<section id="skills" class="mb-5">
 
-                        <div class="cert-img-wrapper">
-                            <img src="images/chatbot1.png"
-                                 class="cert-img"
-                                 alt="Smart Contract Integration"
-                                 onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Blockchain+Integration'">
-                        </div>
+<div class="d-flex align-items-center mb-4">
 
-                        <div class="p-4">
+<div class="section-title-box m-0">
+Technical Skills
+</div>
 
-                            <span class="project-tag">
-                                FRONTEND DEVELOP
-                            </span>
+<span class="small ms-3 code-font"
+style="color:var(--muted)">
+# core_stack
+</span>
 
-                            <h5 class="fw-bold text-white mb-2 fs-6">
-                                CPE AI Chat Bot
-                            </h5>
+</div>
 
-                            <p class="small lh-base mb-0"
-                               style="color: var(--text-description);">
-                                พัฒนาแชทบอทเฉพาะทางเพื่อให้ข้อมูลเกี่ยวกับการเรียน
-                                ในสาขาวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยราชภัฏพิบูล สงคราม
-                                •ใช้ Python ในการพัฒนา Back-end logic พร้อมระบบ
-                                Knowledge base และการเชื่อมต่อฐานข้อมูล
-                            </p>
 
-                            <div class="project-tech-stack">
-                                <span class="tech-pill">Solidity</span>
-                                <span class="tech-pill">Hardhat</span>
-                                <span class="tech-pill">Ethers.js</span>
-                            </div>
+<div class="row row-cols-1 row-cols-md-3 g-3">
 
-                        </div>
-                    </div>
-                </div>
+<div class="col">
+<div class="skill-cat-card">
 
-                <div class="col">
+<div class="skill-cat-header text-white">
+<span>
+<i class="fa-solid fa-code me-2"></i>
+Web Development
+</span>
 
-                    <div class="custom-card">
+<span class="badge code-font"
+style="font-size:.7rem;background:rgba(255,255,255,.1);color:var(--silver)">
+8 skills
+</span>
+</div>
 
-                        <div class="cert-img-wrapper">
-                            <img src="images/111.png"
-                                 class="cert-img"
-                                 alt="Fullstack Integration"
-                                 onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Fullstack+UI'">
-                        </div>
+<div class="skill-badge-container">
+<span class="skill-tag">HTML5/CSS3</span>
+<span class="skill-tag">JavaScript ES6</span>
+<span class="skill-tag">Node.js</span>
+<span class="skill-tag">Express.js</span>
+<span class="skill-tag">React.js</span>
+<span class="skill-tag">Next.js</span>
+<span class="skill-tag">RESTful APIs</span>
+<span class="skill-tag">Bootstrap</span>
+</div>
 
-                        <div class="p-4">
+</div>
+</div>
 
-                            <span class="project-tag">
-                                WEP DESIGN
-                            </span>
 
-                            <h5 class="fw-bold text-white mb-2 fs-6">
-                                PJ01
-                            </h5>
+<div class="col">
+<div class="skill-cat-card">
 
-                            <p class="small lh-base mb-0"
-                               style="color: var(--text-description);">
-                                ชื่อผลงาน: oslo.clothes
-                                (เว็บไซต์ร้านเสื้อผ้าสไตล์มินิมอล)
-                                •เครื่องมือที่ใช้: พัฒนาด้วย VS Code โดยใช้ภาษา
-                                HTML5, CSS3, และ JavaScript (Vanilla JS)
-                                แบบเขียนสด ไม่ใช้เฟรมเวิร์ก
-                                •Responsive Design (CSS Grid):
-                                หน้าเว็บปรับขนาดอัตโนมัติ รองรับการดูผ่านมือถือ
-                                แท็บเล็ต และคอมพิวเตอร์ได้อย่างสวยงาม
-                            </p>
+<div class="skill-cat-header text-white">
+<span>
+<i class="fa-solid fa-database me-2"></i>
+Databases & Tools
+</span>
 
-                            <div class="project-tech-stack">
-                                <span class="tech-pill">JavaScript</span>
-                                <span class="tech-pill">Bootstrap 5</span>
-                                <span class="tech-pill">Formspree API</span>
-                            </div>
+<span class="badge code-font"
+style="font-size:.7rem;background:rgba(255,255,255,.1);color:var(--silver)">
+6 skills
+</span>
+</div>
 
-                        </div>
-                    </div>
-                </div>
+<div class="skill-badge-container">
+<span class="skill-tag">MySQL</span>
+<span class="skill-tag">MongoDB</span>
+<span class="skill-tag">Git / GitHub</span>
+<span class="skill-tag">Docker</span>
+<span class="skill-tag">Postman</span>
+<span class="skill-tag">Prisma ORM</span>
+</div>
 
-            </div>
-        </section>
+</div>
+</div>
 
-        <section id="certificates" class="mb-5">
 
-            <div class="d-flex align-items-center mb-4">
-                <div class="section-title-box m-0">
-                    Certificates & Achievements
-                </div>
-            </div>
+<div class="col">
+<div class="skill-cat-card">
 
-            <div class="row row-cols-1 row-cols-md-3 g-3">
+<div class="skill-cat-header text-white">
+<span>
+<i class="fa-solid fa-gears me-2"></i>
+Engineering Core
+</span>
 
-                <div class="col">
+<span class="badge bg-secondary code-font"
+style="font-size:.7rem">
+5 skills
+</span>
+</div>
 
-                    <div class="custom-card">
+<div class="skill-badge-container">
+<span class="skill-tag">OOP Concept</span>
+<span class="skill-tag">Python Dev</span>
+<span class="skill-tag">Data Structures</span>
+<span class="skill-tag">Software Testing</span>
+<span class="skill-tag">Agile/Scrum</span>
+</div>
 
-                        <div class="cert-img-wrapper">
-                            <img src="images/01.png"
-                                 class="cert-img"
-                                 alt="Python Essentials 1 Certificate"
-                                 onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Python+Essentials+1'">
-                        </div>
+</div>
+</div>
 
-                        <div class="p-4">
+</div>
+</section>
 
-                            <div class="d-flex align-items-start gap-2">
 
-                                <div class="text-secondary mt-1">
-                                    <i class="fa-solid fa-certificate"></i>
-                                </div>
+<!-- PROJECTS -->
+<section id="projects" class="mb-5">
 
-                                <div>
+<div class="d-flex align-items-center mb-4">
+<div class="section-title-box m-0">
+Project Experience
+</div>
+</div>
 
-                                    <h6 class="fw-bold text-white mb-1 small">
-                                        Python Essentials Certificate
-                                    </h6>
+<div class="row row-cols-1 row-cols-md-3 g-3">
 
-                                    <p class="small mb-0 code-font"
-                                       style="font-size:0.75rem; color: var(--text-muted);">
-                                        Cisco Networking Academy
-                                    </p>
 
-                                </div>
+<!-- Project 1 -->
+<div class="col">
+<div class="custom-card">
 
-                            </div>
+<div class="cert-img-wrapper">
+<img src="images/11.png"
+class="cert-img"
+alt="WasteCoin Backend System"
+onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Backend+System'">
+</div>
 
-                        </div>
-                    </div>
-                </div>
+<div class="p-4">
 
-                <div class="col">
+<span class="project-tag">
+FRONTEND DEVELOP
+</span>
 
-                    <div class="custom-card">
+<h5 class="fw-bold text-white mb-2 fs-6">
+CPE AI Chat Bot
+</h5>
 
-                        <div class="cert-img-wrapper">
-                            <img src="images/02.png"
-                                 class="cert-img"
-                                 alt="Software Engineering MOOC"
-                                 onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Software+Engineering'">
-                        </div>
+<p class="small lh-base mb-0"
+style="color:var(--desc)">
+ทำงานร่วมกับเพื่อนในกลุ่มเพื่อเชื่อมต่อระบบ Back-end
+เข้ากับ Front-end UI •ดำเนินการวิจัยและแก้ไขข้อผิดพลาด
+(Debugging) เพื่อ พัฒนาประสิทธิภาพของระบบอย่างต่อเนื่อง
+</p>
 
-                        <div class="p-4">
+<div class="project-tech-stack">
+<span class="tech-pill">Node.js</span>
+<span class="tech-pill">Express</span>
+<span class="tech-pill">MongoDB</span>
+</div>
 
-                            <div class="d-flex align-items-start gap-2">
+</div>
+</div>
+</div>
 
-                                <div class="text-secondary mt-1">
-                                    <i class="fa-solid fa-laptop-code"></i>
-                                </div>
 
-                                <div>
+<!-- Project 2 -->
+<div class="col">
+<div class="custom-card">
 
-                                    <h6 class="fw-bold text-white mb-1 small">
-                                        Full-Stack Web Development Course
-                                    </h6>
+<div class="cert-img-wrapper">
+<img src="images/chatbot1.png"
+class="cert-img"
+alt="Smart Contract Integration"
+onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Blockchain+Integration'">
+</div>
 
-                                    <p class="small mb-0 code-font"
-                                       style="font-size:0.75rem; color: var(--text-muted);">
-                                        Online Tech Academy
-                                    </p>
+<div class="p-4">
 
-                                </div>
+<span class="project-tag">
+FRONTEND DEVELOP
+</span>
 
-                            </div>
+<h5 class="fw-bold text-white mb-2 fs-6">
+CPE AI Chat Bot
+</h5>
 
-                        </div>
-                    </div>
-                </div>
+<p class="small lh-base mb-0"
+style="color:var(--desc)">
+พัฒนาแชทบอทเฉพาะทางเพื่อให้ข้อมูลเกี่ยวกับการเรียน
+ในสาขาวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยราชภัฏพิบูลสงคราม
+•ใช้ Python ในการพัฒนา Back-end logic พร้อมระบบ
+Knowledge base และการเชื่อมต่อฐานข้อมูล
+</p>
 
-                <div class="col">
+<div class="project-tech-stack">
+<span class="tech-pill">Solidity</span>
+<span class="tech-pill">Hardhat</span>
+<span class="tech-pill">Ethers.js</span>
+</div>
 
-                    <div class="custom-card">
+</div>
+</div>
+</div>
 
-                        <div class="cert-img-wrapper">
-                            <img src="images/03.png"
-                                 class="cert-img"
-                                 alt="Programming Certificate"
-                                 onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=OOP+Programming'">
-                        </div>
 
-                        <div class="p-4">
+<!-- Project 3 -->
+<div class="col">
+<div class="custom-card">
 
-                            <div class="d-flex align-items-start gap-2">
+<div class="cert-img-wrapper">
+<img src="images/111.png"
+class="cert-img"
+alt="Fullstack Integration"
+onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Fullstack+UI'">
+</div>
 
-                                <div class="text-secondary mt-1">
-                                    <i class="fa-solid fa-code-branch"></i>
-                                </div>
+<div class="p-4">
 
-                                <div>
+<span class="project-tag">
+WEP DESIGN
+</span>
 
-                                    <h6 class="fw-bold text-white mb-1 small">
-                                        Object-Oriented Programming Fundamentals
-                                    </h6>
+<h5 class="fw-bold text-white mb-2 fs-6">
+PJ01
+</h5>
 
-                                    <p class="small mb-0 code-font"
-                                       style="font-size:0.75rem; color: var(--text-muted);">
-                                        CPE Academic Workshop
-                                    </p>
+<p class="small lh-base mb-0"
+style="color:var(--desc)">
+ชื่อผลงาน: oslo.clothes
+(เว็บไซต์ร้านเสื้อผ้าสไตล์มินิมอล)
+•เครื่องมือที่ใช้: พัฒนาด้วย VS Code โดยใช้ภาษา
+HTML5, CSS3, และ JavaScript (Vanilla JS)
+แบบเขียนสด ไม่ใช้เฟรมเวิร์ก
+•Responsive Design (CSS Grid):
+หน้าเว็บปรับขนาดอัตโนมัติ รองรับการดูผ่านมือถือ
+แท็บเล็ต และคอมพิวเตอร์ได้อย่างสวยงาม
+</p>
 
-                                </div>
+<div class="project-tech-stack">
+<span class="tech-pill">JavaScript</span>
+<span class="tech-pill">Bootstrap 5</span>
+<span class="tech-pill">Formspree API</span>
+</div>
 
-                            </div>
+</div>
+</div>
+</div>
 
-                        </div>
-                    </div>
-                </div>
+</div>
+</section>
 
-            </div>
-        </section>
 
-        <section id="contact-form-section" class="mb-4">
+<!-- CERTIFICATES -->
+<section id="certificates" class="mb-5">
 
-            <div class="contact-section-card text-center">
+<div class="d-flex align-items-center mb-4">
+<div class="section-title-box m-0">
+Certificates & Achievements
+</div>
+</div>
 
-                <h2>มาร่วมงานกัน</h2>
+<div class="row row-cols-1 row-cols-md-3 g-3">
 
-                <p class="readable-description mb-4 text-white-50">
-                    เปิดรับโอกาสฝึกงานและความร่วมมือด้าน
-                    <span style="color: var(--tech-silver);">
-                        Back-end Dev
-                    </span>,
-                    <span style="color: var(--tech-silver);">
-                        Full-Stack
-                    </span>
-                    และ
-                    <span style="color: var(--tech-silver);">
-                        Software Engineering
-                    </span>
-                </p>
-                
-                <a href="mailto:thatchanon.w@psru.ac.th?subject=ติดต่อร่วมงานจาก Software Portfolio"
-                   class="btn-tech-mail mb-5">
-                    <i class="fa-regular fa-envelope"></i>
-                    ส่งอีเมลถึงผม
-                </a>
 
-                <div class="row justify-content-center">
+<div class="col">
+<div class="custom-card">
 
-                    <div class="col-lg-7 text-start">
+<div class="cert-img-wrapper">
+<img src="images/01.png"
+class="cert-img"
+alt="Python Essentials 1 Certificate"
+onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Python+Essentials+1'">
+</div>
 
-                        <form action="https://formspree.io/f/xoqogwpe"
-                              method="POST">
+<div class="p-4">
+<div class="d-flex align-items-start gap-2">
 
-                            <input type="hidden"
-                                   name="_to"
-                                   value="thatchanon.w@psru.ac.th">
-                            
-                            <div class="mb-3">
+<div class="text-secondary mt-1">
+<i class="fa-solid fa-certificate"></i>
+</div>
 
-                                <label for="userName"
-                                       class="form-tech-label">
-                                    ชื่อของคุณ
-                                </label>
+<div>
+<h6 class="fw-bold text-white mb-1 small">
+Python Essentials Certificate
+</h6>
 
-                                <input type="text"
-                                       class="form-control form-tech-input"
-                                       id="userName"
-                                       name="name"
-                                       placeholder="ชื่อ-นามสกุล"
-                                       required>
+<p class="small mb-0 code-font"
+style="font-size:.75rem;color:var(--muted)">
+Cisco Networking Academy
+</p>
+</div>
 
-                            </div>
+</div>
+</div>
 
-                            <div class="mb-3">
+</div>
+</div>
 
-                                <label for="userEmail"
-                                       class="form-tech-label">
-                                    อีเมลติดต่อกลับ
-                                </label>
 
-                                <input type="email"
-                                       class="form-control form-tech-input"
-                                       id="userEmail"
-                                       name="email"
-                                       placeholder="you@example.com"
-                                       required>
+<div class="col">
+<div class="custom-card">
 
-                            </div>
+<div class="cert-img-wrapper">
+<img src="images/02.png"
+class="cert-img"
+alt="Software Engineering MOOC"
+onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Software+Engineering'">
+</div>
 
-                            <div class="mb-4">
+<div class="p-4">
+<div class="d-flex align-items-start gap-2">
 
-                                <label for="userMessage"
-                                       class="form-tech-label">
-                                    ข้อความ
-                                </label>
+<div class="text-secondary mt-1">
+<i class="fa-solid fa-laptop-code"></i>
+</div>
 
-                                <textarea class="form-control form-tech-input"
-                                          id="userMessage"
-                                          name="message"
-                                          rows="5"
-                                          placeholder="รายละเอียดโปรเจกต์หรืองานที่อยากติดต่อตำแหน่งพัฒนาซอฟต์แวร์..."
-                                          required></textarea>
+<div>
+<h6 class="fw-bold text-white mb-1 small">
+Full-Stack Web Development Course
+</h6>
 
-                            </div>
+<p class="small mb-0 code-font"
+style="font-size:.75rem;color:var(--muted)">
+Online Tech Academy
+</p>
+</div>
 
-                            <button type="submit"
-                                    class="btn btn-form-submit">
+</div>
+</div>
 
-                                <i class="fa-solid fa-paper-plane me-2"></i>
-                                SEND MESSAGE
+</div>
+</div>
 
-                            </button>
 
-                        </form>
+<div class="col">
+<div class="custom-card">
 
-                    </div>
-                </div>
+<div class="cert-img-wrapper">
+<img src="images/03.png"
+class="cert-img"
+alt="Programming Certificate"
+onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=OOP+Programming'">
+</div>
 
-            </div>
-        </section>
+<div class="p-4">
+<div class="d-flex align-items-start gap-2">
 
-        <footer class="text-center py-5 mt-5 border-top"
-                style="border-color: var(--border-tech) !important; color: var(--text-muted);">
+<div class="text-secondary mt-1">
+<i class="fa-solid fa-code-branch"></i>
+</div>
 
-            <p class="mb-0 small code-font">
-                &copy; 2026 Thatchanon Wainiplee.
-                Computer Engineering & Software Developer Portfolio.
-            </p>
+<div>
+<h6 class="fw-bold text-white mb-1 small">
+Object-Oriented Programming Fundamentals
+</h6>
 
-        </footer>
+<p class="small mb-0 code-font"
+style="font-size:.75rem;color:var(--muted)">
+CPE Academic Workshop
+</p>
+</div>
 
-    </div>
+</div>
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <script>
+</div>
+</div>
 
-        const words = [
-            "Computer Engineering Student",
-            "Full-Stack Developer",
-            "Software Engineer",
-            "Backend API Specialist"
-        ];
-        
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
+</div>
+</section>
 
-        const dynamicTextElem =
-            document.getElementById("dynamic-text");
-        
-        function typeEffect() {
 
-            const currentWord = words[wordIndex];
-            
-            if (isDeleting) {
+<!-- CONTACT -->
+<section id="contact-form-section" class="mb-4">
 
-                dynamicTextElem.textContent =
-                    currentWord.substring(0, charIndex - 1);
+<div class="contact-section-card text-center">
 
-                charIndex--;
+<h2>มาร่วมงานกัน</h2>
 
-            } else {
+<p class="readable-description mb-4 text-white-50">
+เปิดรับโอกาสฝึกงานและความร่วมมือด้าน
+<span style="color:var(--silver)">Back-end Dev</span>,
+<span style="color:var(--silver)">Full-Stack</span>
+และ
+<span style="color:var(--silver)">Software Engineering</span>
+</p>
 
-                dynamicTextElem.textContent =
-                    currentWord.substring(0, charIndex + 1);
 
-                charIndex++;
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=thatchanon.w@psru.ac.th&su=ติดต่อร่วมงานจาก%20Software%20Portfolio"
+target="_blank"
+class="btn-tech-mail mb-5">
 
+<i class="fa-regular fa-envelope"></i>
+ส่งอีเมลถึงผม
+
+</a>
+
+
+<div class="row justify-content-center">
+
+<div class="col-lg-7 text-start">
+
+<form action="https://formspree.io/f/xoqogwpe"
+method="POST">
+
+<input type="hidden"
+name="_to"
+value="thatchanon.w@psru.ac.th">
+
+
+<div class="mb-3">
+
+<label for="userName"
+class="form-tech-label">
+ชื่อของคุณ
+</label>
+
+<input type="text"
+class="form-control form-tech-input"
+id="userName"
+name="name"
+placeholder="ชื่อ-นามสกุล"
+required>
+
+</div>
+
+
+<div class="mb-3">
+
+<label for="userEmail"
+class="form-tech-label">
+อีเมลติดต่อกลับ
+</label>
+
+<input type="email"
+class="form-control form-tech-input"
+id="userEmail"
+name="email"
+placeholder="you@example.com"
+required>
+
+</div>
+
+
+<div class="mb-4">
+
+<label for="userMessage"
+class="form-tech-label">
+ข้อความ
+</label>
+
+<textarea
+class="form-control form-tech-input"
+id="userMessage"
+name="message"
+rows="5"
+placeholder="รายละเอียดโปรเจกต์หรืองานที่อยากติดต่อตำแหน่งพัฒนาซอฟต์แวร์..."
+required></textarea>
+
+</div>
+
+
+<button type="submit"
+class="btn btn-form-submit">
+
+<i class="fa-solid fa-paper-plane me-2"></i>
+SEND MESSAGE
+
+</button>
+
+</form>
+
+</div>
+</div>
+
+</div>
+</section>
+
+
+<footer class="text-center py-5 mt-5 border-top"
+style="border-color:var(--border)!important;color:var(--muted)">
+
+<p class="mb-0 small code-font">
+&copy; 2026 Thatchanon Wainiplee.
+Computer Engineering & Software Developer Portfolio.
+</p>
+
+</footer>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+/* ================================
+   TYPEWRITER
+================================ */
+
+const words=[
+    "Computer Engineering Student",
+    "Full-Stack Developer",
+    "Software Engineer",
+    "Backend API Specialist"
+];
+
+let wordIndex=0;
+let charIndex=0;
+let deleting=false;
+
+const dynamicText=document.getElementById("dynamic-text");
+
+function typeEffect(){
+
+    const word=words[wordIndex];
+
+    dynamicText.textContent=
+        deleting
+        ? word.substring(0,charIndex-1)
+        : word.substring(0,charIndex+1);
+
+    charIndex+=deleting?-1:1;
+
+    let speed=deleting?40:80;
+
+    if(!deleting && charIndex===word.length){
+        speed=2000;
+        deleting=true;
+    }
+
+    if(deleting && charIndex===0){
+        deleting=false;
+        wordIndex=(wordIndex+1)%words.length;
+        speed=400;
+    }
+
+    setTimeout(typeEffect,speed);
+}
+
+document.addEventListener(
+    "DOMContentLoaded",
+    typeEffect
+);
+
+
+/* ================================
+   INTERACTIVE BACKGROUND
+================================ */
+
+const canvas=document.getElementById("bg-canvas");
+const ctx=canvas.getContext("2d");
+
+let particles=[];
+const maxParticles=45;
+
+const mouse={
+    x:null,
+    y:null,
+    radius:220
+};
+
+function resizeCanvas(){
+
+    canvas.width=innerWidth;
+    canvas.height=innerHeight;
+
+    initParticles();
+}
+
+addEventListener("resize",resizeCanvas);
+
+addEventListener("mousemove",e=>{
+    mouse.x=e.clientX;
+    mouse.y=e.clientY;
+});
+
+addEventListener("mouseout",()=>{
+    mouse.x=null;
+    mouse.y=null;
+});
+
+
+class Particle{
+
+    constructor(){
+
+        this.x=Math.random()*canvas.width;
+        this.y=Math.random()*canvas.height;
+
+        this.size=Math.random()*3.5+1.5;
+
+        this.speedX=Math.random()*.4-.2;
+        this.speedY=Math.random()*.4-.2;
+    }
+
+
+    update(){
+
+        if(mouse.x!==null && mouse.y!==null){
+
+            const dx=mouse.x-this.x;
+            const dy=mouse.y-this.y;
+
+            const distance=Math.sqrt(dx*dx+dy*dy);
+
+            if(distance<mouse.radius && distance!==0){
+
+                const force=
+                    (mouse.radius-distance)/
+                    mouse.radius;
+
+                this.x+=(dx/distance)*force*1.8;
+                this.y+=(dy/distance)*force*1.8;
             }
-            
-            let typeSpeed =
-                isDeleting ? 40 : 80;
-            
-            if (
-                !isDeleting &&
-                charIndex === currentWord.length
-            ) {
-
-                typeSpeed = 2000;
-                isDeleting = true;
-
-            } 
-
-            else if (
-                isDeleting &&
-                charIndex === 0
-            ) {
-
-                isDeleting = false;
-                wordIndex =
-                    (wordIndex + 1) % words.length;
-
-                typeSpeed = 400;
-
-            }
-            
-            setTimeout(typeEffect, typeSpeed);
         }
-        
-        document.addEventListener(
-            "DOMContentLoaded",
-            () => {
-                typeEffect();
-            }
+
+        this.x+=this.speedX;
+        this.y+=this.speedY;
+
+        if(this.x>canvas.width || this.x<0)
+            this.speedX=-this.speedX;
+
+        if(this.y>canvas.height || this.y<0)
+            this.speedY=-this.speedY;
+    }
+
+
+    draw(){
+
+        ctx.fillStyle=
+            "rgba(203,213,225,.25)";
+
+        ctx.beginPath();
+
+        ctx.arc(
+            this.x,
+            this.y,
+            this.size,
+            0,
+            Math.PI*2
         );
 
+        ctx.fill();
+    }
+}
 
-        const canvas =
-            document.getElementById('bg-canvas');
 
-        const ctx =
-            canvas.getContext('2d');
+function initParticles(){
 
-        let particlesArray = [];
+    particles=[];
 
-        const maxParticles = 45; 
+    for(let i=0;i<maxParticles;i++)
+        particles.push(new Particle());
+}
 
-        const mouse = {
-            x: null,
-            y: null,
-            radius: 220 
-        };
 
-        canvas.width =
-            window.innerWidth;
+function connect(){
 
-        canvas.height =
-            window.innerHeight;
+    for(let a=0;a<particles.length;a++){
 
-        window.addEventListener(
-            'mousemove',
-            (event) => {
+        for(let b=a;b<particles.length;b++){
 
-                mouse.x =
-                    event.clientX;
+            const dx=
+                particles[a].x-particles[b].x;
 
-                mouse.y =
-                    event.clientY;
+            const dy=
+                particles[a].y-particles[b].y;
 
-            }
-        );
+            const distance=
+                Math.sqrt(dx*dx+dy*dy);
 
-        window.addEventListener(
-            'mouseout',
-            () => {
+            if(distance<220){
 
-                mouse.x = null;
-                mouse.y = null;
+                const opacity=
+                    (1-distance/220)*.08;
 
-            }
-        );
+                ctx.strokeStyle=
+                    `rgba(203,213,225,${opacity})`;
 
-        window.addEventListener(
-            'resize',
-            () => {
-
-                canvas.width =
-                    window.innerWidth;
-
-                canvas.height =
-                    window.innerHeight;
-
-                init();
-
-            }
-        );
-
-        class Particle {
-
-            constructor() {
-
-                this.x =
-                    Math.random() *
-                    canvas.width;
-
-                this.y =
-                    Math.random() *
-                    canvas.height;
-
-                this.size =
-                    Math.random() * 3.5 + 1.5; 
-
-                this.speedX =
-                    Math.random() * 0.4 - 0.2;
-
-                this.speedY =
-                    Math.random() * 0.4 - 0.2;
-
-                this.baseX =
-                    this.x;
-
-                this.baseY =
-                    this.y;
-            }
-
-            update() {
-
-                if (
-                    mouse.x != null &&
-                    mouse.y != null
-                ) {
-
-                    let dx =
-                        mouse.x - this.x;
-
-                    let dy =
-                        mouse.y - this.y;
-
-                    let distance =
-                        Math.sqrt(
-                            dx * dx +
-                            dy * dy
-                        );
-                    
-                    if (
-                        distance <
-                        mouse.radius
-                    ) {
-
-                        let force =
-                            (mouse.radius - distance)
-                            / mouse.radius;
-
-                        this.x +=
-                            (dx / distance) *
-                            force *
-                            1.8;
-
-                        this.y +=
-                            (dy / distance) *
-                            force *
-                            1.8;
-                    }
-                }
-
-                this.x +=
-                    this.speedX;
-
-                this.y +=
-                    this.speedY;
-
-                if (
-                    this.x > canvas.width ||
-                    this.x < 0
-                ) {
-                    this.speedX =
-                        -this.speedX;
-                }
-
-                if (
-                    this.y > canvas.height ||
-                    this.y < 0
-                ) {
-                    this.speedY =
-                        -this.speedY;
-                }
-            }
-
-            draw() {
-
-                ctx.fillStyle =
-                    'rgba(203, 213, 225, 0.25)'; 
+                ctx.lineWidth=1.2;
 
                 ctx.beginPath();
 
-                ctx.arc(
-                    this.x,
-                    this.y,
-                    this.size,
-                    0,
-                    Math.PI * 2
+                ctx.moveTo(
+                    particles[a].x,
+                    particles[a].y
                 );
 
-                ctx.fill();
-            }
-        }
-
-        function init() {
-
-            particlesArray = [];
-
-            for (
-                let i = 0;
-                i < maxParticles;
-                i++
-            ) {
-
-                particlesArray.push(
-                    new Particle()
+                ctx.lineTo(
+                    particles[b].x,
+                    particles[b].y
                 );
 
+                ctx.stroke();
             }
         }
 
-        function connect() {
 
-            for (
-                let a = 0;
-                a < particlesArray.length;
-                a++
-            ) {
+        if(mouse.x!==null && mouse.y!==null){
 
-                for (
-                    let b = a;
-                    b < particlesArray.length;
-                    b++
-                ) {
+            const dx=particles[a].x-mouse.x;
+            const dy=particles[a].y-mouse.y;
 
-                    let dx =
-                        particlesArray[a].x -
-                        particlesArray[b].x;
+            const distance=
+                Math.sqrt(dx*dx+dy*dy);
 
-                    let dy =
-                        particlesArray[a].y -
-                        particlesArray[b].y;
+            if(distance<mouse.radius){
 
-                    let distance =
-                        Math.sqrt(
-                            dx * dx +
-                            dy * dy
-                        );
+                const opacity=
+                    (1-distance/mouse.radius)*.12;
 
-                    if (
-                        distance < 220
-                    ) {
+                ctx.strokeStyle=
+                    `rgba(241,245,249,${opacity})`;
 
-                        let opacity =
-                            (1 - (distance / 220))
-                            * 0.08; 
+                ctx.lineWidth=1;
 
-                        ctx.strokeStyle =
-                            `rgba(203, 213, 225, ${opacity})`;
+                ctx.beginPath();
 
-                        ctx.lineWidth =
-                            1.2; 
+                ctx.moveTo(
+                    particles[a].x,
+                    particles[a].y
+                );
 
-                        ctx.beginPath();
+                ctx.lineTo(
+                    mouse.x,
+                    mouse.y
+                );
 
-                        ctx.moveTo(
-                            particlesArray[a].x,
-                            particlesArray[a].y
-                        );
-
-                        ctx.lineTo(
-                            particlesArray[b].x,
-                            particlesArray[b].y
-                        );
-
-                        ctx.stroke();
-                    }
-                }
-
-                if (
-                    mouse.x != null &&
-                    mouse.y != null
-                ) {
-
-                    let mdx =
-                        particlesArray[a].x -
-                        mouse.x;
-
-                    let mdy =
-                        particlesArray[a].y -
-                        mouse.y;
-
-                    let mDistance =
-                        Math.sqrt(
-                            mdx * mdx +
-                            mdy * mdy
-                        );
-
-                    if (
-                        mDistance <
-                        mouse.radius
-                    ) {
-
-                        let mOpacity =
-                            (1 - (mDistance / mouse.radius))
-                            * 0.12;
-
-                        ctx.strokeStyle =
-                            `rgba(241, 245, 249, ${mOpacity})`; 
-
-                        ctx.lineWidth =
-                            1.0;
-
-                        ctx.beginPath();
-
-                        ctx.moveTo(
-                            particlesArray[a].x,
-                            particlesArray[a].y
-                        );
-
-                        ctx.lineTo(
-                            mouse.x,
-                            mouse.y
-                        );
-
-                        ctx.stroke();
-                    }
-                }
+                ctx.stroke();
             }
         }
+    }
+}
 
-        function animate() {
 
-            ctx.clearRect(
-                0,
-                0,
-                canvas.width,
-                canvas.height
-            );
+function animate(){
 
-            for (
-                let i = 0;
-                i < particlesArray.length;
-                i++
-            ) {
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
 
-                particlesArray[i].update();
-                particlesArray[i].draw();
+    particles.forEach(p=>{
+        p.update();
+        p.draw();
+    });
 
-            }
+    connect();
 
-            connect();
+    requestAnimationFrame(animate);
+}
 
-            requestAnimationFrame(
-                animate
-            );
-        }
 
-        init();
-        animate();
-
-    </script>
+resizeCanvas();
+animate();
+</script>
 
 </body>
 </html>
