@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oslo.clothes - Minimal Clothing Store</title>
+    <style>
+        /* ตั้งค่าพื้นฐาน */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #FDFBF7;
+            color: #4A3B32;
+        }
+
+        /* Header */
+        header {
+            background-color: #E6D5C3;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 4px;
+            text-transform: lowercase;
+            font-weight: 300;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            color: #7A685C;
+        }
+
+        /* Container & Grid */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* Product Card */
+        .product-card {
+            background-color: #FFFFFF;
+            border: 1px solid #F0E6DC;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(74, 59, 50, 0.1);
+        }
+
+        .product-image-container {
+            width: 100%;
+            height: 400px;
+            background-color: #E6D5C3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .product-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-name {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .product-price {
+            color: #9E8472;
+            font-weight: bold;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .btn-detail {
+            display: inline-block;
+            background-color: #E6D5C3;
+            color: #4A3B32;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            width: 100%;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn-detail:hover {
+            background-color: #D4C0AD;
+        }
+
+        /* Modal (Popup) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background-color: #FDFBF7;
+            max-width: 700px;
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+            position: relative;
+            animation: fadeIn 0.3s ease;
+            display: flex;
+            flex-direction: row;
+        }
+
+        @media (max-width: 600px) {
+            .modal-content { flex-direction: column; }
+            .modal-img { height: 300px !important; width: 100% !important; }
+            .modal-details { width: 100% !important; padding: 20px; }
+        }
+
+        .modal-img {
+            width: 50%;
+            height: 450px;
+            object-fit: cover;
+            background-color: #E6D5C3;
+        }
+
+        .modal-details {
+            width: 50%;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .close-btn {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            font-size: 28px;
+            cursor: pointer;
+            color: #7A685C;
+        }
+
+        .modal-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .modal-price {
+            font-size: 1.3rem;
+            color: #9E8472;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .modal-size-info {
+            background-color: #FFFFFF;
+            border: 1px solid #F0E6DC;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #4A3B32;
+            color: #FDFBF7;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+            font-size: 0.85rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>oslo.clothes</h1>
+        <p>minimal & cozy everyday wear</p>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">New Arrivals</h2>
+        
+        <div class="product-grid">
+            
+            <script>
+                function handleImageError(img) {
+                    img.onerror = null;
+                    img.src = 'https://via.placeholder.com/400x500/E6D5C3/4A3B32?text=oslo.+clothes';
+                }
+            </script>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="images/20.jpg" alt="Knit Cardigan Sweater" onerror="handleImageError(this)">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Knit Cardigan Sweater</div>
+                    <div class="product-price">฿320.00</div>
+                    <button class="btn-detail" onclick="openModal('Knit Cardigan Sweater', '฿320.00', '42-44 นิ้ว', '25 นิ้ว', 'images/20.jpg')">ดูรายละเอียด</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="images/21.jpg" alt="Plaid Button-Up Shirt" onerror="handleImageError(this)">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Plaid Button-Up Shirt</div>
+                    <div class="product-price">฿290.00</div>
+                    <button class="btn-detail" onclick="openModal('Plaid Button-Up Shirt', '฿290.00', '46 นิ้ว', '28 นิ้ว', 'images/21.jpg')">ดูรายละเอียด</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="images/22.jpg" alt="Cream Cozy Shorts" onerror="handleImageError(this)">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Cream Cozy Shorts</div>
+                    <div class="product-price">฿250.00</div>
+                    <button class="btn-detail" onclick="openModal('Cream Cozy Shorts', '฿250.00', 'เอว 28-34 นิ้ว', '18 นิ้ว', 'images/22.jpg')">ดูรายละเอียด</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="images/23.jpg" alt="Classic Gray Hoodie" onerror="handleImageError(this)">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Classic Gray Hoodie</div>
+                    <div class="product-price">฿380.00</div>
+                    <button class="btn-detail" onclick="openModal('Classic Gray Hoodie', '฿380.00', '48 นิ้ว', '27 นิ้ว', 'images/23.jpg')">ดูรายละเอียด</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="images/24.jpg" alt="Straight Leg Jeans" onerror="handleImageError(this)">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Straight Leg Jeans</div>
+                    <div class="product-price">฿450.00</div>
+                    <button class="btn-detail" onclick="openModal('Straight Leg Jeans', '฿450.00', 'เอว 30-36 นิ้ว', '40 นิ้ว', 'images/24.jpg')">ดูรายละเอียด</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="images/25.jpg" alt="Minimal White Shirt" onerror="handleImageError(this)">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Minimal White Shirt</div>
+                    <div class="product-price">฿310.00</div>
+                    <button class="btn-detail" onclick="openModal('Minimal White Shirt', '฿310.00', '50 นิ้ว', '30 นิ้ว', 'images/25.jpg')">ดูรายละเอียด</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="images/26.jpg" alt="Dusty Brown Sweater" onerror="handleImageError(this)">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Dusty Brown Sweater</div>
+                    <div class="product-price">฿350.00</div>
+                    <button class="btn-detail" onclick="openModal('Dusty Brown Sweater', '฿350.00', '46 นิ้ว', '26 นิ้ว', 'images/26.jpg')">ดูรายละเอียด</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="images/27.jpg" alt="Minimal Black Trousers" onerror="handleImageError(this)">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Minimal Black Trousers</div>
+                    <div class="product-price">฿390.00</div>
+                    <button class="btn-detail" onclick="openModal('Minimal Black Trousers', '฿390.00', 'เอว 28-34 นิ้ว', '38 นิ้ว', 'images/27.jpg')">ดูรายละเอียด</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="images/28.jpg" alt="Dusty Green Plaid Jacket" onerror="handleImageError(this)">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Dusty Green Plaid Jacket</div>
+                    <div class="product-price">฿420.00</div>
+                    <button class="btn-detail" onclick="openModal('Dusty Green Plaid Jacket', '฿420.00', '48 นิ้ว', '29 นิ้ว', 'images/28.jpg')">ดูรายละเอียด</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="productModal" class="modal" onclick="closeModalOutside(event)">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <img id="modalImg" class="modal-img" src="" alt="Product Image" onerror="handleImageError(this)">
+            <div class="modal-details">
+                <h3 id="modalName" class="modal-title">ชื่อสินค้า</h3>
+                <div id="modalPrice" class="modal-price">ราคา</div>
+                <div class="modal-size-info">
+                    <p id="chestRow"><strong>รอบอก:</strong> <span id="modalChest">-</span></p>
+                    <p><strong>ความยาว:</strong> <span id="modalLength">-</span></p>
+                </div>
+                <a href="https://line.me" target="_blank" class="btn-detail" style="background-color: #4A3B32; color: #FDFBF7;">สั่งซื้อสินค้าชิ้นนี้</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 oslo.clothes. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function openModal(name, price, chest, length, imgSrc) {
+            document.getElementById('modalName').innerText = name;
+            document.getElementById('modalPrice').innerText = price;
+            document.getElementById('modalChest').innerText = chest;
+            document.getElementById('modalLength').innerText = length;
+            
+            // กรณีเป็นกางเกง (กล่องที่ 3, 5, 8) ให้เปลี่ยนคำว่า รอบอก เป็น ขนาดเอว
+            if(name === 'Cream Cozy Shorts' || name === 'Straight Leg Jeans' || name === 'Minimal Black Trousers') {
+                document.getElementById('chestRow').innerHTML = '<strong>ขนาดเอว:</strong> <span id="modalChest">' + chest + '</span>';
+            } else {
+                document.getElementById('chestRow').innerHTML = '<strong>รอบอก:</strong> <span id="modalChest">' + chest + '</span>';
+            }
+
+            document.getElementById('modalImg').src = imgSrc;
+            document.getElementById('productModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('productModal').style.display = 'none';
+        }
+
+        function closeModalOutside(event) {
+            if (event.target.id === 'productModal') {
+                closeModal();
+            }
+        }
+    </script>
+
+</body>
+</html>
