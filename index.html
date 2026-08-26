@@ -403,6 +403,23 @@ transform:scale(1.05);
 filter:grayscale(0)
 }
 
+/* =========================
+   PROJECT IMAGE CLICK
+   ========================= */
+
+.project-img-link{
+display:block;
+width:100%;
+height:100%;
+cursor:pointer;
+text-decoration:none
+}
+
+.project-img-link:hover .cert-img{
+transform:scale(1.05);
+filter:grayscale(0)
+}
+
 .project-tag{
 font-size:.7rem;
 font-weight:600;
@@ -1243,6 +1260,10 @@ Agile/Scrum
 </section>
 
 
+<!-- =====================================================
+     PROJECT EXPERIENCE
+     ===================================================== -->
+
 <section id="projects" class="mb-5">
 
 <div class="d-flex align-items-center mb-4">
@@ -1257,17 +1278,31 @@ Project Experience
 <div class="row row-cols-1 row-cols-md-3 g-3">
 
 
+<!-- =====================================================
+     PROJECT 1 : CPE01
+     คลิกที่รูปเพื่อเปิดรูปเต็ม
+     ===================================================== -->
+
 <div class="col">
 
 <div class="custom-card">
 
 <div class="cert-img-wrapper">
 
+<a
+href="images/CPE01.png"
+target="_blank"
+rel="noopener noreferrer"
+class="project-img-link"
+title="คลิกเพื่อดูรูปเต็ม">
+
 <img
 src="images/CPE01.png"
 class="cert-img"
-alt="WasteCoin Backend System"
+alt="CPE AI Chat Bot"
 onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Backend+System'">
+
+</a>
 
 </div>
 
@@ -1315,17 +1350,31 @@ MongoDB
 </div>
 
 
+<!-- =====================================================
+     PROJECT 2 : CPE02
+     คลิกที่รูปเพื่อเปิดรูปเต็ม
+     ===================================================== -->
+
 <div class="col">
 
 <div class="custom-card">
 
 <div class="cert-img-wrapper">
 
+<a
+href="images/CPE02.png"
+target="_blank"
+rel="noopener noreferrer"
+class="project-img-link"
+title="คลิกเพื่อดูรูปเต็ม">
+
 <img
 src="images/CPE02.png"
 class="cert-img"
-alt="Smart Contract Integration"
+alt="CPE AI Chat Bot"
 onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=Blockchain+Integration'">
+
+</a>
 
 </div>
 
@@ -1374,21 +1423,24 @@ Ethers.js
 </div>
 
 
-<!-- =========================
-     PJ01
-     แก้เฉพาะส่วนนี้ให้เชื่อม PJ01.html
-     ========================= -->
+<!-- =====================================================
+     PROJECT 3 : PJ01
+     คลิก "รูป" = ดูรูปเต็ม
+     คลิก "รายละเอียด" = เข้า PJ01.html
+     ===================================================== -->
 
 <div class="col">
-
-<a
-href="PJ01.html"
-target="_blank"
-style="text-decoration:none;color:inherit;display:block;height:100%;">
 
 <div class="custom-card">
 
 <div class="cert-img-wrapper">
+
+<a
+href="images/111.png"
+target="_blank"
+rel="noopener noreferrer"
+class="project-img-link"
+title="คลิกเพื่อดูรูปเต็ม">
 
 <img
 src="images/111.png"
@@ -1396,8 +1448,16 @@ class="cert-img"
 alt="oslo.clothes"
 onerror="this.src='https://via.placeholder.com/400x250/1c1f26/cbd5e1?text=oslo.clothes'">
 
+</a>
+
 </div>
 
+
+<a
+href="PJ01.html"
+target="_blank"
+rel="noopener noreferrer"
+style="text-decoration:none;color:inherit;display:block;">
 
 <div class="p-4">
 
@@ -1441,9 +1501,9 @@ Formspree API
 
 </div>
 
-</div>
-
 </a>
+
+</div>
 
 </div>
 
@@ -1466,6 +1526,8 @@ Certificates & Achievements
 <div class="row row-cols-1 row-cols-md-3 g-3">
 
 
+<!-- Certificate 01 -->
+
 <div class="col">
 
 <div class="custom-card">
@@ -1475,6 +1537,7 @@ Certificates & Achievements
 <a
 href="images/01.png"
 target="_blank"
+rel="noopener noreferrer"
 class="cert-img-link">
 
 <img
@@ -1521,6 +1584,8 @@ Cisco Networking Academy
 </div>
 
 
+<!-- Certificate 02 -->
+
 <div class="col">
 
 <div class="custom-card">
@@ -1530,6 +1595,7 @@ Cisco Networking Academy
 <a
 href="images/02.png"
 target="_blank"
+rel="noopener noreferrer"
 class="cert-img-link">
 
 <img
@@ -1576,6 +1642,8 @@ Online Tech Academy
 </div>
 
 
+<!-- Certificate 03 -->
+
 <div class="col">
 
 <div class="custom-card">
@@ -1585,6 +1653,7 @@ Online Tech Academy
 <a
 href="images/03.png"
 target="_blank"
+rel="noopener noreferrer"
 class="cert-img-link">
 
 <img
@@ -1667,6 +1736,7 @@ Software Engineering
 <a
 href="https://mail.google.com/mail/?view=cm&fs=1&to=thatchanon.w@psru.ac.th&su=ติดต่อร่วมงานจาก%20Software%20Portfolio"
 target="_blank"
+rel="noopener noreferrer"
 class="btn-tech-mail mb-5">
 
 <i class="fa-regular fa-envelope"></i>
@@ -1795,7 +1865,9 @@ Computer Engineering & Software Developer Portfolio.
 
 <script>
 
-/* TYPEWRITER */
+/* =====================================================
+   TYPEWRITER
+   ===================================================== */
 
 const words=[
 "Computer Engineering Student",
@@ -1870,7 +1942,9 @@ typeEffect
 );
 
 
-/* BACKGROUND PARTICLES */
+/* =====================================================
+   BACKGROUND PARTICLES
+   ===================================================== */
 
 const canvas=
 document.getElementById("bg-canvas");
@@ -1894,6 +1968,7 @@ window.innerWidth;
 canvas.height=
 window.innerHeight;
 
+
 window.addEventListener(
 "mousemove",
 event=>{
@@ -1907,6 +1982,7 @@ event.clientY;
 }
 );
 
+
 window.addEventListener(
 "mouseout",
 ()=>{
@@ -1916,6 +1992,7 @@ mouse.y=null;
 
 }
 );
+
 
 window.addEventListener(
 "resize",
@@ -1953,6 +2030,7 @@ this.speedY=
 Math.random()*.4-.2;
 
 }
+
 
 update(){
 
@@ -1999,6 +2077,7 @@ this.speedX;
 this.y+=
 this.speedY;
 
+
 if(
 this.x>canvas.width ||
 this.x<0
@@ -2008,6 +2087,7 @@ this.speedX=
 -this.speedX;
 
 }
+
 
 if(
 this.y>canvas.height ||
@@ -2020,6 +2100,7 @@ this.speedY=
 }
 
 }
+
 
 draw(){
 
@@ -2043,6 +2124,10 @@ ctx.fill();
 }
 
 
+/* =====================================================
+   INITIALIZE PARTICLES
+   ===================================================== */
+
 function init(){
 
 particlesArray=[];
@@ -2061,6 +2146,10 @@ new Particle()
 
 }
 
+
+/* =====================================================
+   CONNECT PARTICLES
+   ===================================================== */
 
 function connect(){
 
@@ -2086,6 +2175,7 @@ particlesArray[b].y;
 
 let distance=
 Math.sqrt(dx*dx+dy*dy);
+
 
 if(
 distance<220
@@ -2117,6 +2207,9 @@ ctx.stroke();
 
 }
 
+
+/* Connect particles to mouse */
+
 if(
 mouse.x!=null &&
 mouse.y!=null
@@ -2135,6 +2228,7 @@ Math.sqrt(
 mdx*mdx+
 mdy*mdy
 );
+
 
 if(
 mDistance<mouse.radius
@@ -2171,6 +2265,10 @@ ctx.stroke();
 }
 
 
+/* =====================================================
+   ANIMATION
+   ===================================================== */
+
 function animate(){
 
 ctx.clearRect(
@@ -2179,6 +2277,7 @@ ctx.clearRect(
 canvas.width,
 canvas.height
 );
+
 
 for(
 let i=0;
@@ -2192,6 +2291,7 @@ particlesArray[i].draw();
 
 }
 
+
 connect();
 
 requestAnimationFrame(
@@ -2199,6 +2299,7 @@ animate
 );
 
 }
+
 
 init();
 
